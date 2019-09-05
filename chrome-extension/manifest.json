@@ -1,0 +1,34 @@
+{
+    "name": "My Font Settings Extension",
+    "description": "Customize your fonts",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "icons": {
+        "16": "icon/16x16.png",
+        "32": "icon/32x32.png",
+        "48": "icon/48x48.png",
+        "128": "icon/128x128.png"
+    },
+    "permissions": [
+        "fontSettings",
+        "storage",
+        "activeTab"
+    ],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": ["*://term.ptt.cc/*"],
+        "js": [
+            "js/arrive.min.js",
+            "js/inject.js"
+        ]
+    }],
+    "browser_action": {
+        "default_popup": "popup/index.html"
+    },
+    "web_accessible_resources": [
+        "theme/*"
+    ]
+}
