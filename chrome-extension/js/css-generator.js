@@ -95,9 +95,7 @@ async function puttyFileToCSSFile(puttyConfigFilePath, outputFilePath) {
         let color = `rgb(${colorMap[i][0]},${colorMap[i][1]},${colorMap[i][2]})`
         css = css.replace(new RegExp(idList[i], "g"), color)
     }
-
     
-
     fs.writeFileSync(outputFilePath, css, { flag: 'wx' });
 }
 

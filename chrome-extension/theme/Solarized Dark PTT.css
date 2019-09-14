@@ -1391,9 +1391,12 @@ body,
   color: #495456;
 }
 
-/* buttom-left corner*/
+/* buttom-left corner */
 .q4.b6 {
   color: #073642;
 }
 
-/*# sourceMappingURL=Solarized-Dark-Custom.css.map */
+/* mail counter */
+.q2.b7 {
+  color: #adc700;
+}

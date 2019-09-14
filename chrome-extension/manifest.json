@@ -14,15 +14,12 @@
         "storage",
         "activeTab"
     ],
-    "background": {
-        "scripts": ["js/background.js"],
-        "persistent": false
-    },
     "content_scripts": [{
         "matches": ["*://term.ptt.cc/*"],
         "js": [
             "js/arrive.min.js",
-            "js/inject.js"
+            "js/inject.js",
+            "js/main.js"
         ]
     }],
     "browser_action": {
