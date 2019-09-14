@@ -1,170 +1,48 @@
-let puttyConfigFile = `
-    Windows Registry Editor Version 5.00
-
-    [HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Default%20Settings]
-    "Colour0"="255,250,244"
-    "Colour1"="158,156,154"
-    "Colour2"="14,16,25"
-    "Colour3"="14,16,25"
-    "Colour4"="255,255,255"
-    "Colour5"="255,0,24"
-    "Colour6"="35,35,35"
-    "Colour7"="68,68,68"
-    "Colour8"="255,0,15"
-    "Colour9"="255,39,64"
-    "Colour10"="140,225,11"
-    "Colour11"="171,225,91"
-    "Colour12"="255,185,0"
-    "Colour13"="255,210,66"
-    "Colour14"="0,141,248"
-    "Colour15"="0,146,255"
-    "Colour16"="109,67,166"
-    "Colour17"="154,95,235"
-    "Colour18"="0,216,235"
-    "Colour19"="103,255,240"
-    "Colour20"="255,255,255"
-    "Colour21"="255,255,255"
-`
-
-const fs = require('fs');
-
-function retrieveColorMapFromConfig(puttyConfigFile) {
-    let colorMap = {};
-    let config = puttyConfigFile.split(`"`)
-    for (let i = 0; i < config.length; i++) {
-        let element = config[i];
-        if (element.startsWith(`Colour`)) {
-            let colorId = Number(element.replace(`Colour`, ``))
-            let colorCode = config[i + 2].split(`,`).map((e) => Number(e))
-            colorMap[colorId] = colorCode;
-            i++
-        }
+let themeConfig = JSON.parse(`
+{
+    "base": {
+        "$foreground": "hsl(186.3157894736842, 8.296943231441055%, 55.09803921568628%);",
+        "$foreground-light": "hsl(180, 6.930693069306934%, 60.3921568627451%);",
+        "$background": "hsl(192.22222222222223, 100%, 10.588235294117647%);",
+        "$background-light": "hsl(192.20338983050848, 80.82191780821917%, 14.31372549019608%);",
+        "$cursor-text": "hsl(186.3157894736842, 8.296943231441055%, 55.09803921568628%);",
+        "$cursor": "hsl(186.3157894736842, 8.296943231441055%, 55.09803921568628%);",
+        "$black": "hsl(192.22222222222223, 100%, 10.588235294117647%);",
+        "$black-light": "hsl(192.20338983050848, 80.82191780821917%, 14.31372549019608%);",
+        "$red": "hsl(1.0404624277456633, 71.19341563786008%, 40.27149321266969%);",
+        "$red-light": "hsl(1.0404624277456633, 71.19341563786008%, 52.352941176470594%);",
+        "$green": "hsl(67.84313725490196, 100%, 30%);",
+        "$green-light": "hsl(67.84313725490196, 100%, 39%);",
+        "$yellow": "hsl(45.414364640883974, 100%, 35.490196078431374%);",
+        "$yellow-light": "hsl(45.414364640883974, 100%, 46.13725490196079%);",
+        "$blue": "hsl(204.7674418604651, 69.35483870967741%, 37.40573152337858%);",
+        "$blue-light": "hsl(204.7674418604651, 69.35483870967741%, 48.627450980392155%);",
+        "$magenta": "hsl(330.95541401273886, 64.08163265306122%, 39.96983408748114%);",
+        "$magenta-light": "hsl(330.95541401273886, 64.08163265306122%, 51.96078431372548%);",
+        "$cyan": "hsl(175.46218487394958, 58.62068965517242%, 30.6184012066365%);",
+        "$cyan-light": "hsl(175.46218487394958, 58.62068965517242%, 39.80392156862745%);",
+        "$white": "hsl(45.59999999999999, 42.37288135593221%, 88.4313725490196%);",
+        "$white-light": "hsl(43.846153846153854, 86.66666666666671%, 94.11764705882352%);"
+    },
+    "specialCase": {
+        ".q7.b4": "color: #eee8d5;",
+        ".q4.b7": "background-color: #eee8d5;",
+        ".q8": "color: #495456;",
+        ".q4.b6": "color: #073642;",
+        ".q2.b7": "color: #adc700;"
     }
-    return colorMap;
 }
+`)
 
-function readFile(filename) {
-    return new Promise((resolve, reject) => {
-        fs.readFile(filename, function (err, data) {
-            if (err) {
-                reject(err)
-            }
-            if (data === undefined) {
-                console.log(filename, "is undefined")
-                resolve("");
-            } else {
-                resolve(data.toString())
-            }
-
-        });
-    })
-
-}
-
-let idList = [
-    `\\$foreground`,
-    `\\$foreground-light`,
-    `\\$background`,
-    `\\$background-light`,
-    `\\$cursor-text`,
-    `\\$cursor`,
-    `\\$black`,
-    `\\$black-light`,
-    `\\$red`,
-    `\\$red-light`,
-    `\\$green`,
-    `\\$green-light`,
-    `\\$yellow`,
-    `\\$yellow-light`,
-    `\\$blue`,
-    `\\$blue-light`,
-    `\\$magenta`,
-    `\\$magenta-light`,
-    `\\$cyan`,
-    `\\$cyan-light`,
-    `\\$white`,
-    `\\$white-light`
-]
-
-async function puttyFileToCSSFile(puttyConfigFilePath, outputFilePath) {
-    let puttyConfigFile = await readFile(puttyConfigFilePath)
-    let colorMap = retrieveColorMapFromConfig(puttyConfigFile)
-    let css = await readFile(`template`)
-    console.log(idList.length)
-    for (let i = idList.length - 1; i >= 0; i--) {
-        let color = `rgb(${colorMap[i][0]},${colorMap[i][1]},${colorMap[i][2]})`
-        css = css.replace(new RegExp(idList[i], "g"), color)
+let jsonToCSS = async function (themeConfig) {
+    let css = await fetch(chrome.extension.getURL(`theme/template`)).then((response) => { return response.text() })
+    for (let key in themeConfig.base) {
+        css = css.replace(new RegExp(key, "g"), themeConfig.base[key])
     }
-    
-    fs.writeFileSync(outputFilePath, css, { flag: 'wx' });
+    for (let key in themeConfig.specialCase){
+        css = css + `\n${key} {\n    ${themeConfig.specialCase[key]}\n}\n`
+    }
+    return css
 }
 
-let puttyThemeFilenameList = [
-    "01. Apple Terminal.reg",
-    "02. Argonaut.reg",
-    "03. Birds Of Paradise.reg",
-    "04. Blazer.reg",
-    "05. Chalkboard.reg",
-    "06. Ciapre.reg",
-    "07. Dark Pastel.reg",
-    "08. Desert.reg",
-    "09. Espresso.reg",
-    "10. Fish Of Paradise.reg",
-    "11. Fish Tank.reg",
-    "12. github.reg",
-    "13. Grass.reg",
-    "14. Highway.reg",
-    "15. Homebrew.reg",
-    "16. Hurtado.reg",
-    "17. Ic Green Ppl.reg",
-    "18. Idletoes.reg",
-    "19. Igvita Desert.reg",
-    "20. Igvita Light.reg",
-    "21. Invisibone.reg",
-    "22. Kibble.reg",
-    "23. Liquid Carbon.reg",
-    "24. Liquid Carbon Transparent.reg",
-    "25. Liquid Carbon Transparent Inverse.reg",
-    "26. Man Page.reg",
-    "27. Monokai Soda.reg",
-    "28. Monokai Dimmed.reg",
-    "29. Monokai Stevelosh.reg",
-    "30. Neopolitan.reg",
-    "31. Novel.reg",
-    "32. Ocean.reg",
-    "33. Papirus Dark.reg",
-    "34. Pro.reg",
-    "35. Red Sands.reg",
-    "36. Seafoam Pastel.reg",
-    "37. Solarized Dark.reg",
-    "38. Solarized Light.reg",
-    "39. Solarized Darcula.reg",
-    "40. Sundried.reg",
-    "41. Sympfonic.reg",
-    "42. Teerb.reg",
-    "43. Terminal Basic.reg",
-    "44. Thayer.reg",
-    "45. Tomorrow.reg",
-    "46. Tomorrow Night.reg",
-    "47. Twilight.reg",
-    "48. Vaughn.reg",
-    "49. X Dotshare.reg",
-    "50. Zenburn.reg",
-    "51. Mariana.reg"
-]
-
-puttyThemeFilenameList.forEach(filename => {
-    puttyFileToCSSFile(`../../putty-color-themes/${filename}`, `../putty-theme-css/${filename.split(".")[1].substring(1)}.css`)
-})
-
-// fs.readdir(`../../putty-color-themes/`, (err, files) => {
-//     for (let i = 0; i < files.length; i++) {
-//         let file = files[i]
-//         if (file != undefined && file.match(/.*reg/)) {
-//             puttyFileToCSSFile(`../../putty-color-themes/${file}`, `../putty-theme-css/${file.split(".")[1].substring(1)}.css`)
-//         }
-
-//     }
-// });
-
-// puttyFileToCSSFile(`../../putty-color-themes/01. Apple Terminal.reg`, `../putty-theme-css/test.css`)
+jsonToCSS(themeConfig).then(res => {console.log(res)});
