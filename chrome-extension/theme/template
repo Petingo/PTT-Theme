@@ -51,42 +51,42 @@ body,
 
 .blink--active .qq8 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $black-light
+    background-color: $blackLight
 }
 
 .blink--active .qq9 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $red-light
+    background-color: $redLight
 }
 
 .blink--active .qq10 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $green-light
+    background-color: $greenLight
 }
 
 .blink--active .qq11 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $yellow-light
+    background-color: $yellowLight
 }
 
 .blink--active .qq12 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $blue-light
+    background-color: $blueLight
 }
 
 .blink--active .qq13 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $magenta-light
+    background-color: $magentaLight
 }
 
 .blink--active .qq14 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $cyan-light
+    background-color: $cyanLight
 }
 
 .blink--active .qq15 {
     color: RGBA(0, 0, 0, 0);
-    background-color: $white-light
+    background-color: $whiteLight
 }
 
 .q0 {
@@ -126,31 +126,31 @@ body,
 }
 
 .q9 {
-    color: $red-light
+    color: $redLight
 }
 
 .q10 {
-    color: $green-light
+    color: $greenLight
 }
 
 .q11 {
-    color: $yellow-light
+    color: $yellowLight
 }
 
 .q12 {
-    color: $blue-light
+    color: $blueLight
 }
 
 .q13 {
-    color: $magenta-light
+    color: $magentaLight
 }
 
 .q14 {
-    color: $cyan-light
+    color: $cyanLight
 }
 
 .q15 {
-    color: $white-light
+    color: $whiteLight
 }
 
 .b0 {
@@ -186,35 +186,35 @@ body,
 }
 
 .b8 {
-    background-color: $black-light
+    background-color: $blackLight
 }
 
 .b9 {
-    background-color: $red-light
+    background-color: $redLight
 }
 
 .b10 {
-    background-color: $green-light
+    background-color: $greenLight
 }
 
 .b11 {
-    background-color: $yellow-light
+    background-color: $yellowLight
 }
 
 .b12 {
-    background-color: $blue-light
+    background-color: $blueLight
 }
 
 .b13 {
-    background-color: $magenta-light
+    background-color: $magentaLight
 }
 
 .b14 {
-    background-color: $cyan-light
+    background-color: $cyanLight
 }
 
 .b15 {
-    background-color: $white-light
+    background-color: $whiteLight
 }
 
 .b0b0 {
@@ -250,35 +250,35 @@ body,
 }
 
 .b0b8 {
-    background: -webkit-linear-gradient(left, transparent 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $blackLight 0)
 }
 
 .b0b9 {
-    background: -webkit-linear-gradient(left, transparent 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $redLight 0)
 }
 
 .b0b10 {
-    background: -webkit-linear-gradient(left, transparent 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $greenLight 0)
 }
 
 .b0b11 {
-    background: -webkit-linear-gradient(left, transparent 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $yellowLight 0)
 }
 
 .b0b12 {
-    background: -webkit-linear-gradient(left, transparent 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $blueLight 0)
 }
 
 .b0b13 {
-    background: -webkit-linear-gradient(left, transparent 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $magentaLight 0)
 }
 
 .b0b14 {
-    background: -webkit-linear-gradient(left, transparent 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $cyanLight 0)
 }
 
 .b0b15 {
-    background: -webkit-linear-gradient(left, transparent 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, transparent 50%, $whiteLight 0)
 }
 
 .b1b0 {
@@ -314,35 +314,35 @@ body,
 }
 
 .b1b8 {
-    background: -webkit-linear-gradient(left, $red 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $blackLight 0)
 }
 
 .b1b9 {
-    background: -webkit-linear-gradient(left, $red 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $redLight 0)
 }
 
 .b1b10 {
-    background: -webkit-linear-gradient(left, $red 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $greenLight 0)
 }
 
 .b1b11 {
-    background: -webkit-linear-gradient(left, $red 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $yellowLight 0)
 }
 
 .b1b12 {
-    background: -webkit-linear-gradient(left, $red 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $blueLight 0)
 }
 
 .b1b13 {
-    background: -webkit-linear-gradient(left, $red 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $magentaLight 0)
 }
 
 .b1b14 {
-    background: -webkit-linear-gradient(left, $red 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $cyanLight 0)
 }
 
 .b1b15 {
-    background: -webkit-linear-gradient(left, $red 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $red 50%, $whiteLight 0)
 }
 
 .b2b0 {
@@ -378,35 +378,35 @@ body,
 }
 
 .b2b8 {
-    background: -webkit-linear-gradient(left, $green 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $blackLight 0)
 }
 
 .b2b9 {
-    background: -webkit-linear-gradient(left, $green 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $redLight 0)
 }
 
 .b2b10 {
-    background: -webkit-linear-gradient(left, $green 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $greenLight 0)
 }
 
 .b2b11 {
-    background: -webkit-linear-gradient(left, $green 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $yellowLight 0)
 }
 
 .b2b12 {
-    background: -webkit-linear-gradient(left, $green 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $blueLight 0)
 }
 
 .b2b13 {
-    background: -webkit-linear-gradient(left, $green 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $magentaLight 0)
 }
 
 .b2b14 {
-    background: -webkit-linear-gradient(left, $green 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $cyanLight 0)
 }
 
 .b2b15 {
-    background: -webkit-linear-gradient(left, $green 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $green 50%, $whiteLight 0)
 }
 
 .b3b0 {
@@ -442,35 +442,35 @@ body,
 }
 
 .b3b8 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $blackLight 0)
 }
 
 .b3b9 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $redLight 0)
 }
 
 .b3b10 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $greenLight 0)
 }
 
 .b3b11 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $yellowLight 0)
 }
 
 .b3b12 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $blueLight 0)
 }
 
 .b3b13 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $magentaLight 0)
 }
 
 .b3b14 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $cyanLight 0)
 }
 
 .b3b15 {
-    background: -webkit-linear-gradient(left, $yellow 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $yellow 50%, $whiteLight 0)
 }
 
 .b4b0 {
@@ -506,35 +506,35 @@ body,
 }
 
 .b4b8 {
-    background: -webkit-linear-gradient(left, $blue 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $blackLight 0)
 }
 
 .b4b9 {
-    background: -webkit-linear-gradient(left, $blue 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $redLight 0)
 }
 
 .b4b10 {
-    background: -webkit-linear-gradient(left, $blue 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $greenLight 0)
 }
 
 .b4b11 {
-    background: -webkit-linear-gradient(left, $blue 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $yellowLight 0)
 }
 
 .b4b12 {
-    background: -webkit-linear-gradient(left, $blue 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $blueLight 0)
 }
 
 .b4b13 {
-    background: -webkit-linear-gradient(left, $blue 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $magentaLight 0)
 }
 
 .b4b14 {
-    background: -webkit-linear-gradient(left, $blue 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $cyanLight 0)
 }
 
 .b4b15 {
-    background: -webkit-linear-gradient(left, $blue 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $blue 50%, $whiteLight 0)
 }
 
 .b5b0 {
@@ -570,35 +570,35 @@ body,
 }
 
 .b5b8 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $blackLight 0)
 }
 
 .b5b9 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $redLight 0)
 }
 
 .b5b10 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $greenLight 0)
 }
 
 .b5b11 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $yellowLight 0)
 }
 
 .b5b12 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $blueLight 0)
 }
 
 .b5b13 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $magentaLight 0)
 }
 
 .b5b14 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $cyanLight 0)
 }
 
 .b5b15 {
-    background: -webkit-linear-gradient(left, $magenta 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $magenta 50%, $whiteLight 0)
 }
 
 .b6b0 {
@@ -634,35 +634,35 @@ body,
 }
 
 .b6b8 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $blackLight 0)
 }
 
 .b6b9 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $redLight 0)
 }
 
 .b6b10 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $greenLight 0)
 }
 
 .b6b11 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $yellowLight 0)
 }
 
 .b6b12 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $blueLight 0)
 }
 
 .b6b13 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $magentaLight 0)
 }
 
 .b6b14 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $cyanLight 0)
 }
 
 .b6b15 {
-    background: -webkit-linear-gradient(left, $cyan 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $cyan 50%, $whiteLight 0)
 }
 
 .b7b0 {
@@ -698,547 +698,547 @@ body,
 }
 
 .b7b8 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $blackLight 0)
 }
 
 .b7b9 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $redLight 0)
 }
 
 .b7b10 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $greenLight 0)
 }
 
 .b7b11 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $yellowLight 0)
 }
 
 .b7b12 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $blueLight 0)
 }
 
 .b7b13 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $magentaLight 0)
 }
 
 .b7b14 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $cyanLight 0)
 }
 
 .b7b15 {
-    background: -webkit-linear-gradient(left, $foreground 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $foreground 50%, $whiteLight 0)
 }
 
 .b8b0 {
-    background: -webkit-linear-gradient(left, $black-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, transparent 0)
 }
 
 .b8b1 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $red 0)
 }
 
 .b8b2 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $green 0)
 }
 
 .b8b3 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $yellow 0)
 }
 
 .b8b4 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $blue 0)
 }
 
 .b8b5 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $magenta 0)
 }
 
 .b8b6 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $cyan 0)
 }
 
 .b8b7 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $foreground 0)
 }
 
 .b8b8 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $blackLight 0)
 }
 
 .b8b9 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $redLight 0)
 }
 
 .b8b10 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $greenLight 0)
 }
 
 .b8b11 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $yellowLight 0)
 }
 
 .b8b12 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $blueLight 0)
 }
 
 .b8b13 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $magentaLight 0)
 }
 
 .b8b14 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $cyanLight 0)
 }
 
 .b8b15 {
-    background: -webkit-linear-gradient(left, $black-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $blackLight 50%, $whiteLight 0)
 }
 
 .b9b0 {
-    background: -webkit-linear-gradient(left, $red-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, transparent 0)
 }
 
 .b9b1 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $red 0)
 }
 
 .b9b2 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $green 0)
 }
 
 .b9b3 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $yellow 0)
 }
 
 .b9b4 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $blue 0)
 }
 
 .b9b5 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $magenta 0)
 }
 
 .b9b6 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $cyan 0)
 }
 
 .b9b7 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $foreground 0)
 }
 
 .b9b8 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $blackLight 0)
 }
 
 .b9b9 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $redLight 0)
 }
 
 .b9b10 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $greenLight 0)
 }
 
 .b9b11 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $yellowLight 0)
 }
 
 .b9b12 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $blueLight 0)
 }
 
 .b9b13 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $magentaLight 0)
 }
 
 .b9b14 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $cyanLight 0)
 }
 
 .b9b15 {
-    background: -webkit-linear-gradient(left, $red-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $redLight 50%, $whiteLight 0)
 }
 
 .b10b0 {
-    background: -webkit-linear-gradient(left, $green-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, transparent 0)
 }
 
 .b10b1 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $red 0)
 }
 
 .b10b2 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $green 0)
 }
 
 .b10b3 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $yellow 0)
 }
 
 .b10b4 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $blue 0)
 }
 
 .b10b5 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $magenta 0)
 }
 
 .b10b6 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $cyan 0)
 }
 
 .b10b7 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $foreground 0)
 }
 
 .b10b8 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $blackLight 0)
 }
 
 .b10b9 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $redLight 0)
 }
 
 .b10b10 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $greenLight 0)
 }
 
 .b10b11 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $yellowLight 0)
 }
 
 .b10b12 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $blueLight 0)
 }
 
 .b10b13 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $magentaLight 0)
 }
 
 .b10b14 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $cyanLight 0)
 }
 
 .b10b15 {
-    background: -webkit-linear-gradient(left, $green-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $greenLight 50%, $whiteLight 0)
 }
 
 .b11b0 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, transparent 0)
 }
 
 .b11b1 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $red 0)
 }
 
 .b11b2 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $green 0)
 }
 
 .b11b3 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $yellow 0)
 }
 
 .b11b4 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $blue 0)
 }
 
 .b11b5 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $magenta 0)
 }
 
 .b11b6 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $cyan 0)
 }
 
 .b11b7 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $foreground 0)
 }
 
 .b11b8 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $blackLight 0)
 }
 
 .b11b9 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $redLight 0)
 }
 
 .b11b10 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $greenLight 0)
 }
 
 .b11b11 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $yellowLight 0)
 }
 
 .b11b12 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $blueLight 0)
 }
 
 .b11b13 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $magentaLight 0)
 }
 
 .b11b14 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $cyanLight 0)
 }
 
 .b11b15 {
-    background: -webkit-linear-gradient(left, $yellow-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $yellowLight 50%, $whiteLight 0)
 }
 
 .b12b0 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, transparent 0)
 }
 
 .b12b1 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $red 0)
 }
 
 .b12b2 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $green 0)
 }
 
 .b12b3 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $yellow 0)
 }
 
 .b12b4 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $blue 0)
 }
 
 .b12b5 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $magenta 0)
 }
 
 .b12b6 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $cyan 0)
 }
 
 .b12b7 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $foreground 0)
 }
 
 .b12b8 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $blackLight 0)
 }
 
 .b12b9 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $redLight 0)
 }
 
 .b12b10 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $greenLight 0)
 }
 
 .b12b11 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $yellowLight 0)
 }
 
 .b12b12 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $blueLight 0)
 }
 
 .b12b13 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $magentaLight 0)
 }
 
 .b12b14 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $cyanLight 0)
 }
 
 .b12b15 {
-    background: -webkit-linear-gradient(left, $blue-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $blueLight 50%, $whiteLight 0)
 }
 
 .b13b0 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, transparent 0)
 }
 
 .b13b1 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $red 0)
 }
 
 .b13b2 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $green 0)
 }
 
 .b13b3 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $yellow 0)
 }
 
 .b13b4 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $blue 0)
 }
 
 .b13b5 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $magenta 0)
 }
 
 .b13b6 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $cyan 0)
 }
 
 .b13b7 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $foreground 0)
 }
 
 .b13b8 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $blackLight 0)
 }
 
 .b13b9 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $redLight 0)
 }
 
 .b13b10 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $greenLight 0)
 }
 
 .b13b11 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $yellowLight 0)
 }
 
 .b13b12 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $blueLight 0)
 }
 
 .b13b13 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $magentaLight 0)
 }
 
 .b13b14 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $cyanLight 0)
 }
 
 .b13b15 {
-    background: -webkit-linear-gradient(left, $magenta-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $magentaLight 50%, $whiteLight 0)
 }
 
 .b14b0 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, transparent 0)
 }
 
 .b14b1 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $red 0)
 }
 
 .b14b2 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $green 0)
 }
 
 .b14b3 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $yellow 0)
 }
 
 .b14b4 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $blue 0)
 }
 
 .b14b5 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $magenta 0)
 }
 
 .b14b6 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $cyan 0)
 }
 
 .b14b7 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $foreground 0)
 }
 
 .b14b8 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $blackLight 0)
 }
 
 .b14b9 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $redLight 0)
 }
 
 .b14b10 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $greenLight 0)
 }
 
 .b14b11 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $yellowLight 0)
 }
 
 .b14b12 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $blueLight 0)
 }
 
 .b14b13 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $magentaLight 0)
 }
 
 .b14b14 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $cyanLight 0)
 }
 
 .b14b15 {
-    background: -webkit-linear-gradient(left, $cyan-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $cyanLight 50%, $whiteLight 0)
 }
 
 .b15b0 {
-    background: -webkit-linear-gradient(left, $white-light 50%, transparent 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, transparent 0)
 }
 
 .b15b1 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $red 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $red 0)
 }
 
 .b15b2 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $green 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $green 0)
 }
 
 .b15b3 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $yellow 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $yellow 0)
 }
 
 .b15b4 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $blue 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $blue 0)
 }
 
 .b15b5 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $magenta 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $magenta 0)
 }
 
 .b15b6 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $cyan 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $cyan 0)
 }
 
 .b15b7 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $foreground 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $foreground 0)
 }
 
 .b15b8 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $black-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $blackLight 0)
 }
 
 .b15b9 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $red-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $redLight 0)
 }
 
 .b15b10 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $green-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $greenLight 0)
 }
 
 .b15b11 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $yellow-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $yellowLight 0)
 }
 
 .b15b12 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $blue-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $blueLight 0)
 }
 
 .b15b13 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $magenta-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $magentaLight 0)
 }
 
 .b15b14 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $cyan-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $cyanLight 0)
 }
 
 .b15b15 {
-    background: -webkit-linear-gradient(left, $white-light 50%, $white-light 0)
+    background: -webkit-linear-gradient(left, $whiteLight 50%, $whiteLight 0)
 }
 
 .w0:after {
@@ -1282,43 +1282,43 @@ body,
 }
 
 .w8:after {
-    color: $black-light;
-    text-shadow: $black-light 0 0 0, $black-light 0 0 0, $black-light 0 0 0, $black-light 0 0 0, $black-light 0 0 0
+    color: $blackLight;
+    text-shadow: $blackLight 0 0 0, $blackLight 0 0 0, $blackLight 0 0 0, $blackLight 0 0 0, $blackLight 0 0 0
 }
 
 .w9:after {
-    color: $red-light;
-    text-shadow: $red-light 0 0 0, $red-light 0 0 0, $red-light 0 0 0, $red-light 0 0 0, $red-light 0 0 0
+    color: $redLight;
+    text-shadow: $redLight 0 0 0, $redLight 0 0 0, $redLight 0 0 0, $redLight 0 0 0, $redLight 0 0 0
 }
 
 .w10:after {
-    color: $green-light;
-    text-shadow: $green-light 0 0 0, $green-light 0 0 0, $green-light 0 0 0, $green-light 0 0 0, $green-light 0 0 0
+    color: $greenLight;
+    text-shadow: $greenLight 0 0 0, $greenLight 0 0 0, $greenLight 0 0 0, $greenLight 0 0 0, $greenLight 0 0 0
 }
 
 .w11:after {
-    color: $yellow-light;
-    text-shadow: $yellow-light 0 0 0, $yellow-light 0 0 0, $yellow-light 0 0 0, $yellow-light 0 0 0, $yellow-light 0 0 0
+    color: $yellowLight;
+    text-shadow: $yellowLight 0 0 0, $yellowLight 0 0 0, $yellowLight 0 0 0, $yellowLight 0 0 0, $yellowLight 0 0 0
 }
 
 .w12:after {
-    color: $blue-light;
-    text-shadow: $blue-light 0 0 0, $blue-light 0 0 0, $blue-light 0 0 0, $blue-light 0 0 0, $blue-light 0 0 0
+    color: $blueLight;
+    text-shadow: $blueLight 0 0 0, $blueLight 0 0 0, $blueLight 0 0 0, $blueLight 0 0 0, $blueLight 0 0 0
 }
 
 .w13:after {
-    color: $magenta-light;
-    text-shadow: $magenta-light 0 0 0, $magenta-light 0 0 0, $magenta-light 0 0 0, $magenta-light 0 0 0, $magenta-light 0 0 0
+    color: $magentaLight;
+    text-shadow: $magentaLight 0 0 0, $magentaLight 0 0 0, $magentaLight 0 0 0, $magentaLight 0 0 0, $magentaLight 0 0 0
 }
 
 .w14:after {
-    color: $cyan-light;
-    text-shadow: $cyan-light 0 0 0, $cyan-light 0 0 0, $cyan-light 0 0 0, $cyan-light 0 0 0, $cyan-light 0 0 0
+    color: $cyanLight;
+    text-shadow: $cyanLight 0 0 0, $cyanLight 0 0 0, $cyanLight 0 0 0, $cyanLight 0 0 0, $cyanLight 0 0 0
 }
 
 .w15:after {
-    color: $white-light;
-    text-shadow: $white-light 0 0 0, $white-light 0 0 0, $white-light 0 0 0, $white-light 0 0 0, $white-light 0 0 0
+    color: $whiteLight;
+    text-shadow: $whiteLight 0 0 0, $whiteLight 0 0 0, $whiteLight 0 0 0, $whiteLight 0 0 0, $whiteLight 0 0 0
 }
 
 .trans-fix .b1 {
@@ -1350,35 +1350,35 @@ body,
 }
 
 .trans-fix .b8 {
-    box-shadow: inset 0 0 5px 5px $black-light
+    box-shadow: inset 0 0 5px 5px $blackLight
 }
 
 .trans-fix .b9 {
-    box-shadow: inset 0 0 5px 5px $red-light
+    box-shadow: inset 0 0 5px 5px $redLight
 }
 
 .trans-fix .b10 {
-    box-shadow: inset 0 0 5px 5px $green-light
+    box-shadow: inset 0 0 5px 5px $greenLight
 }
 
 .trans-fix .b11 {
-    box-shadow: inset 0 0 5px 5px $yellow-light
+    box-shadow: inset 0 0 5px 5px $yellowLight
 }
 
 .trans-fix .b12 {
-    box-shadow: inset 0 0 5px 5px $blue-light
+    box-shadow: inset 0 0 5px 5px $blueLight
 }
 
 .trans-fix .b13 {
-    box-shadow: inset 0 0 5px 5px $magenta-light
+    box-shadow: inset 0 0 5px 5px $magentaLight
 }
 
 .trans-fix .b14 {
-    box-shadow: inset 0 0 5px 5px $cyan-light
+    box-shadow: inset 0 0 5px 5px $cyanLight
 }
 
 .trans-fix .b15 {
-    box-shadow: inset 0 0 5px 5px $white-light
+    box-shadow: inset 0 0 5px 5px $whiteLight
 }
 
 

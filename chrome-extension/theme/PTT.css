@@ -1,0 +1,2042 @@
+@font-face {
+    font-family: SymMingLiu;
+    src: url(./symmingliu.aaa394dd81dbe129da06687a75bfe002.woff)
+}
+
+@font-face {
+    font-family: DFHeiLightB5;
+    src: url(./DFHeiLightB5.b857a265811b9246a14422fb56fbabe5.woff)
+}
+
+#picPreview {
+    position: absolute;
+    display: none;
+    z-index: 3
+}
+
+#sideMenus {
+    position: fixed;
+    width: 95px;
+    top: 0;
+    z-index: 3;
+    transition: .25s ease
+}
+
+.menu {
+    left: 0
+}
+
+.menuHidden {
+    left: -85px
+}
+
+.menuHidden:hover {
+    left: 0
+}
+
+#logo {
+    width: 85px;
+    height: 90px;
+    background: url(./icon_128.3ffc4dd8b554423ec802560c239194fe.png) 0 0/85px 85px no-repeat
+}
+
+.font_btn {
+    width: 85px;
+    height: 85px;
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    float: left;
+    cursor: pointer
+}
+
+.font_btn:hover {
+    background-color: #333
+}
+
+.font_btn>i {
+    line-height: 40px
+}
+
+.font_btn>span {
+    font-size: 13px
+}
+
+#BBSWindow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-user-select: none
+}
+
+#cursor {
+    display: none
+}
+
+.blink--active #cursor {
+    display: block
+}
+
+#easyReadingLastRow,
+#easyReadingReplyRow,
+.main {
+    font-family: MingLiu, monospace;
+    font-size: 26px;
+    line-height: 100%;
+    height: 24.125em;
+    margin: 0;
+    -webkit-user-select: text;
+    background-color: #000
+}
+
+#easyReadingLastRow *,
+#easyReadingReplyRow *,
+.main * {
+    font-family: inherit!important
+}
+
+.linkurl {
+    text-decoration: underline;
+    color: #f0f
+}
+
+a:active,
+a:hover,
+a:link,
+a:visited {
+    background-position: 0 90%;
+    text-decoration: none
+}
+
+#easyReadingLastRow>span,
+#easyReadingReplyRow>span,
+#mainContainer>span,
+.main>span {
+    display: block;
+    color: silver;
+    white-space: pre
+}
+
+#easyReadingLastRow,
+#easyReadingReplyRow {
+    position: relative;
+    display: none;
+    overflow: hidden;
+    -webkit-user-select: none;
+    z-index: 1;
+    height: 1em;
+    background-color: transparent
+}
+
+#easyReadingLastRow {
+    margin-top: -1em
+}
+
+#easyReadingReplyRow {
+    margin-top: -2em
+}
+
+#fbSharing {
+    position: absolute;
+    display: none;
+    z-index: 2
+}
+
+#fbSharing .fb_iframe_widget span iframe {
+    bottom: 0!important
+}
+
+.easyReadingImg {
+    max-height: 19em;
+    max-width: 39em;
+    margin: .5em auto;
+    display: block
+}
+
+.easyReadingVideo {
+    margin: .5em auto;
+    width: 640px;
+    display: block
+}
+
+.terminal_display {
+    font-family: MingLiu, monospace;
+    font-size: 26px;
+    line-height: 26px;
+    white-space: pre;
+    cursor: text;
+    position: absolute;
+    color: #fff;
+    text-decoration: blink;
+    -webkit-user-select: none;
+    height: 0;
+    z-index: 2
+}
+
+img {
+    background: #fff;
+    color: #000;
+    padding: 5px
+}
+
+.main img {
+    padding: 0
+}
+
+body {
+    color: #fff;
+    background-color: #101010;
+    background-color: #000;
+    margin: 0;
+    overflow: hidden
+}
+
+span [link=true] {
+    margin: 0;
+    background-image: inherit;
+    background-repeat: inherit;
+    background-position: inherit
+}
+
+span {
+    margin: 0
+}
+
+.drag {
+    display: none;
+    position: absolute;
+    cursor: default;
+    z-Index: 11
+}
+
+.closeSI {
+    float: right;
+    background-color: #bbf
+}
+
+.closeSI,
+.EPbtn {
+    margin: 0;
+    border: 0;
+    padding: 1px;
+    cursor: default
+}
+
+.EPbtn {
+    background-color: #fbb
+}
+
+.closePP {
+    margin: 0;
+    border: 0;
+    padding: 1px;
+    background-color: #bfb;
+    cursor: default
+}
+
+#PicturePreviewInfo {
+    color: #fff;
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #00f, 0 0 7px #00f, 0 0 8px #00f, 0 0 10px #00f, 0 0 15px #00f
+}
+
+#SymbolInput {
+    background-color: #bbf;
+    opacity: .75
+}
+
+#SymbolInput,
+#YoutubeWindow,
+#YoutubeWindow2 {
+    left: 10px;
+    top: 10px;
+    z-index: 3;
+    padding: 3px;
+    border: 0 double #ccc;
+    -moz-border-radius: 8px;
+    cursor: default
+}
+
+#YoutubeWindow,
+#YoutubeWindow2 {
+    background-color: #fbb
+}
+
+#PictureWindow {
+    left: 10px;
+    top: 10px;
+    z-index: 3;
+    background-color: #fff;
+    padding: 3px;
+    border: 0 double #ccc;
+    -moz-border-radius: 8px;
+    cursor: default
+}
+
+.floatWindowClientArea {
+    background-color: #fff;
+    margin: 22px 3px 3px;
+    border: 1px solid #000;
+    cursor: default
+}
+
+.floatWindowClientArea2 {
+    margin: 22px 3px 0
+}
+
+.floatWindowClientArea2,
+.floatWindowClientArea3 {
+    background-color: #fbb;
+    border: 0 solid #000;
+    cursor: default
+}
+
+.floatWindowClientArea3 {
+    margin: 0 3px 3px
+}
+
+.floatWindowClientArea4 {
+    background-color: #fff;
+    position: relative
+}
+
+.floatWindowClientArea4,
+.floatWindowClientArea5 {
+    margin: 0;
+    padding: 0;
+    border: 0 solid #000;
+    cursor: default
+}
+
+.floatWindowClientArea5 {
+    background-color: #bfb
+}
+
+.picturePreview {
+    background: #fff;
+    color: #000;
+    padding: 0;
+    margin: 0
+}
+
+.sBtn {
+    font-family: MingLiu, monospace;
+    font-size: 12px;
+    cursor: default;
+    min-width: 26px;
+    margin: 2px
+}
+
+.main::-webkit-scrollbar {
+    width: 10px
+}
+
+.main::-webkit-scrollbar-track {
+    background: hsla(0, 0%, 100%, .1)
+}
+
+.main::-webkit-scrollbar-track:hover {
+    background: hsla(0, 0%, 100%, .2)
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 100%, .3)
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 100%, .5)
+}
+
+.glyphicon-refresh-animate {
+    -webkit-animation: spin .7s infinite linear
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(1turn)
+    }
+}
+
+.modal-backdrop {
+    z-index: 1!important
+}
+
+.y {
+    background-image: url(data:image/x-ms-bmp;base64,Qk06AAAAAAAAADYAAAAoAAAAAQAAAAEAAAABABgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAGb/AA==);
+    background-repeat: repeat-x;
+    background-position: 0 90%
+}
+
+.y:hover {
+    color: inherit
+}
+
+.blink--active .qq,
+.blink--active .qq0 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: inherit
+}
+
+.blink--active .qq1 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: maroon
+}
+
+.blink--active .qq2 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: green
+}
+
+.blink--active .qq3 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: olive
+}
+
+.blink--active .qq4 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: navy
+}
+
+.blink--active .qq5 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: purple
+}
+
+.blink--active .qq6 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: teal
+}
+
+.blink--active .qq7 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: silver
+}
+
+.blink--active .qq8 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: gray
+}
+
+.blink--active .qq9 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: red
+}
+
+.blink--active .qq10 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: #0f0
+}
+
+.blink--active .qq11 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: #ff0
+}
+
+.blink--active .qq12 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: #00f
+}
+
+.blink--active .qq13 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: #f0f
+}
+
+.blink--active .qq14 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: #0ff
+}
+
+.blink--active .qq15 {
+    color: RGBA(0, 0, 0, 0);
+    background-color: #fff
+}
+
+.q0 {
+    color: #000
+}
+
+.q1 {
+    color: maroon
+}
+
+.q2 {
+    color: green
+}
+
+.q3 {
+    color: olive
+}
+
+.q4 {
+    color: navy
+}
+
+.q5 {
+    color: purple
+}
+
+.q6 {
+    color: teal
+}
+
+.q7 {
+    color: silver
+}
+
+.q8 {
+    color: gray
+}
+
+.q9 {
+    color: red
+}
+
+.q10 {
+    color: #0f0
+}
+
+.q11 {
+    color: #ff0
+}
+
+.q12 {
+    color: #00f
+}
+
+.q13 {
+    color: #f0f
+}
+
+.q14 {
+    color: #0ff
+}
+
+.q15 {
+    color: #fff
+}
+
+.b0 {
+    background-color: transparent
+}
+
+.b1 {
+    background-color: maroon
+}
+
+.b2 {
+    background-color: green
+}
+
+.b3 {
+    background-color: olive
+}
+
+.b4 {
+    background-color: navy
+}
+
+.b5 {
+    background-color: purple
+}
+
+.b6 {
+    background-color: teal
+}
+
+.b7 {
+    background-color: silver
+}
+
+.b8 {
+    background-color: gray
+}
+
+.b9 {
+    background-color: red
+}
+
+.b10 {
+    background-color: #0f0
+}
+
+.b11 {
+    background-color: #ff0
+}
+
+.b12 {
+    background-color: #00f
+}
+
+.b13 {
+    background-color: #f0f
+}
+
+.b14 {
+    background-color: #0ff
+}
+
+.b15 {
+    background-color: #fff
+}
+
+.b0b0 {
+    background: -webkit-linear-gradient(left, transparent 50%, transparent 0)
+}
+
+.b0b1 {
+    background: -webkit-linear-gradient(left, transparent 50%, maroon 0)
+}
+
+.b0b2 {
+    background: -webkit-linear-gradient(left, transparent 50%, green 0)
+}
+
+.b0b3 {
+    background: -webkit-linear-gradient(left, transparent 50%, olive 0)
+}
+
+.b0b4 {
+    background: -webkit-linear-gradient(left, transparent 50%, navy 0)
+}
+
+.b0b5 {
+    background: -webkit-linear-gradient(left, transparent 50%, purple 0)
+}
+
+.b0b6 {
+    background: -webkit-linear-gradient(left, transparent 50%, teal 0)
+}
+
+.b0b7 {
+    background: -webkit-linear-gradient(left, transparent 50%, silver 0)
+}
+
+.b0b8 {
+    background: -webkit-linear-gradient(left, transparent 50%, gray 0)
+}
+
+.b0b9 {
+    background: -webkit-linear-gradient(left, transparent 50%, red 0)
+}
+
+.b0b10 {
+    background: -webkit-linear-gradient(left, transparent 50%, #0f0 0)
+}
+
+.b0b11 {
+    background: -webkit-linear-gradient(left, transparent 50%, #ff0 0)
+}
+
+.b0b12 {
+    background: -webkit-linear-gradient(left, transparent 50%, #00f 0)
+}
+
+.b0b13 {
+    background: -webkit-linear-gradient(left, transparent 50%, #f0f 0)
+}
+
+.b0b14 {
+    background: -webkit-linear-gradient(left, transparent 50%, #0ff 0)
+}
+
+.b0b15 {
+    background: -webkit-linear-gradient(left, transparent 50%, #fff 0)
+}
+
+.b1b0 {
+    background: -webkit-linear-gradient(left, maroon 50%, transparent 0)
+}
+
+.b1b1 {
+    background: -webkit-linear-gradient(left, maroon 50%, maroon 0)
+}
+
+.b1b2 {
+    background: -webkit-linear-gradient(left, maroon 50%, green 0)
+}
+
+.b1b3 {
+    background: -webkit-linear-gradient(left, maroon 50%, olive 0)
+}
+
+.b1b4 {
+    background: -webkit-linear-gradient(left, maroon 50%, navy 0)
+}
+
+.b1b5 {
+    background: -webkit-linear-gradient(left, maroon 50%, purple 0)
+}
+
+.b1b6 {
+    background: -webkit-linear-gradient(left, maroon 50%, teal 0)
+}
+
+.b1b7 {
+    background: -webkit-linear-gradient(left, maroon 50%, silver 0)
+}
+
+.b1b8 {
+    background: -webkit-linear-gradient(left, maroon 50%, gray 0)
+}
+
+.b1b9 {
+    background: -webkit-linear-gradient(left, maroon 50%, red 0)
+}
+
+.b1b10 {
+    background: -webkit-linear-gradient(left, maroon 50%, #0f0 0)
+}
+
+.b1b11 {
+    background: -webkit-linear-gradient(left, maroon 50%, #ff0 0)
+}
+
+.b1b12 {
+    background: -webkit-linear-gradient(left, maroon 50%, #00f 0)
+}
+
+.b1b13 {
+    background: -webkit-linear-gradient(left, maroon 50%, #f0f 0)
+}
+
+.b1b14 {
+    background: -webkit-linear-gradient(left, maroon 50%, #0ff 0)
+}
+
+.b1b15 {
+    background: -webkit-linear-gradient(left, maroon 50%, #fff 0)
+}
+
+.b2b0 {
+    background: -webkit-linear-gradient(left, green 50%, transparent 0)
+}
+
+.b2b1 {
+    background: -webkit-linear-gradient(left, green 50%, maroon 0)
+}
+
+.b2b2 {
+    background: -webkit-linear-gradient(left, green 50%, green 0)
+}
+
+.b2b3 {
+    background: -webkit-linear-gradient(left, green 50%, olive 0)
+}
+
+.b2b4 {
+    background: -webkit-linear-gradient(left, green 50%, navy 0)
+}
+
+.b2b5 {
+    background: -webkit-linear-gradient(left, green 50%, purple 0)
+}
+
+.b2b6 {
+    background: -webkit-linear-gradient(left, green 50%, teal 0)
+}
+
+.b2b7 {
+    background: -webkit-linear-gradient(left, green 50%, silver 0)
+}
+
+.b2b8 {
+    background: -webkit-linear-gradient(left, green 50%, gray 0)
+}
+
+.b2b9 {
+    background: -webkit-linear-gradient(left, green 50%, red 0)
+}
+
+.b2b10 {
+    background: -webkit-linear-gradient(left, green 50%, #0f0 0)
+}
+
+.b2b11 {
+    background: -webkit-linear-gradient(left, green 50%, #ff0 0)
+}
+
+.b2b12 {
+    background: -webkit-linear-gradient(left, green 50%, #00f 0)
+}
+
+.b2b13 {
+    background: -webkit-linear-gradient(left, green 50%, #f0f 0)
+}
+
+.b2b14 {
+    background: -webkit-linear-gradient(left, green 50%, #0ff 0)
+}
+
+.b2b15 {
+    background: -webkit-linear-gradient(left, green 50%, #fff 0)
+}
+
+.b3b0 {
+    background: -webkit-linear-gradient(left, olive 50%, transparent 0)
+}
+
+.b3b1 {
+    background: -webkit-linear-gradient(left, olive 50%, maroon 0)
+}
+
+.b3b2 {
+    background: -webkit-linear-gradient(left, olive 50%, green 0)
+}
+
+.b3b3 {
+    background: -webkit-linear-gradient(left, olive 50%, olive 0)
+}
+
+.b3b4 {
+    background: -webkit-linear-gradient(left, olive 50%, navy 0)
+}
+
+.b3b5 {
+    background: -webkit-linear-gradient(left, olive 50%, purple 0)
+}
+
+.b3b6 {
+    background: -webkit-linear-gradient(left, olive 50%, teal 0)
+}
+
+.b3b7 {
+    background: -webkit-linear-gradient(left, olive 50%, silver 0)
+}
+
+.b3b8 {
+    background: -webkit-linear-gradient(left, olive 50%, gray 0)
+}
+
+.b3b9 {
+    background: -webkit-linear-gradient(left, olive 50%, red 0)
+}
+
+.b3b10 {
+    background: -webkit-linear-gradient(left, olive 50%, #0f0 0)
+}
+
+.b3b11 {
+    background: -webkit-linear-gradient(left, olive 50%, #ff0 0)
+}
+
+.b3b12 {
+    background: -webkit-linear-gradient(left, olive 50%, #00f 0)
+}
+
+.b3b13 {
+    background: -webkit-linear-gradient(left, olive 50%, #f0f 0)
+}
+
+.b3b14 {
+    background: -webkit-linear-gradient(left, olive 50%, #0ff 0)
+}
+
+.b3b15 {
+    background: -webkit-linear-gradient(left, olive 50%, #fff 0)
+}
+
+.b4b0 {
+    background: -webkit-linear-gradient(left, navy 50%, transparent 0)
+}
+
+.b4b1 {
+    background: -webkit-linear-gradient(left, navy 50%, maroon 0)
+}
+
+.b4b2 {
+    background: -webkit-linear-gradient(left, navy 50%, green 0)
+}
+
+.b4b3 {
+    background: -webkit-linear-gradient(left, navy 50%, olive 0)
+}
+
+.b4b4 {
+    background: -webkit-linear-gradient(left, navy 50%, navy 0)
+}
+
+.b4b5 {
+    background: -webkit-linear-gradient(left, navy 50%, purple 0)
+}
+
+.b4b6 {
+    background: -webkit-linear-gradient(left, navy 50%, teal 0)
+}
+
+.b4b7 {
+    background: -webkit-linear-gradient(left, navy 50%, silver 0)
+}
+
+.b4b8 {
+    background: -webkit-linear-gradient(left, navy 50%, gray 0)
+}
+
+.b4b9 {
+    background: -webkit-linear-gradient(left, navy 50%, red 0)
+}
+
+.b4b10 {
+    background: -webkit-linear-gradient(left, navy 50%, #0f0 0)
+}
+
+.b4b11 {
+    background: -webkit-linear-gradient(left, navy 50%, #ff0 0)
+}
+
+.b4b12 {
+    background: -webkit-linear-gradient(left, navy 50%, #00f 0)
+}
+
+.b4b13 {
+    background: -webkit-linear-gradient(left, navy 50%, #f0f 0)
+}
+
+.b4b14 {
+    background: -webkit-linear-gradient(left, navy 50%, #0ff 0)
+}
+
+.b4b15 {
+    background: -webkit-linear-gradient(left, navy 50%, #fff 0)
+}
+
+.b5b0 {
+    background: -webkit-linear-gradient(left, purple 50%, transparent 0)
+}
+
+.b5b1 {
+    background: -webkit-linear-gradient(left, purple 50%, maroon 0)
+}
+
+.b5b2 {
+    background: -webkit-linear-gradient(left, purple 50%, green 0)
+}
+
+.b5b3 {
+    background: -webkit-linear-gradient(left, purple 50%, olive 0)
+}
+
+.b5b4 {
+    background: -webkit-linear-gradient(left, purple 50%, navy 0)
+}
+
+.b5b5 {
+    background: -webkit-linear-gradient(left, purple 50%, purple 0)
+}
+
+.b5b6 {
+    background: -webkit-linear-gradient(left, purple 50%, teal 0)
+}
+
+.b5b7 {
+    background: -webkit-linear-gradient(left, purple 50%, silver 0)
+}
+
+.b5b8 {
+    background: -webkit-linear-gradient(left, purple 50%, gray 0)
+}
+
+.b5b9 {
+    background: -webkit-linear-gradient(left, purple 50%, red 0)
+}
+
+.b5b10 {
+    background: -webkit-linear-gradient(left, purple 50%, #0f0 0)
+}
+
+.b5b11 {
+    background: -webkit-linear-gradient(left, purple 50%, #ff0 0)
+}
+
+.b5b12 {
+    background: -webkit-linear-gradient(left, purple 50%, #00f 0)
+}
+
+.b5b13 {
+    background: -webkit-linear-gradient(left, purple 50%, #f0f 0)
+}
+
+.b5b14 {
+    background: -webkit-linear-gradient(left, purple 50%, #0ff 0)
+}
+
+.b5b15 {
+    background: -webkit-linear-gradient(left, purple 50%, #fff 0)
+}
+
+.b6b0 {
+    background: -webkit-linear-gradient(left, teal 50%, transparent 0)
+}
+
+.b6b1 {
+    background: -webkit-linear-gradient(left, teal 50%, maroon 0)
+}
+
+.b6b2 {
+    background: -webkit-linear-gradient(left, teal 50%, green 0)
+}
+
+.b6b3 {
+    background: -webkit-linear-gradient(left, teal 50%, olive 0)
+}
+
+.b6b4 {
+    background: -webkit-linear-gradient(left, teal 50%, navy 0)
+}
+
+.b6b5 {
+    background: -webkit-linear-gradient(left, teal 50%, purple 0)
+}
+
+.b6b6 {
+    background: -webkit-linear-gradient(left, teal 50%, teal 0)
+}
+
+.b6b7 {
+    background: -webkit-linear-gradient(left, teal 50%, silver 0)
+}
+
+.b6b8 {
+    background: -webkit-linear-gradient(left, teal 50%, gray 0)
+}
+
+.b6b9 {
+    background: -webkit-linear-gradient(left, teal 50%, red 0)
+}
+
+.b6b10 {
+    background: -webkit-linear-gradient(left, teal 50%, #0f0 0)
+}
+
+.b6b11 {
+    background: -webkit-linear-gradient(left, teal 50%, #ff0 0)
+}
+
+.b6b12 {
+    background: -webkit-linear-gradient(left, teal 50%, #00f 0)
+}
+
+.b6b13 {
+    background: -webkit-linear-gradient(left, teal 50%, #f0f 0)
+}
+
+.b6b14 {
+    background: -webkit-linear-gradient(left, teal 50%, #0ff 0)
+}
+
+.b6b15 {
+    background: -webkit-linear-gradient(left, teal 50%, #fff 0)
+}
+
+.b7b0 {
+    background: -webkit-linear-gradient(left, silver 50%, transparent 0)
+}
+
+.b7b1 {
+    background: -webkit-linear-gradient(left, silver 50%, maroon 0)
+}
+
+.b7b2 {
+    background: -webkit-linear-gradient(left, silver 50%, green 0)
+}
+
+.b7b3 {
+    background: -webkit-linear-gradient(left, silver 50%, olive 0)
+}
+
+.b7b4 {
+    background: -webkit-linear-gradient(left, silver 50%, navy 0)
+}
+
+.b7b5 {
+    background: -webkit-linear-gradient(left, silver 50%, purple 0)
+}
+
+.b7b6 {
+    background: -webkit-linear-gradient(left, silver 50%, teal 0)
+}
+
+.b7b7 {
+    background: -webkit-linear-gradient(left, silver 50%, silver 0)
+}
+
+.b7b8 {
+    background: -webkit-linear-gradient(left, silver 50%, gray 0)
+}
+
+.b7b9 {
+    background: -webkit-linear-gradient(left, silver 50%, red 0)
+}
+
+.b7b10 {
+    background: -webkit-linear-gradient(left, silver 50%, #0f0 0)
+}
+
+.b7b11 {
+    background: -webkit-linear-gradient(left, silver 50%, #ff0 0)
+}
+
+.b7b12 {
+    background: -webkit-linear-gradient(left, silver 50%, #00f 0)
+}
+
+.b7b13 {
+    background: -webkit-linear-gradient(left, silver 50%, #f0f 0)
+}
+
+.b7b14 {
+    background: -webkit-linear-gradient(left, silver 50%, #0ff 0)
+}
+
+.b7b15 {
+    background: -webkit-linear-gradient(left, silver 50%, #fff 0)
+}
+
+.b8b0 {
+    background: -webkit-linear-gradient(left, gray 50%, transparent 0)
+}
+
+.b8b1 {
+    background: -webkit-linear-gradient(left, gray 50%, maroon 0)
+}
+
+.b8b2 {
+    background: -webkit-linear-gradient(left, gray 50%, green 0)
+}
+
+.b8b3 {
+    background: -webkit-linear-gradient(left, gray 50%, olive 0)
+}
+
+.b8b4 {
+    background: -webkit-linear-gradient(left, gray 50%, navy 0)
+}
+
+.b8b5 {
+    background: -webkit-linear-gradient(left, gray 50%, purple 0)
+}
+
+.b8b6 {
+    background: -webkit-linear-gradient(left, gray 50%, teal 0)
+}
+
+.b8b7 {
+    background: -webkit-linear-gradient(left, gray 50%, silver 0)
+}
+
+.b8b8 {
+    background: -webkit-linear-gradient(left, gray 50%, gray 0)
+}
+
+.b8b9 {
+    background: -webkit-linear-gradient(left, gray 50%, red 0)
+}
+
+.b8b10 {
+    background: -webkit-linear-gradient(left, gray 50%, #0f0 0)
+}
+
+.b8b11 {
+    background: -webkit-linear-gradient(left, gray 50%, #ff0 0)
+}
+
+.b8b12 {
+    background: -webkit-linear-gradient(left, gray 50%, #00f 0)
+}
+
+.b8b13 {
+    background: -webkit-linear-gradient(left, gray 50%, #f0f 0)
+}
+
+.b8b14 {
+    background: -webkit-linear-gradient(left, gray 50%, #0ff 0)
+}
+
+.b8b15 {
+    background: -webkit-linear-gradient(left, gray 50%, #fff 0)
+}
+
+.b9b0 {
+    background: -webkit-linear-gradient(left, red 50%, transparent 0)
+}
+
+.b9b1 {
+    background: -webkit-linear-gradient(left, red 50%, maroon 0)
+}
+
+.b9b2 {
+    background: -webkit-linear-gradient(left, red 50%, green 0)
+}
+
+.b9b3 {
+    background: -webkit-linear-gradient(left, red 50%, olive 0)
+}
+
+.b9b4 {
+    background: -webkit-linear-gradient(left, red 50%, navy 0)
+}
+
+.b9b5 {
+    background: -webkit-linear-gradient(left, red 50%, purple 0)
+}
+
+.b9b6 {
+    background: -webkit-linear-gradient(left, red 50%, teal 0)
+}
+
+.b9b7 {
+    background: -webkit-linear-gradient(left, red 50%, silver 0)
+}
+
+.b9b8 {
+    background: -webkit-linear-gradient(left, red 50%, gray 0)
+}
+
+.b9b9 {
+    background: -webkit-linear-gradient(left, red 50%, red 0)
+}
+
+.b9b10 {
+    background: -webkit-linear-gradient(left, red 50%, #0f0 0)
+}
+
+.b9b11 {
+    background: -webkit-linear-gradient(left, red 50%, #ff0 0)
+}
+
+.b9b12 {
+    background: -webkit-linear-gradient(left, red 50%, #00f 0)
+}
+
+.b9b13 {
+    background: -webkit-linear-gradient(left, red 50%, #f0f 0)
+}
+
+.b9b14 {
+    background: -webkit-linear-gradient(left, red 50%, #0ff 0)
+}
+
+.b9b15 {
+    background: -webkit-linear-gradient(left, red 50%, #fff 0)
+}
+
+.b10b0 {
+    background: -webkit-linear-gradient(left, #0f0 50%, transparent 0)
+}
+
+.b10b1 {
+    background: -webkit-linear-gradient(left, #0f0 50%, maroon 0)
+}
+
+.b10b2 {
+    background: -webkit-linear-gradient(left, #0f0 50%, green 0)
+}
+
+.b10b3 {
+    background: -webkit-linear-gradient(left, #0f0 50%, olive 0)
+}
+
+.b10b4 {
+    background: -webkit-linear-gradient(left, #0f0 50%, navy 0)
+}
+
+.b10b5 {
+    background: -webkit-linear-gradient(left, #0f0 50%, purple 0)
+}
+
+.b10b6 {
+    background: -webkit-linear-gradient(left, #0f0 50%, teal 0)
+}
+
+.b10b7 {
+    background: -webkit-linear-gradient(left, #0f0 50%, silver 0)
+}
+
+.b10b8 {
+    background: -webkit-linear-gradient(left, #0f0 50%, gray 0)
+}
+
+.b10b9 {
+    background: -webkit-linear-gradient(left, #0f0 50%, red 0)
+}
+
+.b10b10 {
+    background: -webkit-linear-gradient(left, #0f0 50%, #0f0 0)
+}
+
+.b10b11 {
+    background: -webkit-linear-gradient(left, #0f0 50%, #ff0 0)
+}
+
+.b10b12 {
+    background: -webkit-linear-gradient(left, #0f0 50%, #00f 0)
+}
+
+.b10b13 {
+    background: -webkit-linear-gradient(left, #0f0 50%, #f0f 0)
+}
+
+.b10b14 {
+    background: -webkit-linear-gradient(left, #0f0 50%, #0ff 0)
+}
+
+.b10b15 {
+    background: -webkit-linear-gradient(left, #0f0 50%, #fff 0)
+}
+
+.b11b0 {
+    background: -webkit-linear-gradient(left, #ff0 50%, transparent 0)
+}
+
+.b11b1 {
+    background: -webkit-linear-gradient(left, #ff0 50%, maroon 0)
+}
+
+.b11b2 {
+    background: -webkit-linear-gradient(left, #ff0 50%, green 0)
+}
+
+.b11b3 {
+    background: -webkit-linear-gradient(left, #ff0 50%, olive 0)
+}
+
+.b11b4 {
+    background: -webkit-linear-gradient(left, #ff0 50%, navy 0)
+}
+
+.b11b5 {
+    background: -webkit-linear-gradient(left, #ff0 50%, purple 0)
+}
+
+.b11b6 {
+    background: -webkit-linear-gradient(left, #ff0 50%, teal 0)
+}
+
+.b11b7 {
+    background: -webkit-linear-gradient(left, #ff0 50%, silver 0)
+}
+
+.b11b8 {
+    background: -webkit-linear-gradient(left, #ff0 50%, gray 0)
+}
+
+.b11b9 {
+    background: -webkit-linear-gradient(left, #ff0 50%, red 0)
+}
+
+.b11b10 {
+    background: -webkit-linear-gradient(left, #ff0 50%, #0f0 0)
+}
+
+.b11b11 {
+    background: -webkit-linear-gradient(left, #ff0 50%, #ff0 0)
+}
+
+.b11b12 {
+    background: -webkit-linear-gradient(left, #ff0 50%, #00f 0)
+}
+
+.b11b13 {
+    background: -webkit-linear-gradient(left, #ff0 50%, #f0f 0)
+}
+
+.b11b14 {
+    background: -webkit-linear-gradient(left, #ff0 50%, #0ff 0)
+}
+
+.b11b15 {
+    background: -webkit-linear-gradient(left, #ff0 50%, #fff 0)
+}
+
+.b12b0 {
+    background: -webkit-linear-gradient(left, #00f 50%, transparent 0)
+}
+
+.b12b1 {
+    background: -webkit-linear-gradient(left, #00f 50%, maroon 0)
+}
+
+.b12b2 {
+    background: -webkit-linear-gradient(left, #00f 50%, green 0)
+}
+
+.b12b3 {
+    background: -webkit-linear-gradient(left, #00f 50%, olive 0)
+}
+
+.b12b4 {
+    background: -webkit-linear-gradient(left, #00f 50%, navy 0)
+}
+
+.b12b5 {
+    background: -webkit-linear-gradient(left, #00f 50%, purple 0)
+}
+
+.b12b6 {
+    background: -webkit-linear-gradient(left, #00f 50%, teal 0)
+}
+
+.b12b7 {
+    background: -webkit-linear-gradient(left, #00f 50%, silver 0)
+}
+
+.b12b8 {
+    background: -webkit-linear-gradient(left, #00f 50%, gray 0)
+}
+
+.b12b9 {
+    background: -webkit-linear-gradient(left, #00f 50%, red 0)
+}
+
+.b12b10 {
+    background: -webkit-linear-gradient(left, #00f 50%, #0f0 0)
+}
+
+.b12b11 {
+    background: -webkit-linear-gradient(left, #00f 50%, #ff0 0)
+}
+
+.b12b12 {
+    background: -webkit-linear-gradient(left, #00f 50%, #00f 0)
+}
+
+.b12b13 {
+    background: -webkit-linear-gradient(left, #00f 50%, #f0f 0)
+}
+
+.b12b14 {
+    background: -webkit-linear-gradient(left, #00f 50%, #0ff 0)
+}
+
+.b12b15 {
+    background: -webkit-linear-gradient(left, #00f 50%, #fff 0)
+}
+
+.b13b0 {
+    background: -webkit-linear-gradient(left, #f0f 50%, transparent 0)
+}
+
+.b13b1 {
+    background: -webkit-linear-gradient(left, #f0f 50%, maroon 0)
+}
+
+.b13b2 {
+    background: -webkit-linear-gradient(left, #f0f 50%, green 0)
+}
+
+.b13b3 {
+    background: -webkit-linear-gradient(left, #f0f 50%, olive 0)
+}
+
+.b13b4 {
+    background: -webkit-linear-gradient(left, #f0f 50%, navy 0)
+}
+
+.b13b5 {
+    background: -webkit-linear-gradient(left, #f0f 50%, purple 0)
+}
+
+.b13b6 {
+    background: -webkit-linear-gradient(left, #f0f 50%, teal 0)
+}
+
+.b13b7 {
+    background: -webkit-linear-gradient(left, #f0f 50%, silver 0)
+}
+
+.b13b8 {
+    background: -webkit-linear-gradient(left, #f0f 50%, gray 0)
+}
+
+.b13b9 {
+    background: -webkit-linear-gradient(left, #f0f 50%, red 0)
+}
+
+.b13b10 {
+    background: -webkit-linear-gradient(left, #f0f 50%, #0f0 0)
+}
+
+.b13b11 {
+    background: -webkit-linear-gradient(left, #f0f 50%, #ff0 0)
+}
+
+.b13b12 {
+    background: -webkit-linear-gradient(left, #f0f 50%, #00f 0)
+}
+
+.b13b13 {
+    background: -webkit-linear-gradient(left, #f0f 50%, #f0f 0)
+}
+
+.b13b14 {
+    background: -webkit-linear-gradient(left, #f0f 50%, #0ff 0)
+}
+
+.b13b15 {
+    background: -webkit-linear-gradient(left, #f0f 50%, #fff 0)
+}
+
+.b14b0 {
+    background: -webkit-linear-gradient(left, #0ff 50%, transparent 0)
+}
+
+.b14b1 {
+    background: -webkit-linear-gradient(left, #0ff 50%, maroon 0)
+}
+
+.b14b2 {
+    background: -webkit-linear-gradient(left, #0ff 50%, green 0)
+}
+
+.b14b3 {
+    background: -webkit-linear-gradient(left, #0ff 50%, olive 0)
+}
+
+.b14b4 {
+    background: -webkit-linear-gradient(left, #0ff 50%, navy 0)
+}
+
+.b14b5 {
+    background: -webkit-linear-gradient(left, #0ff 50%, purple 0)
+}
+
+.b14b6 {
+    background: -webkit-linear-gradient(left, #0ff 50%, teal 0)
+}
+
+.b14b7 {
+    background: -webkit-linear-gradient(left, #0ff 50%, silver 0)
+}
+
+.b14b8 {
+    background: -webkit-linear-gradient(left, #0ff 50%, gray 0)
+}
+
+.b14b9 {
+    background: -webkit-linear-gradient(left, #0ff 50%, red 0)
+}
+
+.b14b10 {
+    background: -webkit-linear-gradient(left, #0ff 50%, #0f0 0)
+}
+
+.b14b11 {
+    background: -webkit-linear-gradient(left, #0ff 50%, #ff0 0)
+}
+
+.b14b12 {
+    background: -webkit-linear-gradient(left, #0ff 50%, #00f 0)
+}
+
+.b14b13 {
+    background: -webkit-linear-gradient(left, #0ff 50%, #f0f 0)
+}
+
+.b14b14 {
+    background: -webkit-linear-gradient(left, #0ff 50%, #0ff 0)
+}
+
+.b14b15 {
+    background: -webkit-linear-gradient(left, #0ff 50%, #fff 0)
+}
+
+.b15b0 {
+    background: -webkit-linear-gradient(left, #fff 50%, transparent 0)
+}
+
+.b15b1 {
+    background: -webkit-linear-gradient(left, #fff 50%, maroon 0)
+}
+
+.b15b2 {
+    background: -webkit-linear-gradient(left, #fff 50%, green 0)
+}
+
+.b15b3 {
+    background: -webkit-linear-gradient(left, #fff 50%, olive 0)
+}
+
+.b15b4 {
+    background: -webkit-linear-gradient(left, #fff 50%, navy 0)
+}
+
+.b15b5 {
+    background: -webkit-linear-gradient(left, #fff 50%, purple 0)
+}
+
+.b15b6 {
+    background: -webkit-linear-gradient(left, #fff 50%, teal 0)
+}
+
+.b15b7 {
+    background: -webkit-linear-gradient(left, #fff 50%, silver 0)
+}
+
+.b15b8 {
+    background: -webkit-linear-gradient(left, #fff 50%, gray 0)
+}
+
+.b15b9 {
+    background: -webkit-linear-gradient(left, #fff 50%, red 0)
+}
+
+.b15b10 {
+    background: -webkit-linear-gradient(left, #fff 50%, #0f0 0)
+}
+
+.b15b11 {
+    background: -webkit-linear-gradient(left, #fff 50%, #ff0 0)
+}
+
+.b15b12 {
+    background: -webkit-linear-gradient(left, #fff 50%, #00f 0)
+}
+
+.b15b13 {
+    background: -webkit-linear-gradient(left, #fff 50%, #f0f 0)
+}
+
+.b15b14 {
+    background: -webkit-linear-gradient(left, #fff 50%, #0ff 0)
+}
+
+.b15b15 {
+    background: -webkit-linear-gradient(left, #fff 50%, #fff 0)
+}
+
+.o {
+    position: relative;
+    display: inline-block
+}
+
+.o:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    pointer-events: none
+}
+
+.w0:after {
+    color: #000;
+    text-shadow: #000 0 0 0, #000 0 0 0, #000 0 0 0, #000 0 0 0, #000 0 0 0
+}
+
+.w1:after {
+    color: maroon;
+    text-shadow: maroon 0 0 0, maroon 0 0 0, maroon 0 0 0, maroon 0 0 0, maroon 0 0 0
+}
+
+.w2:after {
+    color: green;
+    text-shadow: green 0 0 0, green 0 0 0, green 0 0 0, green 0 0 0, green 0 0 0
+}
+
+.w3:after {
+    color: olive;
+    text-shadow: olive 0 0 0, olive 0 0 0, olive 0 0 0, olive 0 0 0, olive 0 0 0
+}
+
+.w4:after {
+    color: navy;
+    text-shadow: navy 0 0 0, navy 0 0 0, navy 0 0 0, navy 0 0 0, navy 0 0 0
+}
+
+.w5:after {
+    color: purple;
+    text-shadow: purple 0 0 0, purple 0 0 0, purple 0 0 0, purple 0 0 0, purple 0 0 0
+}
+
+.w6:after {
+    color: teal;
+    text-shadow: teal 0 0 0, teal 0 0 0, teal 0 0 0, teal 0 0 0, teal 0 0 0
+}
+
+.w7:after {
+    color: silver;
+    text-shadow: silver 0 0 0, silver 0 0 0, silver 0 0 0, silver 0 0 0, silver 0 0 0
+}
+
+.w8:after {
+    color: gray;
+    text-shadow: gray 0 0 0, gray 0 0 0, gray 0 0 0, gray 0 0 0, gray 0 0 0
+}
+
+.w9:after {
+    color: red;
+    text-shadow: red 0 0 0, red 0 0 0, red 0 0 0, red 0 0 0, red 0 0 0
+}
+
+.w10:after {
+    color: #0f0;
+    text-shadow: #0f0 0 0 0, #0f0 0 0 0, #0f0 0 0 0, #0f0 0 0 0, #0f0 0 0 0
+}
+
+.w11:after {
+    color: #ff0;
+    text-shadow: #ff0 0 0 0, #ff0 0 0 0, #ff0 0 0 0, #ff0 0 0 0, #ff0 0 0 0
+}
+
+.w12:after {
+    color: #00f;
+    text-shadow: #00f 0 0 0, #00f 0 0 0, #00f 0 0 0, #00f 0 0 0, #00f 0 0 0
+}
+
+.w13:after {
+    color: #f0f;
+    text-shadow: #f0f 0 0 0, #f0f 0 0 0, #f0f 0 0 0, #f0f 0 0 0, #f0f 0 0 0
+}
+
+.w14:after {
+    color: #0ff;
+    text-shadow: #0ff 0 0 0, #0ff 0 0 0, #0ff 0 0 0, #0ff 0 0 0, #0ff 0 0 0
+}
+
+.w15:after {
+    color: #fff;
+    text-shadow: #fff 0 0 0, #fff 0 0 0, #fff 0 0 0, #fff 0 0 0, #fff 0 0 0
+}
+
+.trans-fix .b1 {
+    box-shadow: inset 0 0 5px 5px maroon
+}
+
+.trans-fix .b2 {
+    box-shadow: inset 0 0 5px 5px green
+}
+
+.trans-fix .b3 {
+    box-shadow: inset 0 0 5px 5px olive
+}
+
+.trans-fix .b4 {
+    box-shadow: inset 0 0 5px 5px navy
+}
+
+.trans-fix .b5 {
+    box-shadow: inset 0 0 5px 5px purple
+}
+
+.trans-fix .b6 {
+    box-shadow: inset 0 0 5px 5px teal
+}
+
+.trans-fix .b7 {
+    box-shadow: inset 0 0 5px 5px silver
+}
+
+.trans-fix .b8 {
+    box-shadow: inset 0 0 5px 5px gray
+}
+
+.trans-fix .b9 {
+    box-shadow: inset 0 0 5px 5px red
+}
+
+.trans-fix .b10 {
+    box-shadow: inset 0 0 5px 5px #0f0
+}
+
+.trans-fix .b11 {
+    box-shadow: inset 0 0 5px 5px #ff0
+}
+
+.trans-fix .b12 {
+    box-shadow: inset 0 0 5px 5px #00f
+}
+
+.trans-fix .b13 {
+    box-shadow: inset 0 0 5px 5px #f0f
+}
+
+.trans-fix .b14 {
+    box-shadow: inset 0 0 5px 5px #0ff
+}
+
+.trans-fix .b15 {
+    box-shadow: inset 0 0 5px 5px #fff
+}
+
+#tooltip_antiIdleTime,
+#tooltip_fontFace {
+    color: #000
+}
+
+.PrefModal>.modal-dialog {
+    height: 90%;
+    -webkit-user-select: none
+}
+
+.PrefModal .modal-content {
+    height: 100%
+}
+
+.PrefModal .modal-body {
+    height: 100%;
+    padding: 0
+}
+
+.PrefModal__Grid {
+    height: 100%;
+    display: flex;
+    color: #000
+}
+
+.PrefModal__Grid__Col--left {
+    height: 100%;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    box-shadow: inset -10px 0 180px -60px #949494
+}
+
+.PrefModal__Grid__Col--left__Reset {
+    margin-top: auto;
+    margin-bottom: 30px
+}
+
+.PrefModal__Grid__Col--right {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px
+}
+
+.PrefModal__Grid__Col--right__Fieldset>:not(legend) {
+    padding-left: 20px
+}
+
+.PrefModal__Grid__Col--right__Fieldset input[type=number],
+.PrefModal__Grid__Col--right__Fieldset input[type=password],
+.PrefModal__Grid__Col--right__Fieldset input[type=text],
+.PrefModal__Grid__Col--right__Fieldset select {
+    width: 250px
+}
+
+.PrefModal__Grid__Col--right__Fieldset select {
+    margin-top: 5px
+}
+
+.PrefModal__Grid__Col--right__MouseBrowsingHighlightColor {
+    margin-left: 30px
+}
+
+.PrefModal__Grid__Col--right__MouseBrowsingHighlightColor>select {
+    margin: 5px 0 10px;
+    width: 70px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+
+.PageTopAlert {
+    margin-top: 15px;
+    position: relative;
+    z-index: 2;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    box-shadow: 0 0 20px #000
+}
+
+.DropdownMenu--reset>li>a {
+    padding: 3px 20px 3px 30px;
+    cursor: default;
+    -webkit-user-select: none
+}
+
+.DropdownMenu--reset>li>a:focus,
+.DropdownMenu--reset>li>a:hover {
+    color: #fff;
+    background-color: #428bca
+}
+
+.DropdownMenu--reset>li>a:focus span,
+.DropdownMenu--reset>li>a:hover span {
+    color: #fff
+}
+
+.DropdownMenu--reset {
+    -webkit-user-select: none
+}
+
+.DropdownMenu__Item__HotKey {
+    float: right;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #aaa;
+    margin-left: 15px
+}
+
+.DropdownMenu__Item--checked:before {
+    content: "\E013";
+    font-family: Glyphicons Halflings;
+    position: absolute;
+    left: 10px;
+    color: #000
+}
+
+.DropdownMenu__Item--quickSearch {
+    position: relative
+}
+
+.DropdownMenu__Item--quickSearch .QuickSearchMenu {
+    display: none
+}
+
+.DropdownMenu__Item--quickSearch:hover .QuickSearchMenu {
+    display: block
+}
+
+.QuickSearchMenu {
+    left: 100%;
+    top: 0;
+    margin-top: -5px;
+    margin-left: -1px
+}
+
+.QuickSearchMenu--up {
+    top: auto!important;
+    bottom: 0;
+    margin-top: 0!important;
+    margin-bottom: -5px
+}
+
+.QuickSearchMenu--left {
+    right: 100%;
+    left: auto!important;
+    margin-left: 0!important;
+    margin-right: -1px
+}
+
+.InputHelperModal__Dialog {
+    color: #000;
+    right: auto;
+    bottom: auto;
+    overflow: visible
+}
+
+.InputHelperModal__Dialog .modal-dialog {
+    margin: 0
+}
+
+.InputHelperModal__ColorList {
+    list-style-type: none;
+    width: 296px;
+    height: 74px;
+    padding: 0;
+    background-color: #000
+}
+
+.InputHelperModal__ColorList li {
+    display: block;
+    float: left;
+    width: 37px;
+    height: 37px
+}
+
+.InputHelperModal__ColorList li:hover {
+    -webkit-transform: scale(1.2);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .4)
+}
+
+.InputHelperModal__Preview {
+    color: silver;
+    text-align: center;
+    background-color: #000;
+    height: 38px;
+    margin-bottom: 10px;
+    padding-top: 8px
+}
+
+.InputHelperModal__Preview__Content {
+    font-family: MingLiU, MingLiUNoGlyph, monospace;
+    font-size: 22px;
+    line-height: 22px
+}
+
+.InputHelperModal__EmoticonList,
+.InputHelperModal__SymbolList {
+    list-style-type: none;
+    padding: 0 4px;
+    margin-top: 5px
+}
+
+.InputHelperModal__SymbolList>li {
+    font-family: MingLiU, MingLiUNoGlyph, monospace;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 30px;
+    line-height: 30px;
+    padding: 2px;
+    background-color: #fff;
+    margin-bottom: -1px;
+    height: 37px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    width: 37px;
+    margin-right: -1px
+}
+
+.InputHelperModal__SymbolList>li:hover {
+    -webkit-transform: scale(1.4);
+    border: 2px solid #000
+}
+
+.InputHelperModal__EmoticonList>li {
+    font-family: MingLiU, MingLiUNoGlyph, monospace;
+    width: 100%;
+    border: 1px solid #ccc;
+    font-size: 21px;
+    line-height: 21px;
+    padding: 2px;
+    background-color: #fff;
+    margin-bottom: -1px;
+    height: 28px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.InputHelperModal__EmoticonList>li:hover {
+    -webkit-transform: scale(1.1);
+    border: 2px solid #000
+}
+
+.InputHelperModal__SendButtonContainer>div {
+    display: inline-block;
+    float: right
+}
+
+.LiveHelperModal__Body {
+    display: flex;
+    line-height: 34px;
+    color: #000
+}
+
+.LiveHelperModal__Body__Text {
+    margin: 0 5px
+}
+
+.LiveHelperModal__Body__Input {
+    width: 10%
+}
+
+.LiveHelperModal__Body__Close {
+    margin-left: auto
+}
+
+
+/*# sourceMappingURL=pttchrome.b15553e228202ffb8a97.css.map*/

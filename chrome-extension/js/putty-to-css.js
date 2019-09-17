@@ -60,41 +60,54 @@ function readFile(filename) {
 }
 
 let idList = [
-    `\\$foreground`,
-    `\\$foreground-light`,
-    `\\$background`,
-    `\\$background-light`,
-    `\\$cursor-text`,
-    `\\$cursor`,
-    `\\$black`,
-    `\\$black-light`,
-    `\\$red`,
-    `\\$red-light`,
-    `\\$green`,
-    `\\$green-light`,
-    `\\$yellow`,
-    `\\$yellow-light`,
-    `\\$blue`,
-    `\\$blue-light`,
-    `\\$magenta`,
-    `\\$magenta-light`,
-    `\\$cyan`,
-    `\\$cyan-light`,
-    `\\$white`,
-    `\\$white-light`
+    `$foreground`,
+    `$foreground-light`,
+    `$background`,
+    `$background-light`,
+    `$cursor-text`,
+    `$cursor`,
+    `$black`,
+    `$black-light`,
+    `$red`,
+    `$red-light`,
+    `$green`,
+    `$green-light`,
+    `$yellow`,
+    `$yellow-light`,
+    `$blue`,
+    `$blue-light`,
+    `$magenta`,
+    `$magenta-light`,
+    `$cyan`,
+    `$cyan-light`,
+    `$white`,
+    `$white-light`
 ]
 
 async function puttyFileToCSSFile(puttyConfigFilePath, outputFilePath) {
     let puttyConfigFile = await readFile(puttyConfigFilePath)
     let colorMap = retrieveColorMapFromConfig(puttyConfigFile)
-    let css = await readFile(`template`)
-    console.log(idList.length)
     for (let i = idList.length - 1; i >= 0; i--) {
         let color = `rgb(${colorMap[i][0]},${colorMap[i][1]},${colorMap[i][2]})`
         css = css.replace(new RegExp(idList[i], "g"), color)
     }
-    
+
     fs.writeFileSync(outputFilePath, css, { flag: 'wx' });
+}
+
+async function puttyFileToJSONFile(puttyConfigFilePath, outputFilePath) {
+    let puttyConfigFile = await readFile(puttyConfigFilePath)
+    let colorMap = retrieveColorMapFromConfig(puttyConfigFile)
+    let config = {
+        "base": {},
+        "specialCase": {}
+    }
+    for (let i = idList.length - 1; i >= 0; i--) {
+        let color = `rgb(${colorMap[i][0]},${colorMap[i][1]},${colorMap[i][2]})`
+        config.base[idList[i]] = color
+    }
+    console.log(config)
+    fs.writeFileSync(outputFilePath, JSON.stringify(config), { flag: 'wx' });
 }
 
 let puttyThemeFilenameList = [
@@ -152,7 +165,7 @@ let puttyThemeFilenameList = [
 ]
 
 puttyThemeFilenameList.forEach(filename => {
-    puttyFileToCSSFile(`../../putty-color-themes/${filename}`, `../putty-theme-css/${filename.split(".")[1].substring(1)}.css`)
+    puttyFileToJSONFile(`../../putty-color-themes/${filename}`, `../theme/${filename.split(".")[1].substring(1)}.json`)
 })
 
 // fs.readdir(`../../putty-color-themes/`, (err, files) => {

@@ -77,21 +77,6 @@ elements.forEach((e) => {
     pickrObject.push(createPickrObject(e.el, e.defaultColor))
 })
 
-// let themeSelectionDropdownItem = $(".theme-selection-dropdown-item")
-// for(let i = 0 ; i<themeSelectionDropdownItem.length ; i++){
-//     let item = themeSelectionDropdownItem[i]
-//     console.log(item)
-//     item.onclick = function(){
-//         console.log(item)
-//     }
-// }
-
-// document.querySelectorAll(".theme-selection-dropdown-item").forEach((element) => {
-//     element.onclick = () => {
-
-//     }
-// })
-
 document.querySelectorAll(".img-position-selection-dropdown-item").forEach((element) => {
     element.onclick = () => {
         let imgPositionOption = element.getAttribute("img-position-option")
@@ -99,61 +84,60 @@ document.querySelectorAll(".img-position-selection-dropdown-item").forEach((elem
     }
 })
 
-let themeCSSFileMap = {
-    "無": "Classic.css",
-    "Solarized Dark PTT 優化版": "Solarized Dark PTT.css",
-    "Solarized Light PTT 優化版": "Solarized Light PTT.css",
-    "Apple Terminal": "Apple Terminal.css",
-    "Argonaut": "Argonaut.css",
-    "Birds Of Paradise": "Birds Of Paradise.css",
-    "Blazer": "Blazer.css",
-    "Chalkboard": "Chalkboard.css",
-    "Ciapre": "Ciapre.css",
-    "Dark Pastel": "Dark Pastel.css",
-    "Desert": "Desert.css",
-    "Espresso": "Espresso.css",
-    "Fish Of Paradise": "Fish Of Paradise.css",
-    "Fish Tank": "Fish Tank.css",
-    "Grass": "Grass.css",
-    "Highway": "Highway.css",
-    "Homebrew": "Homebrew.css",
-    "Hurtado": "Hurtado.css",
-    "Ic Green Ppl": "Ic Green Ppl.css",
-    "Idletoes": "Idletoes.css",
-    "Igvita Desert": "Igvita Desert.css",
-    "Igvita Light": "Igvita Light.css",
-    "Invisibone": "Invisibone.css",
-    "Kibble": "Kibble.css",
-    "Liquid Carbon Transparent Inverse": "Liquid Carbon Transparent Inverse.css",
-    "Liquid Carbon Transparent": "Liquid Carbon Transparent.css",
-    "Liquid Carbon": "Liquid Carbon.css",
-    "Man Page": "Man Page.css",
-    "Mariana": "Mariana.css",
-    "Monokai Dimmed": "Monokai Dimmed.css",
-    "Monokai Soda": "Monokai Soda.css",
-    "Monokai Stevelosh": "Monokai Stevelosh.css",
-    "Neopolitan": "Neopolitan.css",
-    "Novel": "Novel.css",
-    "Ocean": "Ocean.css",
-    "Papirus Dark": "Papirus Dark.css",
-    "Pro": "Pro.css",
-    "Red Sands": "Red Sands.css",
-    "Seafoam Pastel": "Seafoam Pastel.css",
-    "Solarized Darcula": "Solarized Darcula.css",
-    "Solarized Dark": "Solarized Dark.css",
-    "Solarized Light": "Solarized Light.css",
-    "Sundried": "Sundried.css",
-    "Sympfonic": "Sympfonic.css",
-    "Teerb": "Teerb.css",
-    "Terminal Basic": "Terminal Basic.css",
-    "Thayer": "Thayer.css",
-    "Tomorrow Night": "Tomorrow Night.css",
-    "Tomorrow": "Tomorrow.css",
-    "Twilight": "Twilight.css",
-    "Vaughn": "Vaughn.css",
-    "X Dotshare": "X Dotshare.css",
-    "Zenburn": "Zenburn.css",
-    "github": "github.css"
+let themeJSONFileMap = {
+    "無": "PTT.json",
+    "Solarized Dark PTT 優化版": "Solarized Dark PTT.json",
+    "Apple Terminal": "Apple Terminal.json",
+    "Argonaut": "Argonaut.json",
+    "Birds Of Paradise": "Birds Of Paradise.json",
+    "Blazer": "Blazer.json",
+    "Chalkboard": "Chalkboard.json",
+    "Ciapre": "Ciapre.json",
+    "Dark Pastel": "Dark Pastel.json",
+    "Desert": "Desert.json",
+    "Espresso": "Espresso.json",
+    "Fish Of Paradise": "Fish Of Paradise.json",
+    "Fish Tank": "Fish Tank.json",
+    "Grass": "Grass.json",
+    "Highway": "Highway.json",
+    "Homebrew": "Homebrew.json",
+    "Hurtado": "Hurtado.json",
+    "Ic Green Ppl": "Ic Green Ppl.json",
+    "Idletoes": "Idletoes.json",
+    "Igvita Desert": "Igvita Desert.json",
+    "Igvita Light": "Igvita Light.json",
+    "Invisibone": "Invisibone.json",
+    "Kibble": "Kibble.json",
+    "Liquid Carbon Transparent Inverse": "Liquid Carbon Transparent Inverse.json",
+    "Liquid Carbon Transparent": "Liquid Carbon Transparent.json",
+    "Liquid Carbon": "Liquid Carbon.json",
+    "Man Page": "Man Page.json",
+    "Mariana": "Mariana.json",
+    "Monokai Dimmed": "Monokai Dimmed.json",
+    "Monokai Soda": "Monokai Soda.json",
+    "Monokai Stevelosh": "Monokai Stevelosh.json",
+    "Neopolitan": "Neopolitan.json",
+    "Novel": "Novel.json",
+    "Ocean": "Ocean.json",
+    "Papirus Dark": "Papirus Dark.json",
+    "Pro": "Pro.json",
+    "Red Sands": "Red Sands.json",
+    "Seafoam Pastel": "Seafoam Pastel.json",
+    "Solarized Darcula": "Solarized Darcula.json",
+    "Solarized Dark": "Solarized Dark.json",
+    "Solarized Light": "Solarized Light.json",
+    "Sundried": "Sundried.json",
+    "Sympfonic": "Sympfonic.json",
+    "Teerb": "Teerb.json",
+    "Terminal Basic": "Terminal Basic.json",
+    "Thayer": "Thayer.json",
+    "Tomorrow Night": "Tomorrow Night.json",
+    "Tomorrow": "Tomorrow.json",
+    "Twilight": "Twilight.json",
+    "Vaughn": "Vaughn.json",
+    "X Dotshare": "X Dotshare.json",
+    "Zenburn": "Zenburn.json",
+    "github": "github.json"
 }
 
 let activeThemeItem
@@ -167,10 +151,10 @@ chrome.storage.sync.get(["themeName"], function (result) {
     }
 
     let themeSelectionDropdownItemContainer = document.getElementById("theme-selection-dropdown-item-container")
-    for (let key in themeCSSFileMap) {
+    for (let key in themeJSONFileMap) {
         let item = document.createElement("a")
         item.setAttribute("class", "dropdown-item theme-selection-dropdown-item")
-        item.setAttribute("theme-css-file", themeCSSFileMap[key])
+        item.setAttribute("theme-json-file", themeJSONFileMap[key])
         item.setAttribute("href", "#")
         if(key == currentThemeName){
             item.classList.add("active")
@@ -181,7 +165,7 @@ chrome.storage.sync.get(["themeName"], function (result) {
 
         item.onclick = () => {
             chrome.storage.sync.set({ "themeName": key })
-            chrome.storage.sync.set({ "themeCSSFile": themeCSSFileMap[key] })
+            chrome.storage.sync.set({ "themeJSONFile": themeJSONFileMap[key] })
             themeSelectionDropdown.innerText = key
 
             activeThemeItem.classList.remove("active")
@@ -192,7 +176,3 @@ chrome.storage.sync.get(["themeName"], function (result) {
         themeSelectionDropdownItemContainer.appendChild(item)
     }
 })
-
-
-
-
