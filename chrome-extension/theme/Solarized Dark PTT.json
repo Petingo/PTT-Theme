@@ -24,10 +24,20 @@
         "$white-light": "hsl(43.846153846153854, 86.66666666666671%, 94.11764705882352%);"
     },
     "specialCase": {
-        ".q7.b4": "color: #eee8d5;",
-        ".q4.b7": "background-color: #eee8d5;",
-        ".q8": "color: #495456;",
-        ".q4.b6": "color: #073642;",
-        ".q2.b7": "color: #adc700;"
+        ".q7.b4": {
+            "color": "#eee8d5"
+        },
+        ".q4.b7": {
+            "background-color": "#eee8d5"
+        },
+        ".q8": {
+            "color": "#495456"
+        },
+        ".q4.b6": {
+            "color": "#073642"
+        },
+        ".q2.b7": {
+            "color": "#adc700"
+        }
     }
 }

@@ -204,10 +204,57 @@ chrome.storage.sync.get(["themeName"], function (result) {
         item.onclick = () => {
             chrome.storage.sync.set({ "themeName": key })
             chrome.storage.sync.set({ "themeJSONFile": themeJSONFileMap[key] })
+            themeSelectionDropdown.innerText = key
+            document.querySelector("#special-color-picker").innerHTML = ""
 
-            location.reload();
+            activeThemeItem.classList.remove("active")
+            activeThemeItem = item
+            activeThemeItem.classList.add("active")
         }
 
         themeSelectionDropdownItemContainer.appendChild(item)
+    }
+})
+
+chrome.storage.sync.get(["themeName"], function (result) {
+    let currentThemeName = result["themeName"]
+    if (currentThemeName === undefined) {
+        themeSelectionDropdown.innerText = "無";
+    } else {
+        themeSelectionDropdown.innerText = currentThemeName;
+    }
+
+    let themeSelectionDropdownItemContainer = document.getElementById("theme-selection-dropdown-item-container")
+    for (let key in themeJSONFileMap) {
+        let item = document.createElement("a")
+        item.setAttribute("class", "dropdown-item theme-selection-dropdown-item")
+        item.setAttribute("theme-json-file", themeJSONFileMap[key])
+        item.setAttribute("href", "#")
+        if(key == currentThemeName){
+            item.classList.add("active")
+            activeThemeItem = item
+        }
+
+        item.innerText = key
+
+        item.onclick = () => {
+            chrome.storage.sync.set({ "themeName": key })
+            chrome.storage.sync.set({ "themeJSONFile": themeJSONFileMap[key] })
+            themeSelectionDropdown.innerText = key
+
+            activeThemeItem.classList.remove("active")
+            activeThemeItem = item
+            activeThemeItem.classList.add("active")
+        }
+
+        themeSelectionDropdownItemContainer.appendChild(item)
+    }
+})
+document.querySelectorAll(".img-position-selection-dropdown-item").forEach((element) => {
+
+    element.onclick = () => {
+        let imgPositionOption = element.getAttribute("img-position-option")
+        console.log(imgPositionOption)
+        chrome.storage.sync.set({ "imgPositionOption": imgPositionOption });
     }
 })
