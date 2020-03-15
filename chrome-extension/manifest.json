@@ -26,5 +26,6 @@
     },
     "web_accessible_resources": [
         "theme/*"
-    ]
+    ],
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js https://buttons.github.io/buttons.js; object-src 'self';"
 }

@@ -1,5 +1,5 @@
 let lastUpdateTime = 0;
-function createPickrObject(target, el, defaultColor) {
+function createPickrObject(target, el, defaultColor, attributeType='base', speicalColorData=undefined) {
     let pickr = Pickr.create({
         el: el,
         theme: 'nano',
@@ -42,25 +42,31 @@ function createPickrObject(target, el, defaultColor) {
         }
     });
 
+    let update = (color) => {
+        chrome.storage.sync.get(["themeConfig"], function (result) {
+            let themeConfig = JSON.parse(result["themeConfig"])
+            if(attributeType == 'base'){
+                themeConfig.base[`$${target}`] = color.toRGBA().toString()
+            } else {
+                let key = speicalColorData.key
+                let attrKey = speicalColorData.attrKey
+
+                themeConfig.specialCase[key][attrKey] = color.toRGBA().toString()
+            }
+            chrome.storage.sync.set({ "themeConfig": JSON.stringify(themeConfig) })
+        })
+    }
+
     pickr.on('save', (color, instance) => {
         console.log('save', color, instance);
     }).on('change', (color, instance) => {
         let now = Date.now()
         if (now - lastUpdateTime > 200) {
             lastUpdateTime = now
-            console.log(color.toRGBA().toString())
-            chrome.storage.sync.get(["themeConfig"], function (result) {
-                let themeConfig = JSON.parse(result["themeConfig"])
-                themeConfig.base[`$${target}`] = color.toRGBA().toString()
-                chrome.storage.sync.set({ "themeConfig": JSON.stringify(themeConfig) })
-            })
+            update(color)
         }
     }).on('cancel', instance => {
-        chrome.storage.sync.get(["themeConfig"], function (result) {
-            let themeConfig = JSON.parse(result["themeConfig"])
-            themeConfig.base[`$${target}`] = instance.options.default
-            chrome.storage.sync.set({ "themeConfig": JSON.stringify(themeConfig) })
-        })
+        update(color)
     })
 
     return pickr
@@ -69,6 +75,8 @@ function createPickrObject(target, el, defaultColor) {
 let refreshColorPickr = () => {
     chrome.storage.sync.get(["themeConfig"], function (result) {
         let themeConfig = JSON.parse(result["themeConfig"])
+
+        // base
         let elements = [
             "foreground",
             "background",
@@ -92,30 +100,31 @@ let refreshColorPickr = () => {
             "white-light"
         ]
 
-        let pickrObject = []
         elements.forEach((e) => {
-            console.log(e, `.pickr-${e}`, themeConfig.base[`$${e}`])
-            pickrObject.push(createPickrObject(e, `.pickr-${e}`, themeConfig.base[`$${e}`]))
+            createPickrObject(e, `.pickr-${e}`, themeConfig.base[`$${e}`])
         })
-
-
+        
+        // special
         for (let key in themeConfig.specialCase) {
             for (let attributeKey in themeConfig.specialCase[key]) {
-                let id = 'S' + btoa(key) + '-' + attributeKey
-                console.log(id)
-                console.log(`.pickr-${id}`)
-                console.log(themeConfig.specialCase[key][attributeKey])
-                let html = `<div class="col-7" style="white-space:nowrap;">
-                                ${key}-${attributeKey}
-                            </div>
-                            <div class="col-5 text-right">
-                                <div class="pickr-${id}"></div>
-                            </div>`
+                let id = 'sp' + btoa(key) + '-' + attributeKey
+                let html = `
+                    <div class="col-9" style="white-space:nowrap;">
+                        <div class="row">
+                            <input type="text" class="ml-2 mr-1 col-4 form-control special-color-key" value="${key}">
+                            <input type="text" class="col-6 form-control special-color-attr" value="${attributeKey}">
+                        </div>
+                    </div>
+                    <div class="col-3 text-right">
+                        <div class="pickr-${id}"></div>
+                    </div>
+                `
                 let newColorRow = document.createElement('div')
                 newColorRow.className = "row mt-2 d-flex align-items-center"
                 newColorRow.innerHTML = html
                 document.querySelector("#special-color-picker").appendChild(newColorRow)
-                pickrObject.push(createPickrObject(id, `.pickr-${id}`, themeConfig.specialCase[key][attributeKey]))
+
+                createPickrObject(id, `.pickr-${id}`, themeConfig.specialCase[key][attributeKey], 'special', {"key": key, "attrKey": attributeKey})
             }
         }
     })

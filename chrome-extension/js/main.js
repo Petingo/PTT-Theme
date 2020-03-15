@@ -28,7 +28,7 @@ let changeImgPosition = () => {
         
         console.log("imgPositionOption", imgPositionOption)
 
-        if (imgPositionOption == undefined) {
+        if (imgPositionOption == 'none') {
             // none, makeCenterVertically, makeTopInside
             chrome.storage.sync.set({ "imgPositionOption": "makeCenterVertically" })
             imgPositionOption = "makeCenterVertically"
@@ -60,6 +60,7 @@ let changeImgPosition = () => {
                     let adjust = function (element) {
                         console.log("adjust!!!")
                         console.log(imgPositionOption)
+
                         if (imgPositionOption == "makeCenterVertically") {
                             console.log("center")
                             makeCenterVertically(element)
@@ -138,3 +139,6 @@ chrome.storage.sync.get(["themeConfig"], function (result) {
 })
 
 changeImgPosition()
+
+
+// python train.py --model vanilla_bert --datafiles data/queries.tsv data/documents.tsv --qrels data/qrels --train_pairs data/train_pairs --valid_run data/valid_run --model_out_dir models/vbert
