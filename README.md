@@ -1,4 +1,9 @@
-# PTT Theme
+<p align="center">
+    <img src="https://github.com/Petingo/ptt-theme/raw/master/example.png">
+    <h1> PTT Theme </h1>
+</p>
+
+
 https://term.ptt.cc 色彩編輯插件
 A chrome-extension for editing the color of https://term.ptt.cc
 
