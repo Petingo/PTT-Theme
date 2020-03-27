@@ -23,12 +23,6 @@ let injectTheme = () => {
         themeCSS.setAttribute("type", "text/css")
         themeCSS.setAttribute("href", chrome.extension.getURL(`theme/${config.themeCSSFile}`))
 
-        let otherCSS = document.createElement("link")
-        otherCSS.setAttribute("id", "customOther")
-        otherCSS.setAttribute("rel", "stylesheet")
-        otherCSS.setAttribute("type", "text/css")
-        otherCSS.setAttribute("href", chrome.extension.getURL('theme/other.css'))
-
         let head = document.getElementsByTagName("body")[0]
         head.append(themeCSS)
         head.append(otherCSS)
@@ -76,27 +70,6 @@ let injectTheme = () => {
         }, 50)
 
     })
-
-    // clear original font setting
-    // let mainDiv
-    // let getMainDivIntervalId = setInterval(() => {
-    //     mainDiv = document.getElementsByClassName("main")[0]
-    //     if (!(mainDiv === undefined)) {
-    //         clearInterval(getMainDivIntervalId)
-
-    //         mainDiv.style["font-family"] = ""
-    //     }
-    // }, 50)
-
-    // let cursorDiv
-    // let getCursorDivIntervalId = setInterval(() => {
-    //     cursorDiv = document.getElementById("cursor")
-    //     if (!(cursorDiv === undefined)) {
-    //         clearInterval(getCursorDivIntervalId)
-
-    //         mainDiv.style["color"] = ""
-    //     }
-    // }, 50)
 }
 
 let refreshTheme = () => {

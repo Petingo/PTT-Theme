@@ -21,10 +21,10 @@ Colour2\0,43,54\
 Colour1\147,161,161\
 Colour0\131,148,150\
 
-0  Default Foreground: 131, 148, 150
-1  Default Bold Foreground: 147, 161, 161
-2  Default Background: 0, 43, 54
-3  Default Bold Background: 7, 54, 66
+0  Default Foreground: 131, 148, 150  -> white
+1  Default Bold Foreground: 147, 161, 161 -> white-light
+2  Default Background: 0, 43, 54 -> black
+3  Default Bold Background: 7, 54, 66 -> black-light
 4  Cursor Text: 0, 43, 54
 5  Cursor Colour: 131, 148, 150
 6  ANSI Black: 7, 54, 66

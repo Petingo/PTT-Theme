@@ -1,23 +1,30 @@
-# PTT-Theme
+# PTT Theme
+https://term.ptt.cc 色彩編輯插件
+A chrome-extension for editing the color of https://term.ptt.cc
 
-選顏色的地方要把 base 和 special 分開處理
+## Putty、PTT 色號對應表
+| 顏色代碼  | 原始目標          | PTT 色彩 | PTT 色號 | term.ptt.cc | template      |
+| --------- | ----------------- | -------- | -------- | ----------- | ------------- |
+| Colour 0  | Foreground        | 白       | 37       | 7           | white         |
+| Colour 1  | Bold Foreground   | 亮白     | 1;37     | 15          | white-light   |
+| Colour 2  | Background        | 黑       | 30       | 0           | black         |
+| Colour 3  | Bold Background   | 深灰     | 1;30     | 8           | black-light   |
+| Colour 4  | Cursor Text       |          |          |             |               |
+| Colour 5  | Cursor Colour     |          |          |             |               |
+| Colour 6  | ANSI Black        |          |          |             |               |
+| Colour 7  | ANSI Black Bold   |          |          |             |               |
+| Colour 8  | ANSI Red          | 紅       | 31       | 1           | red           |
+| Colour 9  | ANSI Red Bold     | 亮紅     | 1;31     | 9           | red-light     |
+| Colour 10 | ANSI Green        | 綠       | 32       | 2           | green         |
+| Colour 11 | ANSI Green Bold   | 亮綠     | 1;32     | 10          | green-light   |
+| Colour 12 | ANSI Yellow       | 土棕     | 33       | 3           | yellow        |
+| Colour 13 | ANSI Yellow Bold  | 黃       | 1;33     | 11          | yellow-light  |
+| Colour 14 | ANSI Blue         | 深藍     | 34       | 4           | blue          |
+| Colour 15 | ANSI Blue Bold    | 亮深藍   | 1;34     | 12          | blue-light    |
+| Colour 16 | ANSI Magenta      | 紫色     | 35       | 5           | magenta       |
+| Colour 17 | ANSI Magenta Bold | 亮紫色   | 1;35     | 13          | magenta-light |
+| Colour 18 | ANSI Cyan         | 淺藍     | 36       | 6           | cyan          |
+| Colour 19 | ANSI Cyan Bold    | 亮淺藍   | 1;36     | 14          | cyan-light    |
+| Colour 20 | ANSI White        |          |          |             |               |
+| Colour 21 | ANSI White Bold   |          |          |             |               |
 
-
-大家早！
-我是在捷克的交換生，剛剛收到訊息說捷克政府宣布緊急命令，如果最近有安排捷克旅遊或是在捷克有要出去玩的，可能要注意一下！
-未來 30 天內：
-- 關閉「德國」、「奧地利」邊境
-- 禁止捷克公民前往 People’s Republic of China, Hongkong, Iran, Japan, Singapore, South Korea, Italy, Spain, Austria, Germany, Great Britain, France, Netherlands, Switzerland, Sweden, Norway, Belgium, Danemark 等國家
-- 去過以上國家的外國住民，除非領有永久居留證或 >90 天的短期居留證，否則禁止回到捷克
-- 禁止超過 30 人的活動
-- 餐廳 8PM - 6PM 禁止營業
-- 大部分的公家單位停止營業
-
-The Government of the Czech Republic declared an Emergency for the next 30 days.
-
-- events with more than 30 participants are banned
-- restaurants have to be closed between 8 PM and 6 AM
-- a lot of public amenities will be closed
-- borders with Germany and Austria are closed
-- it is banned (for Czech citizens) to travel to following countries: People’s Republic of China, Hongkong, Iran, Japan, Singapore, South Korea, Italy, Spain, Austria, Germany, Great Britain, France, Netherlands, Switzerland, Sweden, Norway, Belgium, Danemark
-- all foreign citizens from countries above, who are abroad at this moment, are banned to come back to the Czech Republic except those who have Permanent Residence or Short-term residence over 90 days

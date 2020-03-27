@@ -1,0 +1,110 @@
+doctype html
+html(lang="en")
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+        -
+            var styleList = [
+                "https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css",
+                "style/popup.css",
+                "style/bootstrap.min.css"
+            ]
+
+        each style in styleList
+            link(href=style, rel="stylesheet")
+
+    body(style="width: 800px;")
+        .container-fluid
+            .card.mt-3
+                h6.card-header 顏色設定
+                .card-body
+                    .container
+                        #base-color-picker
+                            .row
+                                .col.dropdown.show
+                                    a.btn.btn-primary.dropdown-toggle.col-12.mb-2#theme-selection-dropdown(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
+                                    .dropdown-menu#theme-selection-dropdown-item-container(aria-labelledby="dropdownMenuLink")
+                            .row
+                                .col
+                                    mixin baseColorRow(text, name1, name2, bg)
+                                        .row.mt-2.d-flex.align-items-center
+                                            .col-2=text
+                                            .col-1
+                                                .row
+                                                    div(class="pickr-" + name1)
+                                                    span=" "
+                                                    div(class="pickr-" + name2)
+                                            .col-9
+                                                .row
+                                                    .col(style="padding-left: 30px; padding-right:0px")
+                                                        - for (var i = 0; i <= 7; i++)
+                                                            button.sp-color-demo-button(class="b" + i + " " + "q" + bg, type="button")="字"
+                                                    .col
+                                                        - for (var i = 0; i <= 7; i++)
+                                                            button.sp-color-demo-button(class="b" + i + " " + "q" + (bg + 8), type="button")="字"
+                                                
+                                    -
+                                        var baseColorDict = {
+                                            "white": {
+                                                ch: "白",
+                                                code: 7
+                                            },
+                                            "black": {
+                                                ch: "黑",
+                                                code: 0
+                                            },
+                                            "red": {
+                                                ch: "紅",
+                                                code: 1
+                                            },
+                                            "green":{
+                                                ch: "綠",
+                                                code: 2
+                                            },
+                                            "yellow":{
+                                                ch: "黃",
+                                                code: 3
+                                            },
+                                            "blue":{
+                                                ch: "藍",
+                                                code: 4
+                                            },
+                                            "magenta":{
+                                                ch: "粉",
+                                                code: 5
+                                            },
+                                            "cyan": {
+                                                ch: "青",
+                                                code: 6
+                                            }
+                                        }
+
+                                    each val, en in baseColorDict
+                                        +baseColorRow(val.ch+"＆亮"+val.ch, en, en+"-light", val.code)
+                                //- .col-9
+                                //-     mixin specialColorCol(wordColor)
+                                //-         - for (var x = 0; x <= 7; x++)
+                                        
+                                //-             .col
+                                //-                 button(class = wordColor + " " + en, type="button")
+
+                                //-     mixin specialColorRow()
+                                //-         .row
+                                //-             specialColorCol()
+            .row.justify-content-center
+                a(href="https://github.com/petingo/ptt-theme", target="_blank") 說明
+
+                a.github-button(href="https://github.com/petingo/ptt-theme", data-show-count="true", aria-label="Star petingo/ptt-theme on GitHub") Star
+
+        -
+            var scriptList = [
+                "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
+                "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
+                "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+                "js/pickr.es5.min.js",
+                "js/popup.js",
+            ]
+
+        each scriptSrc in scriptList
+            script(src=scriptSrc)
+
+        script(async, defer, src="https://buttons.github.io/buttons.js")

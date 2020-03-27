@@ -78,10 +78,8 @@ let refreshColorPickr = () => {
 
         // base
         let elements = [
-            "foreground",
-            "background",
-            // "cursor-text",
-            // "cursor",
+            "white",
+            "white-light",
             "black",
             "black-light",
             "red",
@@ -95,9 +93,7 @@ let refreshColorPickr = () => {
             "magenta",
             "magenta-light",
             "cyan",
-            "cyan-light",
-            "white",
-            "white-light"
+            "cyan-light"
         ]
 
         elements.forEach((e) => {
@@ -187,6 +183,7 @@ let themeJSONFileMap = {
 }
 
 refreshColorPickr()
+
 let activeThemeItem
 let themeSelectionDropdown = document.getElementById("theme-selection-dropdown")
 chrome.storage.sync.get(["themeName"], function (result) {

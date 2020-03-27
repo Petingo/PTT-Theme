@@ -1,31 +1,3 @@
-let puttyConfigFile = `
-    Windows Registry Editor Version 5.00
-
-    [HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\Default%20Settings]
-    "Colour0"="255,250,244"
-    "Colour1"="158,156,154"
-    "Colour2"="14,16,25"
-    "Colour3"="14,16,25"
-    "Colour4"="255,255,255"
-    "Colour5"="255,0,24"
-    "Colour6"="35,35,35"
-    "Colour7"="68,68,68"
-    "Colour8"="255,0,15"
-    "Colour9"="255,39,64"
-    "Colour10"="140,225,11"
-    "Colour11"="171,225,91"
-    "Colour12"="255,185,0"
-    "Colour13"="255,210,66"
-    "Colour14"="0,141,248"
-    "Colour15"="0,146,255"
-    "Colour16"="109,67,166"
-    "Colour17"="154,95,235"
-    "Colour18"="0,216,235"
-    "Colour19"="103,255,240"
-    "Colour20"="255,255,255"
-    "Colour21"="255,255,255"
-`
-
 const fs = require('fs');
 
 function retrieveColorMapFromConfig(puttyConfigFile) {
@@ -59,41 +31,37 @@ function readFile(filename) {
     })
 }
 
-let idList = [
-    `$foreground`,
-    `$foreground-light`,
-    `$background`,
-    `$background-light`,
-    `$cursor-text`,
-    `$cursor`,
-    `$black`,
-    `$black-light`,
-    `$red`,
-    `$red-light`,
-    `$green`,
-    `$green-light`,
-    `$yellow`,
-    `$yellow-light`,
-    `$blue`,
-    `$blue-light`,
-    `$magenta`,
-    `$magenta-light`,
-    `$cyan`,
-    `$cyan-light`,
-    `$white`,
-    `$white-light`
-]
-
-async function puttyFileToCSSFile(puttyConfigFilePath, outputFilePath) {
-    let puttyConfigFile = await readFile(puttyConfigFilePath)
-    let colorMap = retrieveColorMapFromConfig(puttyConfigFile)
-    for (let i = idList.length - 1; i >= 0; i--) {
-        let color = `rgb(${colorMap[i][0]},${colorMap[i][1]},${colorMap[i][2]})`
-        css = css.replace(new RegExp(idList[i], "g"), color)
-    }
-
-    fs.writeFileSync(outputFilePath, css, { flag: 'wx' });
+let puttyIdMap = {
+    0: `$white`,
+    1: `$white-light`,
+    2: `$black`,
+    3: `$black-light`,
+    4: `$cursor-text`,
+    5: `$cursor`,
+    8: `$red`,
+    9: `$red-light`,
+    10: `$green`,
+    11: `$green-light`,
+    12: `$yellow`,
+    13: `$yellow-light`,
+    14: `$blue`,
+    15: `$blue-light`,
+    16: `$magenta`,
+    17: `$magenta-light`,
+    18: `$cyan`,
+    19: `$cyan-light`,
 }
+
+// async function puttyFileToCSSFile(puttyConfigFilePath, outputFilePath) {
+//     let puttyConfigFile = await readFile(puttyConfigFilePath)
+//     let colorMap = retrieveColorMapFromConfig(puttyConfigFile)
+//     for (let i = idList.length - 1; i >= 0; i--) {
+//         let color = `rgb(${colorMap[i][0]},${colorMap[i][1]},${colorMap[i][2]})`
+//         css = css.replace(new RegExp(idList[i], "g"), color)
+//     }
+
+//     fs.writeFileSync(outputFilePath, css, { flag: 'wx' });
+// }
 
 async function puttyFileToJSONFile(puttyConfigFilePath, outputFilePath) {
     let puttyConfigFile = await readFile(puttyConfigFilePath)
@@ -102,9 +70,13 @@ async function puttyFileToJSONFile(puttyConfigFilePath, outputFilePath) {
         "base": {},
         "specialCase": {}
     }
-    for (let i = idList.length - 1; i >= 0; i--) {
-        let color = `rgb(${colorMap[i][0]},${colorMap[i][1]},${colorMap[i][2]})`
-        config.base[idList[i]] = color
+    
+    for (let key in puttyIdMap) {
+        let puttyId = key
+        let colorName = puttyIdMap[key]
+
+        let color = `rgb(${colorMap[puttyId][0]},${colorMap[puttyId][1]},${colorMap[puttyId][2]})`
+        config.base[colorName] = color
     }
     console.log(config)
     fs.writeFileSync(outputFilePath, JSON.stringify(config), { flag: 'wx' });
@@ -165,7 +137,7 @@ let puttyThemeFilenameList = [
 ]
 
 puttyThemeFilenameList.forEach(filename => {
-    puttyFileToJSONFile(`../../putty-color-themes/${filename}`, `../theme/${filename.split(".")[1].substring(1)}.json`)
+    puttyFileToJSONFile(`./putty-color-themes/${filename}`, `./theme/${filename.split(".")[1].substring(1)}.json`)
 })
 
 // fs.readdir(`../../putty-color-themes/`, (err, files) => {

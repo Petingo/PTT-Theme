@@ -74,4 +74,6 @@ let s = {
     "$white-light": "hsl(43.846153846153854, 86.66666666666671%, 94.11764705882352%);"
 }
 
-console.log(JSON.stringify(s))
+for(let k in s){
+    console.log(k)
+}
