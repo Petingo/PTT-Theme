@@ -1,23 +1,23 @@
 {
     "base": {
-        "$white": "rgb(210,216,217)",
-        "$white-light": "rgb(236,236,236)",
-        "$black": "rgb(61,63,65)",
-        "$black-light": "rgb(61,63,65)",
-        "$cursor-text": "rgb(112,130,132)",
-        "$cursor": "rgb(0,40,49)",
-        "$red": "rgb(242,72,64)",
-        "$red-light": "rgb(242,72,64)",
-        "$green": "rgb(98,150,85)",
-        "$green-light": "rgb(98,150,85)",
-        "$yellow": "rgb(182,136,0)",
-        "$yellow-light": "rgb(182,136,0)",
-        "$blue": "rgb(32,117,199)",
-        "$blue-light": "rgb(32,117,199)",
-        "$magenta": "rgb(121,127,212)",
-        "$magenta-light": "rgb(121,127,212)",
-        "$cyan": "rgb(21,150,141)",
-        "$cyan-light": "rgb(21,150,141)"
+        "--white": "rgb(210,216,217)",
+        "--white-light": "rgb(236,236,236)",
+        "--black": "rgb(61,63,65)",
+        "--black-light": "rgb(61,63,65)",
+        "--cursor-text": "rgb(112,130,132)",
+        "--cursor": "rgb(0,40,49)",
+        "--red": "rgb(242,72,64)",
+        "--red-light": "rgb(242,72,64)",
+        "--green": "rgb(98,150,85)",
+        "--green-light": "rgb(98,150,85)",
+        "--yellow": "rgb(182,136,0)",
+        "--yellow-light": "rgb(182,136,0)",
+        "--blue": "rgb(32,117,199)",
+        "--blue-light": "rgb(32,117,199)",
+        "--magenta": "rgb(121,127,212)",
+        "--magenta-light": "rgb(121,127,212)",
+        "--cyan": "rgb(21,150,141)",
+        "--cyan-light": "rgb(21,150,141)"
     },
-    "specialCase": {}
+    "specialCase": []
 }

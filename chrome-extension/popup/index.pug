@@ -4,9 +4,9 @@ html(lang="en")
         meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
         -
             var styleList = [
-                "https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css",
-                "style/popup.css",
-                "style/bootstrap.min.css"
+                "/css/bootstrap.min.css",
+                "css/pickr.nano.min.css",
+                "css/popup.css"
             ]
 
         each style in styleList
@@ -35,12 +35,18 @@ html(lang="en")
                                                     div(class="pickr-" + name2)
                                             .col-9
                                                 .row
-                                                    .col(style="padding-left: 30px; padding-right:0px")
-                                                        - for (var i = 0; i <= 7; i++)
-                                                            button.sp-color-demo-button(class="b" + i + " " + "q" + bg, type="button")="字"
-                                                    .col
-                                                        - for (var i = 0; i <= 7; i++)
-                                                            button.sp-color-demo-button(class="b" + i + " " + "q" + (bg + 8), type="button")="字"
+                                                    .col.ml-4.mr-3
+                                                        .row
+                                                            - for (var i = 0; i <= 7; i++)
+                                                                .col(style="padding:0px;")
+                                                                    .dot(class="b" + i + " " + "q" + bg, hidden="true")
+                                                                    button.sp-color-demo-button(class="b" + i + " " + "q" + bg, type="button")="字"
+                                                    .col.mr-3
+                                                        .row
+                                                            - for (var i = 0; i <= 7; i++)
+                                                                .col(style="padding:0px;")
+                                                                    .dot(class="b" + i + " " + "q" + bg, hidden="true")
+                                                                    button.sp-color-demo-button(class="b" + i + " " + "q" + (bg + 8), type="button")="字"
                                                 
                                     -
                                         var baseColorDict = {
@@ -90,18 +96,21 @@ html(lang="en")
                                 //-     mixin specialColorRow()
                                 //-         .row
                                 //-             specialColorCol()
-            .row.justify-content-center
-                a(href="https://github.com/petingo/ptt-theme", target="_blank") 說明
+            .row.justify-content-center.mt-1.mb-3
+                a.mr-1(href="https://github.com/petingo/ptt-theme", target="_blank", style="color: #28415b") 網站
+                span(style="color: #555") |
+                a.ml-1(href="https://github.com/petingo/ptt-theme", target="_blank", style="color: #28415b") Github
 
-                a.github-button(href="https://github.com/petingo/ptt-theme", data-show-count="true", aria-label="Star petingo/ptt-theme on GitHub") Star
+                
 
         -
             var scriptList = [
                 "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
                 "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
+                "/js/init.js",
                 "js/pickr.es5.min.js",
-                "js/popup.js",
+                "js/popup.js"
             ]
 
         each scriptSrc in scriptList

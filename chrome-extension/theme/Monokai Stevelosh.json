@@ -1,1 +1,23 @@
-{"base":{"$white":"rgb(219,219,219)","$white-light":"rgb(255,255,255)","$black":"rgb(0,0,0)","$black-light":"rgb(0,0,0)","$cursor-text":"rgb(187,187,187)","$cursor":"rgb(255,255,255)","$red":"rgb(229,34,34)","$red-light":"rgb(255,85,85)","$green":"rgb(166,227,45)","$green-light":"rgb(85,255,85)","$yellow":"rgb(252,149,30)","$yellow-light":"rgb(255,255,85)","$blue":"rgb(196,141,255)","$blue-light":"rgb(85,85,255)","$magenta":"rgb(250,37,115)","$magenta-light":"rgb(255,85,255)","$cyan":"rgb(103,217,240)","$cyan-light":"rgb(85,255,255)"},"specialCase":{}}
+{
+    "base": {
+        "--white": "rgb(219,219,219)",
+        "--white-light": "rgb(255,255,255)",
+        "--black": "rgb(0,0,0)",
+        "--black-light": "rgb(0,0,0)",
+        "--cursor-text": "rgb(187,187,187)",
+        "--cursor": "rgb(255,255,255)",
+        "--red": "rgb(229,34,34)",
+        "--red-light": "rgb(255,85,85)",
+        "--green": "rgb(166,227,45)",
+        "--green-light": "rgb(85,255,85)",
+        "--yellow": "rgb(252,149,30)",
+        "--yellow-light": "rgb(255,255,85)",
+        "--blue": "rgb(196,141,255)",
+        "--blue-light": "rgb(85,85,255)",
+        "--magenta": "rgb(250,37,115)",
+        "--magenta-light": "rgb(255,85,255)",
+        "--cyan": "rgb(103,217,240)",
+        "--cyan-light": "rgb(85,255,255)"
+    },
+    "specialCase": []
+}

@@ -17,15 +17,18 @@
     "content_scripts": [{
         "matches": ["*://term.ptt.cc/*"],
         "js": [
-            "js/arrive.min.js",
-            "js/main.js"
+            "/js/arrive.min.js",
+            "/js/injectCSS.js",
+            "/js/init.js",
+            "/js/main.js"
         ]
     }],
     "browser_action": {
         "default_popup": "popup/index.html"
     },
     "web_accessible_resources": [
-        "theme/*"
+        "theme/*",
+        "css/template.css"
     ],
     "content_security_policy": "script-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js https://buttons.github.io/buttons.js; object-src 'self';"
 }

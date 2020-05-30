@@ -1,1 +1,729 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" rel="stylesheet"><link href="style/popup.css" rel="stylesheet"><link href="style/bootstrap.min.css" rel="stylesheet"></head><body style="width: 800px;"><div class="container-fluid"><div class="card mt-3"><h6 class="card-header">顏色設定</h6><div class="card-body"><div class="container"><div id="base-color-picker"><div class="row"><div class="col dropdown show"><a class="btn btn-primary dropdown-toggle col-12 mb-2" id="theme-selection-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a><div class="dropdown-menu" id="theme-selection-dropdown-item-container" aria-labelledby="dropdownMenuLink"></div></div></div><div class="row"><div class="col"><div class="row mt-2 d-flex align-items-center"><div class="col-2">白＆亮白</div><div class="col-1"><div class="row"><div class="pickr-white"></div><span> </span><div class="pickr-white-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q7" type="button">字</button><button class="sp-color-demo-button b1 q7" type="button">字</button><button class="sp-color-demo-button b2 q7" type="button">字</button><button class="sp-color-demo-button b3 q7" type="button">字</button><button class="sp-color-demo-button b4 q7" type="button">字</button><button class="sp-color-demo-button b5 q7" type="button">字</button><button class="sp-color-demo-button b6 q7" type="button">字</button><button class="sp-color-demo-button b7 q7" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q15" type="button">字</button><button class="sp-color-demo-button b1 q15" type="button">字</button><button class="sp-color-demo-button b2 q15" type="button">字</button><button class="sp-color-demo-button b3 q15" type="button">字</button><button class="sp-color-demo-button b4 q15" type="button">字</button><button class="sp-color-demo-button b5 q15" type="button">字</button><button class="sp-color-demo-button b6 q15" type="button">字</button><button class="sp-color-demo-button b7 q15" type="button">字</button></div></div></div></div><div class="row mt-2 d-flex align-items-center"><div class="col-2">黑＆亮黑</div><div class="col-1"><div class="row"><div class="pickr-black"></div><span> </span><div class="pickr-black-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q0" type="button">字</button><button class="sp-color-demo-button b1 q0" type="button">字</button><button class="sp-color-demo-button b2 q0" type="button">字</button><button class="sp-color-demo-button b3 q0" type="button">字</button><button class="sp-color-demo-button b4 q0" type="button">字</button><button class="sp-color-demo-button b5 q0" type="button">字</button><button class="sp-color-demo-button b6 q0" type="button">字</button><button class="sp-color-demo-button b7 q0" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q8" type="button">字</button><button class="sp-color-demo-button b1 q8" type="button">字</button><button class="sp-color-demo-button b2 q8" type="button">字</button><button class="sp-color-demo-button b3 q8" type="button">字</button><button class="sp-color-demo-button b4 q8" type="button">字</button><button class="sp-color-demo-button b5 q8" type="button">字</button><button class="sp-color-demo-button b6 q8" type="button">字</button><button class="sp-color-demo-button b7 q8" type="button">字</button></div></div></div></div><div class="row mt-2 d-flex align-items-center"><div class="col-2">紅＆亮紅</div><div class="col-1"><div class="row"><div class="pickr-red"></div><span> </span><div class="pickr-red-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q1" type="button">字</button><button class="sp-color-demo-button b1 q1" type="button">字</button><button class="sp-color-demo-button b2 q1" type="button">字</button><button class="sp-color-demo-button b3 q1" type="button">字</button><button class="sp-color-demo-button b4 q1" type="button">字</button><button class="sp-color-demo-button b5 q1" type="button">字</button><button class="sp-color-demo-button b6 q1" type="button">字</button><button class="sp-color-demo-button b7 q1" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q9" type="button">字</button><button class="sp-color-demo-button b1 q9" type="button">字</button><button class="sp-color-demo-button b2 q9" type="button">字</button><button class="sp-color-demo-button b3 q9" type="button">字</button><button class="sp-color-demo-button b4 q9" type="button">字</button><button class="sp-color-demo-button b5 q9" type="button">字</button><button class="sp-color-demo-button b6 q9" type="button">字</button><button class="sp-color-demo-button b7 q9" type="button">字</button></div></div></div></div><div class="row mt-2 d-flex align-items-center"><div class="col-2">綠＆亮綠</div><div class="col-1"><div class="row"><div class="pickr-green"></div><span> </span><div class="pickr-green-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q2" type="button">字</button><button class="sp-color-demo-button b1 q2" type="button">字</button><button class="sp-color-demo-button b2 q2" type="button">字</button><button class="sp-color-demo-button b3 q2" type="button">字</button><button class="sp-color-demo-button b4 q2" type="button">字</button><button class="sp-color-demo-button b5 q2" type="button">字</button><button class="sp-color-demo-button b6 q2" type="button">字</button><button class="sp-color-demo-button b7 q2" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q10" type="button">字</button><button class="sp-color-demo-button b1 q10" type="button">字</button><button class="sp-color-demo-button b2 q10" type="button">字</button><button class="sp-color-demo-button b3 q10" type="button">字</button><button class="sp-color-demo-button b4 q10" type="button">字</button><button class="sp-color-demo-button b5 q10" type="button">字</button><button class="sp-color-demo-button b6 q10" type="button">字</button><button class="sp-color-demo-button b7 q10" type="button">字</button></div></div></div></div><div class="row mt-2 d-flex align-items-center"><div class="col-2">黃＆亮黃</div><div class="col-1"><div class="row"><div class="pickr-yellow"></div><span> </span><div class="pickr-yellow-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q3" type="button">字</button><button class="sp-color-demo-button b1 q3" type="button">字</button><button class="sp-color-demo-button b2 q3" type="button">字</button><button class="sp-color-demo-button b3 q3" type="button">字</button><button class="sp-color-demo-button b4 q3" type="button">字</button><button class="sp-color-demo-button b5 q3" type="button">字</button><button class="sp-color-demo-button b6 q3" type="button">字</button><button class="sp-color-demo-button b7 q3" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q11" type="button">字</button><button class="sp-color-demo-button b1 q11" type="button">字</button><button class="sp-color-demo-button b2 q11" type="button">字</button><button class="sp-color-demo-button b3 q11" type="button">字</button><button class="sp-color-demo-button b4 q11" type="button">字</button><button class="sp-color-demo-button b5 q11" type="button">字</button><button class="sp-color-demo-button b6 q11" type="button">字</button><button class="sp-color-demo-button b7 q11" type="button">字</button></div></div></div></div><div class="row mt-2 d-flex align-items-center"><div class="col-2">藍＆亮藍</div><div class="col-1"><div class="row"><div class="pickr-blue"></div><span> </span><div class="pickr-blue-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q4" type="button">字</button><button class="sp-color-demo-button b1 q4" type="button">字</button><button class="sp-color-demo-button b2 q4" type="button">字</button><button class="sp-color-demo-button b3 q4" type="button">字</button><button class="sp-color-demo-button b4 q4" type="button">字</button><button class="sp-color-demo-button b5 q4" type="button">字</button><button class="sp-color-demo-button b6 q4" type="button">字</button><button class="sp-color-demo-button b7 q4" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q12" type="button">字</button><button class="sp-color-demo-button b1 q12" type="button">字</button><button class="sp-color-demo-button b2 q12" type="button">字</button><button class="sp-color-demo-button b3 q12" type="button">字</button><button class="sp-color-demo-button b4 q12" type="button">字</button><button class="sp-color-demo-button b5 q12" type="button">字</button><button class="sp-color-demo-button b6 q12" type="button">字</button><button class="sp-color-demo-button b7 q12" type="button">字</button></div></div></div></div><div class="row mt-2 d-flex align-items-center"><div class="col-2">粉＆亮粉</div><div class="col-1"><div class="row"><div class="pickr-magenta"></div><span> </span><div class="pickr-magenta-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q5" type="button">字</button><button class="sp-color-demo-button b1 q5" type="button">字</button><button class="sp-color-demo-button b2 q5" type="button">字</button><button class="sp-color-demo-button b3 q5" type="button">字</button><button class="sp-color-demo-button b4 q5" type="button">字</button><button class="sp-color-demo-button b5 q5" type="button">字</button><button class="sp-color-demo-button b6 q5" type="button">字</button><button class="sp-color-demo-button b7 q5" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q13" type="button">字</button><button class="sp-color-demo-button b1 q13" type="button">字</button><button class="sp-color-demo-button b2 q13" type="button">字</button><button class="sp-color-demo-button b3 q13" type="button">字</button><button class="sp-color-demo-button b4 q13" type="button">字</button><button class="sp-color-demo-button b5 q13" type="button">字</button><button class="sp-color-demo-button b6 q13" type="button">字</button><button class="sp-color-demo-button b7 q13" type="button">字</button></div></div></div></div><div class="row mt-2 d-flex align-items-center"><div class="col-2">青＆亮青</div><div class="col-1"><div class="row"><div class="pickr-cyan"></div><span> </span><div class="pickr-cyan-light"></div></div></div><div class="col-9"><div class="row"><div class="col" style="padding-left: 30px; padding-right:0px"><button class="sp-color-demo-button b0 q6" type="button">字</button><button class="sp-color-demo-button b1 q6" type="button">字</button><button class="sp-color-demo-button b2 q6" type="button">字</button><button class="sp-color-demo-button b3 q6" type="button">字</button><button class="sp-color-demo-button b4 q6" type="button">字</button><button class="sp-color-demo-button b5 q6" type="button">字</button><button class="sp-color-demo-button b6 q6" type="button">字</button><button class="sp-color-demo-button b7 q6" type="button">字</button></div><div class="col"><button class="sp-color-demo-button b0 q14" type="button">字</button><button class="sp-color-demo-button b1 q14" type="button">字</button><button class="sp-color-demo-button b2 q14" type="button">字</button><button class="sp-color-demo-button b3 q14" type="button">字</button><button class="sp-color-demo-button b4 q14" type="button">字</button><button class="sp-color-demo-button b5 q14" type="button">字</button><button class="sp-color-demo-button b6 q14" type="button">字</button><button class="sp-color-demo-button b7 q14" type="button">字</button></div></div></div></div></div></div></div></div></div></div><div class="row justify-content-center"><a href="https://github.com/petingo/ptt-theme" target="_blank">說明</a><a class="github-button" href="https://github.com/petingo/ptt-theme" data-show-count="true" aria-label="Star petingo/ptt-theme on GitHub">Star</a></div></div><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script><script src="js/pickr.es5.min.js"></script><script src="js/popup.js"></script><script async defer src="https://buttons.github.io/buttons.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link href="/css/bootstrap.min.css" rel="stylesheet"><link href="css/pickr.nano.min.css" rel="stylesheet"><link href="css/popup.css" rel="stylesheet"></head>
+    <body style="width: 800px;">
+        <div class="container-fluid">
+            <div class="card mt-3">
+                <h6 class="card-header">顏色設定</h6>
+                <div class="card-body">
+                    <div class="container">
+                        <div id="base-color-picker">
+                            <div class="row">
+                                <div class="col dropdown show">
+                                    <a class="btn btn-primary dropdown-toggle col-12 mb-2" id="theme-selection-dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                                    <div class="dropdown-menu" id="theme-selection-dropdown-item-container" aria-labelledby="dropdownMenuLink"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">白＆亮白</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-white"></div>
+                                                <span></span>
+                                                <div class="pickr-white-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q7" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q7" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q7" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q7" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q7" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q7" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q7" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q7" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q15" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q15" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q15" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q15" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q15" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q15" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q15" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q7" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q15" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">黑＆亮黑</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-black"></div>
+                                                <span></span>
+                                                <div class="pickr-black-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q0" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q0" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q0" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q0" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q0" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q0" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q0" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q0" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q8" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q8" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q8" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q8" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q8" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q8" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q8" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q0" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q8" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">紅＆亮紅</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-red"></div>
+                                                <span></span>
+                                                <div class="pickr-red-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q1" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q1" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q1" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q1" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q1" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q1" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q1" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q1" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q9" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q9" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q9" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q9" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q9" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q9" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q9" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q1" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q9" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">綠＆亮綠</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-green"></div>
+                                                <span></span>
+                                                <div class="pickr-green-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q2" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q2" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q2" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q2" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q2" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q2" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q2" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q2" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q10" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q10" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q10" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q10" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q10" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q10" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q10" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q2" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q10" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">黃＆亮黃</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-yellow"></div>
+                                                <span></span>
+                                                <div class="pickr-yellow-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q3" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q3" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q3" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q3" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q3" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q3" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q3" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q3" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q11" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q11" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q11" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q11" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q11" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q11" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q11" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q3" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q11" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">藍＆亮藍</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-blue"></div>
+                                                <span></span>
+                                                <div class="pickr-blue-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q4" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q4" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q4" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q4" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q4" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q4" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q4" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q4" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q12" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q12" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q12" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q12" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q12" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q12" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q12" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q4" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q12" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">粉＆亮粉</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-magenta"></div>
+                                                <span></span>
+                                                <div class="pickr-magenta-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q5" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q5" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q5" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q5" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q5" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q5" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q5" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q5" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q13" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q13" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q13" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q13" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q13" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q13" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q13" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q5" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q13" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex align-items-center">
+                                        <div class="col-2">青＆亮青</div>
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="pickr-cyan"></div>
+                                                <span></span>
+                                                <div class="pickr-cyan-light"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col ml-4 mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q6" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q6" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q6" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q6" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q6" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q6" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q6" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q6" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mr-3">
+                                                    <div class="row">
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b0 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b0 q14" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b1 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b1 q14" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b2 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b2 q14" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b3 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b3 q14" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b4 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b4 q14" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b5 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b5 q14" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b6 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b6 q14" type="button">字</button>
+                                                        </div>
+                                                        <div class="col" style="padding:0px;">
+                                                            <div class="dot b7 q6" hidden="true"></div>
+                                                            <button class="sp-color-demo-button b7 q14" type="button">字</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-1 mb-3">
+                <a class="mr-1" href="https://github.com/petingo/ptt-theme" target="_blank" style="color: #28415b">網站</a>
+                <span style="color: #555">|</span>
+                <a class="ml-1" href="https://github.com/petingo/ptt-theme" target="_blank" style="color: #28415b">Github</a>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="/js/init.js"></script>
+        <script src="./js/pickr.es5.min.js"></script>
+        <script src="./js/popup.js"></script>
+        <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+
+    </body>
+</html>
