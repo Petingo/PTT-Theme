@@ -6,7 +6,7 @@
 https://term.ptt.cc 色彩編輯插件
 
 ## Flow
-![](https://github.com/Petingo/ptt-theme/raw/master/flow.png)
+![](https://github.com/Petingo/ptt-theme/raw/master/flow.jpg)
 
 ## Putty、PTT 色號對應表
 | 顏色代碼  | 原始目標          | PTT 色彩 | PTT 色號 | term.ptt.cc | 原始色彩 | template      |
