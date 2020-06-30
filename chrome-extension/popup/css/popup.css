@@ -14,12 +14,26 @@
     height: 1.8em;
     width: 1.8em;
     border-radius: 50%;
+    text-align: left;
+    border-width: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+}
+
+.sp-color-demo-button-big {
+    height: 1.5em;
+    width: 1.5em;
+    font-size: 5em;
+    border-radius: 50%;
     text-align: center;
     border-width: 0px;
 }
 
-.pickr {
-    margin-right: 2px;
+.sp-color-demo-button:active {
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.75);
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.75);
 }
 
 .modified-sign {
@@ -32,6 +46,12 @@
     border-radius: 50%;
 }
 
+.pickr {
+    margin-right: 2px;
+}
+
+
+/*
 .pickr .pcr-button {
     height: 1.8em;
     width: 1.8em;
@@ -67,7 +87,7 @@
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     border-bottom-left-radius: 50%;
-}
+} */
 
 
 /* PTT */
@@ -1354,67 +1374,67 @@
 } */
 
 .q0 {
-    color: var(--black)
+    color: var(--black) !important;
 }
 
 .q1 {
-    color: var(--red)
+    color: var(--red) !important;
 }
 
 .q2 {
-    color: var(--green)
+    color: var(--green) !important;
 }
 
 .q3 {
-    color: var(--yellow)
+    color: var(--yellow) !important;
 }
 
 .q4 {
-    color: var(--blue)
+    color: var(--blue) !important;
 }
 
 .q5 {
-    color: var(--magenta)
+    color: var(--magenta) !important;
 }
 
 .q6 {
-    color: var(--cyan)
+    color: var(--cyan) !important;
 }
 
 .q7 {
-    color: var(--white)
+    color: var(--white) !important;
 }
 
 .q8 {
-    color: var(--black-light)
+    color: var(--black-light) !important;
 }
 
 .q9 {
-    color: var(--red-light)
+    color: var(--red-light) !important;
 }
 
 .q10 {
-    color: var(--green-light)
+    color: var(--green-light) !important;
 }
 
 .q11 {
-    color: var(--yellow-light)
+    color: var(--yellow-light) !important;
 }
 
 .q12 {
-    color: var(--blue-light)
+    color: var(--blue-light) !important;
 }
 
 .q13 {
-    color: var(--magenta-light)
+    color: var(--magenta-light) !important;
 }
 
 .q14 {
-    color: var(--cyan-light)
+    color: var(--cyan-light) !important;
 }
 
 .q15 {
-    color: var(--white-light)
+    color: var(--white-light) !important;
 }
 
 .b0 {

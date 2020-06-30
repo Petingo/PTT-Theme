@@ -5,7 +5,7 @@ html(lang="en")
         -
             var styleList = [
                 "/css/bootstrap.min.css",
-                "css/pickr.nano.min.css",
+                "css/nano.min.css",
                 "css/popup.css"
             ]
 
@@ -25,6 +25,33 @@ html(lang="en")
                                     .dropdown-menu#theme-selection-dropdown-item-container(aria-labelledby="dropdownMenuLink")
                             .row
                                 .col
+                                    
+                                    //- mixin spPopupPanel(id, i, bg)
+                                    //-     .modal.fade(id=id tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+                                    //-         .modal-dialog(role="document")
+                                    //-             .modal-content
+                                    //-                 .modal-body
+                                    //-                     .row
+                                    //-                         .col-4
+                                    //-                             button.sp-color-demo-button-big(class="b" + i + " " + "q" + bg, type="button", data-toggle="modal" data-target="#popup" + "b" + i + "q" + bg)="字"
+                                    //-                         .col-8
+
+                                                    //- .modal-footer
+                                                    //-     button(type="button" class="btn btn-secondary" data-dismiss="modal")="Close"
+                                                    //-     button(type="button" class="btn btn-primary")="Save changes"
+                                    mixin spPopover(i, bg)
+                                        div(style="display: none")
+                                            div(class="sp-popover-panel")
+                                                .container
+                                                    .row
+                                                        .col-4="字體色："
+                                                        .col-8
+                                                            div(class="pickr-" + "b" + i + "q" + bg + "-b")
+                                                    .row
+                                                        .col-4="背景色："
+                                                        .col-8
+                                                            div(class="pickr-" + "b" + i + "q" + bg + "-q")
+
                                     mixin baseColorRow(text, name1, name2, bg)
                                         .row.mt-2.d-flex.align-items-center
                                             .col-2=text
@@ -40,13 +67,22 @@ html(lang="en")
                                                             - for (var i = 0; i <= 7; i++)
                                                                 .col(style="padding:0px;")
                                                                     .dot(class="b" + i + " " + "q" + bg, hidden="true")
-                                                                    button.sp-color-demo-button(class="b" + i + " " + "q" + bg, type="button")="字"
+                                                                    //- +spPopupPanel("popup" + "b" + i + "q" + bg, i, bg)
+                                                                    //- var popupPanel='<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+                                                                    //- button(class="b" + i + " " + "q" + bg, type="button", data-toggle="modal" data-target="#popup" + "b" + i + "q" + bg template=popupPanel)="字"
+                                                                    //- +spPopover(i, bg)
+                                                                    //- a.sp-color-demo-button.btn(class="b" + i + " " + "q" + bg b=i q=bg)="字"
+                                                                    button.sp-color-demo-button.btn(class="b" + i + " " + "q" + bg b=i q=bg type="button" role="button" data-toggle="popover" data-trigger="click" data-html="true"
+                                                                        data-content='<div class="container"><div class="row"><div class="col-8">字體顏色</div><div class="col-4"><div class="pickr-b' + i + 'q' + bg + '-b"></div></div>')="字"
+
                                                     .col.mr-3
                                                         .row
                                                             - for (var i = 0; i <= 7; i++)
                                                                 .col(style="padding:0px;")
                                                                     .dot(class="b" + i + " " + "q" + bg, hidden="true")
-                                                                    button.sp-color-demo-button(class="b" + i + " " + "q" + (bg + 8), type="button")="字"
+                                                                    
+                                                                    //- +spPopover(i, bg + 8)
+                                                                    //- a.sp-color-demo-button.btn(class="b" + i + " " + "q" + (bg + 8) b=i q=(bg + 8))="字"
                                                 
                                     -
                                         var baseColorDict = {
@@ -101,6 +137,13 @@ html(lang="en")
                 span(style="color: #555") |
                 a.ml-1(href="https://github.com/petingo/ptt-theme", target="_blank", style="color: #28415b") Github
 
+            .container
+                .row
+                    .col-6="字"
+                    .col-6="調色盤"
+                .row
+                    .col-6="字"
+                    .col-6="調色盤"
                 
 
         -
@@ -109,7 +152,7 @@ html(lang="en")
                 "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js",
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
                 "/js/init.js",
-                "js/pickr.es5.min.js",
+                "js/pickr.min.js",
                 "js/popup.js"
             ]
 

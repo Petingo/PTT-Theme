@@ -78,7 +78,8 @@ const SP_COLOR_LIST = "SP_COLOR_LIST"
 const SP_COLOR_KEY = "SP_COLOR_KEY"
 const SP_BG_COLOR_KEY = "SP_BG_COLOR_KEY"
 
-let loadJSONConfig = async function(theme) {
+let loadJSONConfig = async function(theme, refresh = false) {
+    console.log("meow")
     let themeJSONFile = themeJSONFileMap[theme]
     let config = await JSON.parse(await fetch(chrome.extension.getURL(`/theme/${themeJSONFile}`)).then((response) => {
         return response.text()
@@ -114,12 +115,18 @@ let loadJSONConfig = async function(theme) {
             chrome.storage.local.set({
                 [varName]: color["color"]
             })
+            console.log({
+                [varName]: color["color"]
+            })
             spColorList.push(varName)
             spColorKey.push(`.q${color.q}.b${color.b}`)
         }
         if (color.hasOwnProperty("bg-color")) {
             let varName = `--q${color.q}b${color.b}-bg-color`
             chrome.storage.local.set({
+                [varName]: color["bg-color"]
+            })
+            console.log({
                 [varName]: color["bg-color"]
             })
             spColorList.push(varName)
@@ -130,6 +137,10 @@ let loadJSONConfig = async function(theme) {
         [SP_COLOR_LIST]: spColorList,
         [SP_COLOR_KEY]: spColorKey,
         [SP_BG_COLOR_KEY]: spBgColorKey
+    }, () => {
+        if (refresh) {
+            location.reload();
+        }
     })
 }
 
