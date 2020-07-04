@@ -75,11 +75,10 @@ const colors = [
 
 const BASE_THEME = "BASE_THEME"
 const SP_COLOR_LIST = "SP_COLOR_LIST"
-const SP_COLOR_KEY = "SP_COLOR_KEY"
-const SP_BG_COLOR_KEY = "SP_BG_COLOR_KEY"
+const SP_COLOR_CSS_KEY = "SP_COLOR_CSS_KEY"
+const SP_BG_COLOR_CSS_KEY = "SP_BG_COLOR_CSS_KEY"
 
 let loadJSONConfig = async function(theme, refresh = false) {
-    console.log("meow")
     let themeJSONFile = themeJSONFileMap[theme]
     let config = await JSON.parse(await fetch(chrome.extension.getURL(`/theme/${themeJSONFile}`)).then((response) => {
         return response.text()
@@ -97,46 +96,37 @@ let loadJSONConfig = async function(theme, refresh = false) {
         })
     }
 
-    // TODO: update special colors
-    // remove old
-    chrome.storage.local.get([SP_COLOR_LIST], r => {
-        if (r[SP_COLOR_LIST] != undefined) {
-            for (let sc of r[SP_COLOR_LIST]) {
-                chrome.storage.local.remove(sc)
-            }
-        }
-    })
-    let spColorList = []
-    let spColorKey = []
-    let spBgColorKey = []
+    let spColorList = [] // ["--q2b3-color", ...]
+    let spColorKey = [] // [".q2.b3", ...]
+    let spBgColorKey = [] // [".q2.b3", ...]
     for (let color of config["specialCase"]) {
         if (color.hasOwnProperty("color")) {
             let varName = `--q${color.q}b${color.b}-color`
             chrome.storage.local.set({
-                [varName]: color["color"]
-            })
-            console.log({
-                [varName]: color["color"]
-            })
+                    [varName]: color["color"]
+                })
+                // console.log({
+                //     [varName]: color["color"]
+                // })
             spColorList.push(varName)
             spColorKey.push(`.q${color.q}.b${color.b}`)
         }
         if (color.hasOwnProperty("bg-color")) {
             let varName = `--q${color.q}b${color.b}-bg-color`
             chrome.storage.local.set({
-                [varName]: color["bg-color"]
-            })
-            console.log({
-                [varName]: color["bg-color"]
-            })
+                    [varName]: color["bg-color"]
+                })
+                // console.log({
+                //     [varName]: color["bg-color"]
+                // })
             spColorList.push(varName)
             spBgColorKey.push(`.q${color.q}.b${color.b}`)
         }
     }
     chrome.storage.local.set({
         [SP_COLOR_LIST]: spColorList,
-        [SP_COLOR_KEY]: spColorKey,
-        [SP_BG_COLOR_KEY]: spBgColorKey
+        [SP_COLOR_CSS_KEY]: spColorKey,
+        [SP_BG_COLOR_CSS_KEY]: spBgColorKey
     }, () => {
         if (refresh) {
             location.reload();
@@ -144,38 +134,121 @@ let loadJSONConfig = async function(theme, refresh = false) {
     })
 }
 
+let addOnChangeListener = () => {
+    chrome.storage.onChanged.addListener(async function(changes, namespace) {
+        let specialStyle = document.getElementById("special-style")
+        console.log(specialStyle)
+        for (let key in changes) {
+            console.log(key, changes[key].newValue)
+            console.log(key, changes[key].oldValue)
+
+            let colorKeyRE = /--.*/
+            let spColorKeyRE = /--q[0-9]*b[0-9]*-color/
+            let spBgColorKeyRE = /--q[0-9]*b[0-9]*-bg-color/
+
+            if (spBgColorKeyRE.test(key)) {
+                let t = key.match(/[0-9]+/g)[0]
+                let q = t[0]
+                let b = t[1]
+                document.documentElement.style.setProperty(key, changes[key].newValue);
+
+                if (changes[key].oldValue === undefined) {
+                    let cssKey = `.q${q}.b${b}`
+                    insertBgColorRule(cssKey, cssRuleCounter++, specialStyle)
+
+                    chrome.storage.local.get([SP_COLOR_LIST, SP_BG_COLOR_CSS_KEY], r => {
+
+                        let spColorList = r[SP_COLOR_LIST]
+                        spColorList.push(key)
+
+                        let spBgColorCSSKey = r[SP_BG_COLOR_CSS_KEY]
+                        spBgColorCSSKey.push(cssKey)
+
+                        chrome.storage.local.set({
+                            [SP_COLOR_LIST]: spColorList,
+                            [SP_BG_COLOR_CSS_KEY]: spBgColorCSSKey
+                        })
+                    })
+                }
+            } else if (spColorKeyRE.test(key)) {
+                let t = key.match(/[0-9]+/g)[0]
+                let q = t[0]
+                let b = t[1]
+                document.documentElement.style.setProperty(key, changes[key].newValue);
+
+                if (changes[key].oldValue === undefined) {
+                    let cssKey = `.q${q}.b${b}`
+                    insertColorRule(cssKey, cssRuleCounter++, specialStyle)
+
+                    chrome.storage.local.get([SP_COLOR_LIST, SP_COLOR_CSS_KEY], r => {
+
+                        let spColorList = r[SP_COLOR_LIST]
+                        spColorList.push(key)
+
+                        let spColorCSSKey = r[SP_COLOR_CSS_KEY]
+                        spColorCSSKey.push(cssKey)
+
+                        chrome.storage.local.set({
+                            [SP_COLOR_LIST]: spColorList,
+                            [SP_COLOR_CSS_KEY]: spColorCSSKey
+                        })
+                    })
+                }
+
+            } else if (colorKeyRE.test(key)) {
+                document.documentElement.style.setProperty(key, changes[key].newValue);
+                console.log(key, changes[key].newValue)
+            }
+        }
+
+    })
+}
+
+function insertColorRule(cssKey, id, cssStyle) {
+    let t = cssKey.match(/[0-9]+/g)
+    let cssRule = `
+        ${cssKey}{
+            color: var(--q${t[0]}b${t[1]}-color); !important
+        }`
+    cssStyle.sheet.insertRule(cssRule, id)
+    console.log("add new style:", cssRule, id)
+}
+
+function insertBgColorRule(cssKey, id, cssStyle) {
+    let t = cssKey.match(/[0-9]+/g)
+    let cssRule = `
+        ${cssKey}{
+            background-color: var(--q${t[0]}b${t[1]}-bg-color); !important
+        }`
+    cssStyle.sheet.insertRule(cssRule, id)
+    console.log("add new style:", cssRule, id)
+}
+
+let cssRuleCounter = 0
 let setColor = () => {
     // special color
     // add CSS style sheet interface
     let specialStyle = document.createElement("style")
     specialStyle.type = "text/css"
+    specialStyle.id = "special-style"
     document.head.appendChild(specialStyle)
 
-    chrome.storage.local.get([SP_COLOR_KEY, SP_BG_COLOR_KEY], r => {
-        let counter = 0
-        for (let k of r[SP_COLOR_KEY]) {
-            let t = k.split('.')
-            let cssRule = `
-                ${k}{
-                    color: var(--${t[1]}${t[2]}-color);
-                }`
-            specialStyle.sheet.insertRule(cssRule, counter++)
+    addOnChangeListener()
+
+    chrome.storage.local.get([SP_COLOR_CSS_KEY, SP_BG_COLOR_CSS_KEY], r => {
+        for (let key of r[SP_COLOR_CSS_KEY]) {
+            insertColorRule(key, cssRuleCounter++, specialStyle, specialStyle)
         }
-        for (let k of r[SP_BG_COLOR_KEY]) {
-            let t = k.split('.')
-            let cssRule = `
-                ${k}{
-                    background-color: var(--${t[1]}${t[2]}-bg-color);
-                }`
-            specialStyle.sheet.insertRule(cssRule, counter++)
+        for (let key of r[SP_BG_COLOR_CSS_KEY]) {
+            insertBgColorRule(key, cssRuleCounter++, specialStyle, specialStyle)
         }
     })
 
     // set color
     chrome.storage.local.get([SP_COLOR_LIST], r => {
-        for (let sc of r[SP_COLOR_LIST]) {
-            chrome.storage.local.get([sc], r => {
-                document.documentElement.style.setProperty(sc, r[sc]);
+        for (let spColorKey of r[SP_COLOR_LIST]) {
+            chrome.storage.local.get([spColorKey], r => {
+                document.documentElement.style.setProperty(spColorKey, r[spColorKey]);
             })
         }
     })
@@ -187,6 +260,8 @@ let setColor = () => {
         }
     })
 }
+
+
 
 // ensure it works in the first time
 let init = async function() {

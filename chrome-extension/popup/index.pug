@@ -25,34 +25,20 @@ html(lang="en")
                                     .dropdown-menu#theme-selection-dropdown-item-container(aria-labelledby="dropdownMenuLink")
                             .row
                                 .col
-                                    
-                                    //- mixin spPopupPanel(id, i, bg)
-                                    //-     .modal.fade(id=id tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
-                                    //-         .modal-dialog(role="document")
-                                    //-             .modal-content
-                                    //-                 .modal-body
-                                    //-                     .row
-                                    //-                         .col-4
-                                    //-                             button.sp-color-demo-button-big(class="b" + i + " " + "q" + bg, type="button", data-toggle="modal" data-target="#popup" + "b" + i + "q" + bg)="字"
-                                    //-                         .col-8
-
-                                                    //- .modal-footer
-                                                    //-     button(type="button" class="btn btn-secondary" data-dismiss="modal")="Close"
-                                                    //-     button(type="button" class="btn btn-primary")="Save changes"
-                                    mixin spPopover(i, bg)
-                                        div(style="display: none")
-                                            div(class="sp-popover-panel")
-                                                .container
-                                                    .row
-                                                        .col-4="字體色："
-                                                        .col-8
-                                                            div(class="pickr-" + "b" + i + "q" + bg + "-b")
-                                                    .row
-                                                        .col-4="背景色："
-                                                        .col-8
-                                                            div(class="pickr-" + "b" + i + "q" + bg + "-q")
-
-                                    mixin baseColorRow(text, name1, name2, bg)
+                                    mixin spPopover(qi, bi)
+                                        div(id="popover-content-" + "q" + qi + "b" + bi style="display: none")
+                                            table
+                                                tbody
+                                                    tr
+                                                        td="字體："
+                                                        td
+                                                            div(class="pickr-" + "q" + qi + "b" + bi + "-b")
+                                                    tr
+                                                        td(class="pt-1")="背景："
+                                                        td(class="pt-1")
+                                                            div(class="pickr-" + "q" + qi + "b" + bi + "-q")
+                                                        
+                                    mixin baseColorRow(text, name1, name2, qi)
                                         .row.mt-2.d-flex.align-items-center
                                             .col-2=text
                                             .col-1
@@ -64,26 +50,26 @@ html(lang="en")
                                                 .row
                                                     .col.ml-4.mr-3
                                                         .row
-                                                            - for (var i = 0; i <= 7; i++)
+                                                            - for (var bi = 0; bi <= 7; bi++)
                                                                 .col(style="padding:0px;")
-                                                                    .dot(class="b" + i + " " + "q" + bg, hidden="true")
-                                                                    //- +spPopupPanel("popup" + "b" + i + "q" + bg, i, bg)
-                                                                    //- var popupPanel='<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
-                                                                    //- button(class="b" + i + " " + "q" + bg, type="button", data-toggle="modal" data-target="#popup" + "b" + i + "q" + bg template=popupPanel)="字"
-                                                                    //- +spPopover(i, bg)
-                                                                    //- a.sp-color-demo-button.btn(class="b" + i + " " + "q" + bg b=i q=bg)="字"
-                                                                    button.sp-color-demo-button.btn(class="b" + i + " " + "q" + bg b=i q=bg type="button" role="button" data-toggle="popover" data-trigger="click" data-html="true"
-                                                                        data-content='<div class="container"><div class="row"><div class="col-8">字體顏色</div><div class="col-4"><div class="pickr-b' + i + 'q' + bg + '-b"></div></div>')="字"
+                                                                    .dot(class="q" + qi + "b" + bi, hidden="true")
+                                                                    +spPopover(qi, bi)
+                                                                    button.sp-color-demo-button.btn(class="q" + qi + " " + "b" + bi b=bi q=qi type="button" role="button" data-toggle="popover" data-trigger="focus" data-html="true"
+                                                                        data-content='<div id="popover-q'+ qi + "b" + bi + '" style="width: 5em"></div>')="字"
 
                                                     .col.mr-3
                                                         .row
-                                                            - for (var i = 0; i <= 7; i++)
+                                                            - for (var bi = 0; bi <= 7; bi++)
                                                                 .col(style="padding:0px;")
-                                                                    .dot(class="b" + i + " " + "q" + bg, hidden="true")
-                                                                    
-                                                                    //- +spPopover(i, bg + 8)
-                                                                    //- a.sp-color-demo-button.btn(class="b" + i + " " + "q" + (bg + 8) b=i q=(bg + 8))="字"
-                                                
+                                                                    .dot(class="q" + (qi + 8) + "b" + bi, hidden="true")
+                                                                    +spPopover(qi + 8, bi)
+                                                                    - if(bi >= 6)
+                                                                        button.sp-color-demo-button.btn(class="q" + (qi + 8) + " " + "b" + bi b=bi q=(qi + 8) type="button" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom"
+                                                                            data-content='<div id="popover-q'+ (qi + 8) + "b" + bi + '" style="width:200px;"></div>')="字"
+                                                                    - else
+                                                                        button.sp-color-demo-button.btn(class="q" + (qi + 8) + " " + "b" + bi b=bi q=(qi + 8) type="button" role="button" data-toggle="popover" data-trigger="focus" data-html="true"
+                                                                            data-content='<div id="popover-q'+ (qi + 8) + "b" + bi + '" style="width: 5em"></div>')="字"
+
                                     -
                                         var baseColorDict = {
                                             "white": {
@@ -137,15 +123,6 @@ html(lang="en")
                 span(style="color: #555") |
                 a.ml-1(href="https://github.com/petingo/ptt-theme", target="_blank", style="color: #28415b") Github
 
-            .container
-                .row
-                    .col-6="字"
-                    .col-6="調色盤"
-                .row
-                    .col-6="字"
-                    .col-6="調色盤"
-                
-
         -
             var scriptList = [
                 "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
@@ -153,7 +130,8 @@ html(lang="en")
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
                 "/js/init.js",
                 "js/pickr.min.js",
-                "js/popup.js"
+                "js/popup.js",
+                "/js/main.js"
             ]
 
         each scriptSrc in scriptList

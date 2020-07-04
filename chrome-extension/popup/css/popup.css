@@ -1374,67 +1374,67 @@
 } */
 
 .q0 {
-    color: var(--black) !important;
+    color: var(--black)
 }
 
 .q1 {
-    color: var(--red) !important;
+    color: var(--red)
 }
 
 .q2 {
-    color: var(--green) !important;
+    color: var(--green)
 }
 
 .q3 {
-    color: var(--yellow) !important;
+    color: var(--yellow)
 }
 
 .q4 {
-    color: var(--blue) !important;
+    color: var(--blue)
 }
 
 .q5 {
-    color: var(--magenta) !important;
+    color: var(--magenta)
 }
 
 .q6 {
-    color: var(--cyan) !important;
+    color: var(--cyan)
 }
 
 .q7 {
-    color: var(--white) !important;
+    color: var(--white)
 }
 
 .q8 {
-    color: var(--black-light) !important;
+    color: var(--black-light)
 }
 
 .q9 {
-    color: var(--red-light) !important;
+    color: var(--red-light)
 }
 
 .q10 {
-    color: var(--green-light) !important;
+    color: var(--green-light)
 }
 
 .q11 {
-    color: var(--yellow-light) !important;
+    color: var(--yellow-light)
 }
 
 .q12 {
-    color: var(--blue-light) !important;
+    color: var(--blue-light)
 }
 
 .q13 {
-    color: var(--magenta-light) !important;
+    color: var(--magenta-light)
 }
 
 .q14 {
-    color: var(--cyan-light) !important;
+    color: var(--cyan-light)
 }
 
 .q15 {
-    color: var(--white-light) !important;
+    color: var(--white-light)
 }
 
 .b0 {
