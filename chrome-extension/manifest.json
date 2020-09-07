@@ -19,8 +19,7 @@
         "js": [
             "/js/arrive.min.js",
             "/js/injectCSS.js",
-            "/js/init.js",
-            "/js/main.js"
+            "/js/init.js"
         ]
     }],
     "browser_action": {

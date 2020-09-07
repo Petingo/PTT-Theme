@@ -78,6 +78,18 @@ const SP_COLOR_LIST = "SP_COLOR_LIST"
 const SP_COLOR_CSS_KEY = "SP_COLOR_CSS_KEY"
 const SP_BG_COLOR_CSS_KEY = "SP_BG_COLOR_CSS_KEY"
 
+function makeVisible(id) {
+    let el = document.getElementById(id)
+    if (el != null)
+        el.style.visibility = "visible"
+}
+
+function makeHidden(id) {
+    let el = document.getElementById(id)
+    if (el != null)
+        el.style.visibility = "hidden"
+}
+
 let loadJSONConfig = async function(theme, refresh = false) {
     let themeJSONFile = themeJSONFileMap[theme]
     let config = await JSON.parse(await fetch(chrome.extension.getURL(`/theme/${themeJSONFile}`)).then((response) => {
@@ -103,22 +115,18 @@ let loadJSONConfig = async function(theme, refresh = false) {
         if (color.hasOwnProperty("color")) {
             let varName = `--q${color.q}b${color.b}-color`
             chrome.storage.local.set({
-                    [varName]: color["color"]
-                })
-                // console.log({
-                //     [varName]: color["color"]
-                // })
+                [varName]: color["color"], 
+                [varName + "-theme-def"]: color["color"]
+            })
             spColorList.push(varName)
             spColorKey.push(`.q${color.q}.b${color.b}`)
         }
         if (color.hasOwnProperty("bg-color")) {
             let varName = `--q${color.q}b${color.b}-bg-color`
             chrome.storage.local.set({
-                    [varName]: color["bg-color"]
-                })
-                // console.log({
-                //     [varName]: color["bg-color"]
-                // })
+                [varName]: color["bg-color"],
+                [varName + "-theme-def"]: color["color"]
+            })
             spColorList.push(varName)
             spBgColorKey.push(`.q${color.q}.b${color.b}`)
         }
@@ -137,27 +145,27 @@ let loadJSONConfig = async function(theme, refresh = false) {
 let addOnChangeListener = () => {
     chrome.storage.onChanged.addListener(async function(changes, namespace) {
         let specialStyle = document.getElementById("special-style")
-        console.log(specialStyle)
+        console.log('changed!!', specialStyle)
         for (let key in changes) {
-            console.log(key, changes[key].newValue)
-            console.log(key, changes[key].oldValue)
+            console.log("listener:", key, changes[key].newValue)
 
             let colorKeyRE = /--.*/
             let spColorKeyRE = /--q[0-9]*b[0-9]*-color/
             let spBgColorKeyRE = /--q[0-9]*b[0-9]*-bg-color/
-
+            
             if (spBgColorKeyRE.test(key)) {
-                let t = key.match(/[0-9]+/g)[0]
+                let t = key.match(/[0-9]+/g)
                 let q = t[0]
-                let b = t[1]
+                let b = t[1] 
+                console.log("special background key:", q, b)
+                makeVisible(`dot-q${q}b${b}`)
                 document.documentElement.style.setProperty(key, changes[key].newValue);
 
-                if (changes[key].oldValue === undefined) {
-                    let cssKey = `.q${q}.b${b}`
+                let cssKey = `.q${q}.b${b}`
+                if (changes[key].newValue != undefined) {
                     insertBgColorRule(cssKey, cssRuleCounter++, specialStyle)
 
                     chrome.storage.local.get([SP_COLOR_LIST, SP_BG_COLOR_CSS_KEY], r => {
-
                         let spColorList = r[SP_COLOR_LIST]
                         spColorList.push(key)
 
@@ -169,15 +177,31 @@ let addOnChangeListener = () => {
                             [SP_BG_COLOR_CSS_KEY]: spBgColorCSSKey
                         })
                     })
+                } else {
+                    removeBgColorRule(cssKey, specialStyle)
+                    chrome.storage.local.get([SP_COLOR_LIST, SP_BG_COLOR_CSS_KEY], r => {
+                        let spColorList = r[SP_COLOR_LIST]
+                        spColorList.splice(spColorList.indexOf(key), 1);
+
+                        let spBgColorCSSKey = r[SP_BG_COLOR_CSS_KEY]
+                        spBgColorCSSKey.splice(spBgColorCSSKey.indexOf(cssKey), 1);
+
+                        chrome.storage.local.set({
+                            [SP_COLOR_LIST]: spColorList,
+                            [SP_BG_COLOR_CSS_KEY]: spBgColorCSSKey
+                        })
+                    })
                 }
             } else if (spColorKeyRE.test(key)) {
-                let t = key.match(/[0-9]+/g)[0]
+                let t = key.match(/[0-9]+/g)
                 let q = t[0]
                 let b = t[1]
                 document.documentElement.style.setProperty(key, changes[key].newValue);
-
-                if (changes[key].oldValue === undefined) {
-                    let cssKey = `.q${q}.b${b}`
+                console.log("special background key:", q, b)
+                
+                let cssKey = `.q${q}.b${b}`
+                if (changes[key].newValue != undefined) {
+                    makeVisible(`dot-q${q}b${b}`)
                     insertColorRule(cssKey, cssRuleCounter++, specialStyle)
 
                     chrome.storage.local.get([SP_COLOR_LIST, SP_COLOR_CSS_KEY], r => {
@@ -187,6 +211,23 @@ let addOnChangeListener = () => {
 
                         let spColorCSSKey = r[SP_COLOR_CSS_KEY]
                         spColorCSSKey.push(cssKey)
+
+                        chrome.storage.local.set({
+                            [SP_COLOR_LIST]: spColorList,
+                            [SP_COLOR_CSS_KEY]: spColorCSSKey
+                        })
+                    })
+                } else {
+                    // if
+                    // makeHidden(`dot-q${q}b${b}`)
+                    removeColorRule(cssKey, specialStyle)
+                    chrome.storage.local.get([SP_COLOR_LIST, SP_COLOR_CSS_KEY], r => {
+
+                        let spColorList = r[SP_COLOR_LIST]
+                        spColorList.splice(spColorList.indexOf(key), 1);
+
+                        let spColorCSSKey = r[SP_COLOR_CSS_KEY]
+                        spColorCSSKey.splice(spColorCSSKey.indexOf(cssKey), 1);
 
                         chrome.storage.local.set({
                             [SP_COLOR_LIST]: spColorList,
@@ -204,12 +245,18 @@ let addOnChangeListener = () => {
     })
 }
 
+let cssIdMap = {
+    color: {},
+    bgColor: {}
+}
+
 function insertColorRule(cssKey, id, cssStyle) {
     let t = cssKey.match(/[0-9]+/g)
     let cssRule = `
         ${cssKey}{
-            color: var(--q${t[0]}b${t[1]}-color); !important
+            color: var(--q${t[0]}b${t[1]}-color);
         }`
+    cssIdMap.color[cssKey] = id
     cssStyle.sheet.insertRule(cssRule, id)
     console.log("add new style:", cssRule, id)
 }
@@ -218,10 +265,25 @@ function insertBgColorRule(cssKey, id, cssStyle) {
     let t = cssKey.match(/[0-9]+/g)
     let cssRule = `
         ${cssKey}{
-            background-color: var(--q${t[0]}b${t[1]}-bg-color); !important
+            background-color: var(--q${t[0]}b${t[1]}-bg-color);
         }`
+        cssIdMap.bgColor[cssKey] = id
     cssStyle.sheet.insertRule(cssRule, id)
     console.log("add new style:", cssRule, id)
+}
+
+function removeBgColorRule(cssKey, cssStyle){
+    console.log('remove css', cssKey, cssIdMap.bgColor[cssKey])
+    console.log(cssStyle.sheet)
+    cssStyle.sheet.deleteRule(cssIdMap.bgColor[cssKey]) 
+    console.log(cssStyle.sheet)
+}
+
+function removeColorRule(cssKey, cssStyle){
+    console.log('remove css', cssKey, cssIdMap.color[cssKey])
+    console.log(cssStyle.sheet)
+    cssStyle.sheet.deleteRule(cssIdMap.color[cssKey]) 
+    console.log(cssStyle.sheet)
 }
 
 let cssRuleCounter = 0
@@ -244,9 +306,12 @@ let setColor = () => {
         }
     })
 
-    // set color
+    // set sp color
     chrome.storage.local.get([SP_COLOR_LIST], r => {
+        console.log(r[SP_COLOR_LIST])
         for (let spColorKey of r[SP_COLOR_LIST]) {
+            let t = spColorKey.match(/[0-9]+/g)
+            makeVisible(`dot-q${t[0]}b${t[1]}`)
             chrome.storage.local.get([spColorKey], r => {
                 document.documentElement.style.setProperty(spColorKey, r[spColorKey]);
             })

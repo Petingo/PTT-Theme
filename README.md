@@ -38,3 +38,4 @@ https://term.ptt.cc 色彩編輯插件
 ### chrome storage key
 - --q1b2-color
 - --q1b2-bg-color
+- --q1b2-color-theme-def

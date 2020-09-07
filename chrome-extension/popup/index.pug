@@ -52,7 +52,7 @@ html(lang="en")
                                                         .row
                                                             - for (var bi = 0; bi <= 7; bi++)
                                                                 .col(style="padding:0px;")
-                                                                    .dot(class="q" + qi + "b" + bi, hidden="true")
+                                                                    .dot(id="dot-q" + qi + "b" + bi, style="visibility:hidden")
                                                                     +spPopover(qi, bi)
                                                                     button.sp-color-demo-button.btn(class="q" + qi + " " + "b" + bi b=bi q=qi type="button" role="button" data-toggle="popover" data-trigger="focus" data-html="true"
                                                                         data-content='<div id="popover-q'+ qi + "b" + bi + '" style="width: 5em"></div>')="字"
@@ -61,7 +61,7 @@ html(lang="en")
                                                         .row
                                                             - for (var bi = 0; bi <= 7; bi++)
                                                                 .col(style="padding:0px;")
-                                                                    .dot(class="q" + (qi + 8) + "b" + bi, hidden="true")
+                                                                    .dot(id="dot-q" + (qi + 8) + "b" + bi, style="visibility:hidden")
                                                                     +spPopover(qi + 8, bi)
                                                                     - if(bi >= 6)
                                                                         button.sp-color-demo-button.btn(class="q" + (qi + 8) + " " + "b" + bi b=bi q=(qi + 8) type="button" role="button" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom"
@@ -130,8 +130,7 @@ html(lang="en")
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
                 "/js/init.js",
                 "js/pickr.min.js",
-                "js/popup.js",
-                "/js/main.js"
+                "js/popup.js"
             ]
 
         each scriptSrc in scriptList
