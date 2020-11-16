@@ -34,6 +34,11 @@ https://term.ptt.cc 色彩編輯插件
 | Colour 20 | ANSI White        |          |          |             |          |               |
 | Colour 21 | ANSI White Bold   |          |          |             |          |               |
 
+## TODO
+- [ ] 把存進去的東西改成 JSON (SP_COLOR_LIST / SP_COLOR_KEY / ...)
+- [ ] Theme Demo
+- [ ] 白底背景優化
+
 ## 程式結構
 ### chrome storage key
 - --q1b2-color

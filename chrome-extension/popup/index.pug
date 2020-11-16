@@ -20,9 +20,11 @@ html(lang="en")
                     .container
                         #base-color-picker
                             .row
-                                .col.dropdown.show
+                                .col-10.dropdown.show
                                     a.btn.btn-primary.dropdown-toggle.col-12.mb-2#theme-selection-dropdown(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
                                     .dropdown-menu#theme-selection-dropdown-item-container(aria-labelledby="dropdownMenuLink")
+                                .col-2.pl-0(style="padding-right: 20px")
+                                    button.btn.btn-primary.col-12#export-button(type="button") 匯出
                             .row
                                 .col
                                     mixin spPopover(qi, bi)

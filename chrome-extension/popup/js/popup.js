@@ -17,8 +17,8 @@ const colorCode2Key = {
     14: "--cyan-light"
 }
 
-let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, type = "normal") => {
-    console.log(target, elementPath, defaultColor, themeDefaultColor, type)
+let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, hasDefault=false) => {
+    console.log(target, elementPath, defaultColor, themeDefaultColor, hasDefault)
     let pickr = Pickr.create({
         el: elementPath,
         theme: 'nano',
@@ -59,15 +59,7 @@ let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, t
             }, callback)
         }
     }
-
-    let clear = (color) => {
-        if (type == "normal") {
-
-        } else if (type == "special-with-default") {
-
-        }
-    }
-
+    
     let lastUpdateTime = 0;
     let cancelFlag
     let colorOnShow = undefined
@@ -97,20 +89,18 @@ let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, t
                 break;
             case "clear":
                 update(themeDefaultColor)
-                if (type == "normal") {
-                    // remove key
-                    chrome.storage.local.remove(target)
-                    
-                    // set yellow dot hidden if no special color remain
-                    
-                } else if (type == "special-with-default") {
+                if (hasDefault) {
                     // set key-color to default
+                    console.log("")
                     let themeDefKey = target+"-theme-def"
                     chrome.storage.local.get([themeDefKey], (r) => {
                         chrome.storage.local.set({
                             [target]: r[themeDefKey]
                         }) 
                     })
+                } else {
+                    // remove key
+                    chrome.storage.local.remove(target)
                 }
 
                 break;
@@ -158,6 +148,61 @@ let initThemeSelectionDropdown = () => {
     })
 }
 
+
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+
+let exportJson = () => {
+    let themeConfig = {
+        "base": {},
+        "specialCase": []
+    }
+    chrome.storage.local.get([...colors, BASE_THEME, SP_COLOR_LIST, SP_COLOR_CSS_KEY, SP_BG_COLOR_CSS_KEY], r=>{
+        for(let c of colors){
+            themeConfig.base[c] = r[c]
+        }
+        filename = `${r[BASE_THEME]}.custom.json`
+        spColorList = r[SP_COLOR_LIST]
+        console.log("aaaa", spColorList)
+        chrome.storage.local.get(spColorList, r => {
+            console.log(r)
+            for(let spColor of spColorList){
+                console.log(spColor)
+                let t = spColor.match(/[0-9]+/g)
+                let q = t[0]
+                let b = t[1]
+                let spColorConfig = {
+                    "q": q,
+                    "b": b
+                }
+                if(spColor.includes("bg")){
+                    spColorConfig["bg-color"] = r[spColor]
+                } else {
+                    spColorConfig["color"] = r[spColor]
+                }
+                themeConfig.specialCase.push(spColorConfig)
+            }
+            download(filename, JSON.stringify(themeConfig))
+        })
+    })
+}
+
+let initExportButton = () => {
+    let exportButton = document.getElementById("export-button")
+    exportButton.addEventListener("click", exportJson)
+}
+
 let initSpClickEvent = () => {
     let buttons = [...document.getElementsByClassName("sp-color-demo-button")]
     buttons.forEach(button => {
@@ -187,7 +232,7 @@ let initSpClickEvent = () => {
                 chrome.storage.local.get(query, (r) => {
                     console.log(r)
                     let defaultColor, defaultBgColor, themeDefaultColor, themeDefaultBgColor
-
+                    let colorHasDefault = false, bgColorHasDefault = false
                     // default color
                     if (r[`--q${q}b${b}-color`] != undefined) {
                         defaultColor = r[`--q${q}b${b}-color`]
@@ -204,6 +249,7 @@ let initSpClickEvent = () => {
 
                     // theme default color
                     if (r[`--q${q}b${b}-color-theme-def`] != undefined) {
+                        colorHasDefault = true
                         themeDefaultColor = r[`--q${q}b${b}-color-theme-def`]
                     } else {
                         themeDefaultColor = r[colorCode2Key[q]]
@@ -211,6 +257,7 @@ let initSpClickEvent = () => {
 
                     // theme default bg color
                     if (r[`--q${q}b${b}-bg-color-theme-def`] != undefined) {
+                        bgColorHasDefault = true
                         themeDefaultBgColor = r[`--q${q}b${b}-bg-color-theme-def`]
                     } else {
                         themeDefaultBgColor = r[colorCode2Key[b]]
@@ -218,8 +265,8 @@ let initSpClickEvent = () => {
 
                     // console.log(`--q${q}b${b}`, defaultColor, defaultBgColor, themeDefaultColor, themeDefaultBgColor)
                     console.log("meow")
-                    createPickrObject(`--q${q}b${b}-color`, `.pickr-q${q}b${b}-b`, defaultColor, themeDefaultColor)
-                    createPickrObject(`--q${q}b${b}-bg-color`, `.pickr-q${q}b${b}-q`, defaultBgColor, themeDefaultBgColor)
+                    createPickrObject(`--q${q}b${b}-color`, `.pickr-q${q}b${b}-b`, defaultColor, themeDefaultColor, colorHasDefault)
+                    createPickrObject(`--q${q}b${b}-bg-color`, `.pickr-q${q}b${b}-q`, defaultBgColor, themeDefaultBgColor, bgColorHasDefault)
 
                 })
 
@@ -281,6 +328,7 @@ let initSpPopup = () => {
 
 (async () => {
     initThemeSelectionDropdown()
+    initExportButton()
     refreshColorPickr()
     initSpClickEvent()
 
