@@ -1,14 +1,16 @@
 <p align="center">
-    <img src="https://github.com/Petingo/ptt-theme/raw/master/main.png">
+    <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/main.png">
 </p>
 
 # PTT Theme
 看膩黑底白字了嗎？PTT Theme 是一個 https://term.ptt.cc 的色彩編輯插件，讓你自訂 PTT 的顏色！
 
-| <img src="https://github.com/Petingo/ptt-theme/raw/master/Solarized-Dark.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/Solarized-Light.png"> |
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Dark.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Light.png"> |
 | Solarized Dark | Solarized Light |
-| <img src="https://github.com/Petingo/ptt-theme/raw/master/Argonaut.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/Expresso.png"> |
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Argonaut.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Expresso.png"> |
 | Argonaut | Expresso |
+
+
 
 ## Flow
 ![](https://github.com/Petingo/ptt-theme/raw/master/flow.jpg)
