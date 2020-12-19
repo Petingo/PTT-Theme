@@ -1,21 +1,20 @@
+# PTT Theme
+看膩黑底白字了嗎？PTT Theme 是一個 https://term.ptt.cc 的色彩編輯插件，讓你自訂 PTT 的顏色！
+
 <p align="center">
     <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/main.png">
 </p>
 
-# PTT Theme
-看膩黑底白字了嗎？PTT Theme 是一個 https://term.ptt.cc 的色彩編輯插件，讓你自訂 PTT 的顏色！
-
-| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Dark.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Light.png"> |
 | Solarized Dark | Solarized Light |
-| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Argonaut.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Expresso.png"> |
-| Argonaut | Expresso |
+|-|-|
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Dark.png"/> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Light.png"/> |
 
-|                           原始影像                           |                             D65                              |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="https://raw.githubusercontent.com/Petingo/von-Kries-Adaptation/master/image/test.png" alt="test" style="zoom:50%; margin: 12pt 0pt;" /> | <img src="https://raw.githubusercontent.com/Petingo/von-Kries-Adaptation/master/image/result_D65.png" alt="test" style="zoom:50%; margin: 12pt 0pt;" /> |
+| Argonaut | Expresso |
+|-|-|
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Argonaut.png"/> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Expresso.png"/> |
 
 ## Flow
-![](https://github.com/Petingo/ptt-theme/raw/master/flow.jpg)
+![](https://github.com/Petingo/ptt-theme/raw/master/imgs/flow.jpg)
 
 ## Putty、PTT 色號對應表
 | 顏色代碼  | 原始目標          | PTT 色彩 | PTT 色號 | term.ptt.cc | 原始色彩 | template      |
