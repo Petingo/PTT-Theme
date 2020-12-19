@@ -1,4 +1,4 @@
-let injectCSS = () => {
+function injectCSS() {
     let themeCSS = document.createElement("link")
     themeCSS.setAttribute("id", "customTheme")
     themeCSS.setAttribute("rel", "stylesheet")

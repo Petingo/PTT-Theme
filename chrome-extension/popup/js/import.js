@@ -9,7 +9,6 @@ function handleFiles() {
     fileReader.readAsDataURL(this.files[0]);
 }
 
-
 (() => {
     let importButton = document.getElementById("import-button")
     importButton.addEventListener("change", handleFiles, false);

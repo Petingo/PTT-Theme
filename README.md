@@ -1,9 +1,14 @@
 <p align="center">
-    <img src="https://github.com/Petingo/ptt-theme/raw/master/example.png">
+    <img src="https://github.com/Petingo/ptt-theme/raw/master/main.png">
 </p>
 
-# PPT Theme
-https://term.ptt.cc 色彩編輯插件
+# PTT Theme
+看膩黑底白字了嗎？PTT Theme 是一個 https://term.ptt.cc 的色彩編輯插件，讓你自訂 PTT 的顏色！
+
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/Solarized-Dark.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/Solarized-Light.png"> |
+| Solarized Dark | Solarized Light |
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/Argonaut.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/Expresso.png"> |
+| Argonaut | Expresso |
 
 ## Flow
 ![](https://github.com/Petingo/ptt-theme/raw/master/flow.jpg)
@@ -35,9 +40,11 @@ https://term.ptt.cc 色彩編輯插件
 | Colour 21 | ANSI White Bold   |          |          |             |          |               |
 
 ## TODO
-- [ ] 把存進去的東西改成 JSON (SP_COLOR_LIST / SP_COLOR_KEY / ...)
-- [ ] Theme Demo
+目前肥肥我在在申請研究所，下個月就要進去當兵了，應該沒空繼續開發，如果你對這個專案有興趣、想一起開發的話歡迎聯絡我：）
 - [ ] 白底背景優化
+- [ ] 目前切換的時候 special case 會有轉不過來的問題，感覺應該是 async 沒寫好
+- [ ] Theme Demo
+    想做一個網頁，可以有一個主題 -> 效果的呈現，並讓大家可以上傳自己編輯的主題
 
 ## 程式結構
 ### chrome storage key

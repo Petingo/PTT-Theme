@@ -111,7 +111,7 @@ let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, h
 }
 
 // for global color setting
-let refreshColorPickr = () => {
+function refreshColorPickr() {
     console.log("refreshColorPickr")
     colors.forEach((color) => {
         chrome.storage.local.get([color], function (result) {
@@ -121,7 +121,7 @@ let refreshColorPickr = () => {
     })
 }
 
-let initThemeSelectionDropdown = () => {
+function initThemeSelectionDropdown() {
     let themeSelectionDropdown = document.getElementById("theme-selection-dropdown")
     let themeSelectionDropdownItemContainer = document.getElementById("theme-selection-dropdown-item-container")
 
@@ -163,7 +163,7 @@ function download(filename, text) {
 }
 
 
-let exportJson = () => {
+function exportJson() {
     let themeConfig = {
         "base": {},
         "specialCase": []
@@ -198,12 +198,12 @@ let exportJson = () => {
     })
 }
 
-let initExportButton = () => {
+function initExportButton() {
     let exportButton = document.getElementById("export-button")
     exportButton.addEventListener("click", exportJson)
 }
 
-let initImportButton = () => {
+function initImportButton() {
     let importButton = document.getElementById("import-button")
     importButton.onclick = () => {
         chrome.tabs.create({url: "popup/import.html"});
@@ -212,7 +212,7 @@ let initImportButton = () => {
 }
 
 
-let initSpClickEvent = () => {
+function initSpClickEvent() {
     let buttons = [...document.getElementsByClassName("sp-color-demo-button")]
     buttons.forEach(button => {
         let innerHTMLTmp = undefined
@@ -285,7 +285,7 @@ let initSpClickEvent = () => {
     })
 }
 
-let initSpPopup = () => {
+function initSpPopup() {
     for (let i = 0; i <= 15; i++) {
         for (let k = 0; k <= 7; k++) {
             // Popover Menu initialize
@@ -294,20 +294,19 @@ let initSpPopup = () => {
                 trigger: 'click',
                 html: true,
                 content: function () {
-                    console.log(document.querySelector(`.pickr-q${i}.b${k}-q`).parentNode)
+                    console.log(document.querySelector(`.pickr-q${i}.b${k}-q`).parentNode);
                     return $(this).parent().find(".sp-popover-panel").html();
                 }
-
             }).on('show.bs.popover', function (e) {
                 if (window.activePopover) {
-                    $(window.activePopover).popover('hide')
+                    $(window.activePopover).popover('hide');
                 }
                 window.activePopover = this;
                 currentPopover = e.target;
 
             }).on('hide.bs.popover', function () {
                 window.activePopover = null;
-            })
+            });
         }
     }
 
@@ -325,7 +324,6 @@ let initSpPopup = () => {
 
     // Anchor popover to opening element
     $(window).resize(function () {
-
         // console.log(currentPopover);
 
         if (currentPopover.data('bs.popover').tip().hasClass('in') == true) {
