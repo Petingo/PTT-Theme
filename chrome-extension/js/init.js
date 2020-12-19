@@ -1,6 +1,8 @@
 const themeJSONFileMap = {
+    "Custom": "Custom.json",
     "PTT": "PTT.json",
-    "Solarized Dark PTT 優化版": "Solarized Dark PTT.json",
+    "Solarized Dark": "Solarized Dark PTT.json",
+    "Solarized Light": "Solarized Light PTT.json",
     "Apple Terminal": "Apple Terminal.json",
     "Argonaut": "Argonaut.json",
     "Birds Of Paradise": "Birds Of Paradise.json",
@@ -38,8 +40,8 @@ const themeJSONFileMap = {
     "Red Sands": "Red Sands.json",
     "Seafoam Pastel": "Seafoam Pastel.json",
     "Solarized Darcula": "Solarized Darcula.json",
-    "Solarized Dark": "Solarized Dark.json",
-    "Solarized Light": "Solarized Light.json",
+    "Solarized Dark (original)": "Solarized Dark.json",
+    "Solarized Light (original)": "Solarized Light.json",
     "Sundried": "Sundried.json",
     "Sympfonic": "Sympfonic.json",
     "Teerb": "Teerb.json",
@@ -90,12 +92,15 @@ function makeHidden(id) {
         el.style.visibility = "hidden"
 }
 
-let loadJSONConfig = async function(theme, refresh = false) {
+async function loadJSONConfig(theme, refresh = true) {
     let themeJSONFile = themeJSONFileMap[theme]
     let config = await JSON.parse(await fetch(chrome.extension.getURL(`/theme/${themeJSONFile}`)).then((response) => {
         return response.text()
     }))
+    updateConfig(theme, config, refresh)
+}
 
+function updateConfig(theme, config, refresh) {
     // update BASE_THEME_JSON
     chrome.storage.local.set({
         [BASE_THEME]: theme
@@ -116,7 +121,7 @@ let loadJSONConfig = async function(theme, refresh = false) {
             let varName = `--q${color.q}b${color.b}-color`
             console.log("meow", varName)
             chrome.storage.local.set({
-                [varName]: color["color"], 
+                [varName]: color["color"],
                 [varName + "-theme-def"]: color["color"]
             })
             spColorList.push(varName)
@@ -144,8 +149,8 @@ let loadJSONConfig = async function(theme, refresh = false) {
     })
 }
 
-let addOnChangeListener = () => {
-    chrome.storage.onChanged.addListener(async function(changes, namespace) {
+function addOnChangeListener() {
+    chrome.storage.onChanged.addListener(async function (changes, namespace) {
         let specialStyle = document.getElementById("special-style")
         console.log('changed!!', specialStyle)
         for (let key in changes) {
@@ -155,11 +160,11 @@ let addOnChangeListener = () => {
             let colorKeyRE = /--.*/
             let spColorKeyRE = /--q[0-9]*b[0-9]*-color/
             let spBgColorKeyRE = /--q[0-9]*b[0-9]*-bg-color/
-            
+
             if (spBgColorKeyRE.test(key)) {
                 let t = key.match(/[0-9]+/g)
                 let q = t[0]
-                let b = t[1] 
+                let b = t[1]
                 console.log("special background key:", q, b)
                 makeVisible(`dot-q${q}b${b}`)
                 document.documentElement.style.setProperty(key, changes[key].newValue);
@@ -168,14 +173,14 @@ let addOnChangeListener = () => {
                 if (changes[key].newValue != undefined) {
                     chrome.storage.local.get([SP_COLOR_LIST, SP_BG_COLOR_CSS_KEY], r => {
                         let spColorList = r[SP_COLOR_LIST]
-                        if(spColorList.indexOf(key) == -1){
+                        if (spColorList.indexOf(key) == -1) {
                             spColorList.push(key)
 
                             insertBgColorRule(cssKey, cssRuleCounter++, specialStyle)
 
                             let spBgColorCSSKey = r[SP_BG_COLOR_CSS_KEY]
                             spBgColorCSSKey.push(cssKey)
-    
+
                             chrome.storage.local.set({
                                 [SP_COLOR_LIST]: spColorList,
                                 [SP_BG_COLOR_CSS_KEY]: spBgColorCSSKey
@@ -187,7 +192,7 @@ let addOnChangeListener = () => {
                     chrome.storage.local.get([SP_COLOR_LIST, SP_BG_COLOR_CSS_KEY], r => {
                         let spColorList = r[SP_COLOR_LIST]
                         spColorList.splice(spColorList.indexOf(key), 1);
-                        if(spColorList.indexOf(`--q${q}b${b}-color`) == -1){
+                        if (spColorList.indexOf(`--q${q}b${b}-color`) == -1) {
                             makeHidden(`dot-q${q}b${b}`)
                         }
 
@@ -206,20 +211,20 @@ let addOnChangeListener = () => {
                 let b = t[1]
                 document.documentElement.style.setProperty(key, changes[key].newValue);
                 console.log("special background key:", q, b)
-                
+
                 let cssKey = `.q${q}.b${b}`
                 if (changes[key].newValue != undefined) {
                     makeVisible(`dot-q${q}b${b}`)
                     chrome.storage.local.get([SP_COLOR_LIST, SP_COLOR_CSS_KEY], r => {
                         let spColorList = r[SP_COLOR_LIST]
-                        if(spColorList.indexOf(key) == -1){
+                        if (spColorList.indexOf(key) == -1) {
                             insertColorRule(cssKey, cssRuleCounter++, specialStyle)
-    
+
                             spColorList.push(key)
-    
+
                             let spColorCSSKey = r[SP_COLOR_CSS_KEY]
                             spColorCSSKey.push(cssKey)
-    
+
                             chrome.storage.local.set({
                                 [SP_COLOR_LIST]: spColorList,
                                 [SP_COLOR_CSS_KEY]: spColorCSSKey
@@ -229,16 +234,16 @@ let addOnChangeListener = () => {
                 } else {
                     removeColorRule(cssKey, specialStyle)
                     chrome.storage.local.get([SP_COLOR_LIST, SP_COLOR_CSS_KEY], r => {
-                        
+
                         let spColorList = r[SP_COLOR_LIST]
                         spColorList.splice(spColorList.indexOf(key), 1);
-                        if(spColorList.indexOf(`--q${q}b${b}-bg-color`) == -1){
+                        if (spColorList.indexOf(`--q${q}b${b}-bg-color`) == -1) {
                             makeHidden(`dot-q${q}b${b}`)
                         }
 
                         let spColorCSSKey = r[SP_COLOR_CSS_KEY]
                         spColorCSSKey.splice(spColorCSSKey.indexOf(cssKey), 1);
-                        
+
                         chrome.storage.local.set({
                             [SP_COLOR_LIST]: spColorList,
                             [SP_COLOR_CSS_KEY]: spColorCSSKey
@@ -268,7 +273,7 @@ function insertColorRule(cssKey, id, cssStyle) {
         ${cssKey}{
             color: var(--q${t[0]}b${t[1]}-color);
         }`
-    if(cssIdMap.color[cssKey] === undefined){
+    if (cssIdMap.color[cssKey] === undefined) {
         cssIdMap.color[cssKey] = []
     }
     id = cssStyle.sheet.cssRules.length
@@ -283,7 +288,7 @@ function insertBgColorRule(cssKey, id, cssStyle) {
         ${cssKey}{
             background-color: var(--q${t[0]}b${t[1]}-bg-color);
         }`
-    if(cssIdMap.bgColor[cssKey] === undefined){
+    if (cssIdMap.bgColor[cssKey] === undefined) {
         cssIdMap.bgColor[cssKey] = []
     }
     id = cssStyle.sheet.cssRules.length
@@ -292,28 +297,28 @@ function insertBgColorRule(cssKey, id, cssStyle) {
     console.log("add new style:", cssRule, id)
 }
 
-function removeBgColorRule(cssKey, cssStyle){
+function removeBgColorRule(cssKey, cssStyle) {
     console.log('remove css', cssKey, cssIdMap.bgColor[cssKey])
     console.log(cssStyle.sheet)
-    let idList = cssIdMap.bgColor[cssKey].sort((a, b) => { return b-a })
-    for(let id of idList){
+    let idList = cssIdMap.bgColor[cssKey].sort((a, b) => { return b - a })
+    for (let id of idList) {
         cssStyle.sheet.deleteRule(id)
     }
     console.log(cssStyle.sheet)
 }
 
-function removeColorRule(cssKey, cssStyle){
+function removeColorRule(cssKey, cssStyle) {
     console.log('remove css', cssKey, cssIdMap.color[cssKey])
     console.log(cssStyle.sheet)
-    let idList = cssIdMap.color[cssKey].sort((a, b) => { return b-a })
-    for(let id of idList){
+    let idList = cssIdMap.color[cssKey].sort((a, b) => { return b - a })
+    for (let id of idList) {
         cssStyle.sheet.deleteRule(id)
     }
     console.log(cssStyle.sheet)
 }
 
 let cssRuleCounter = 0
-let setColor = () => {
+function setColor() {
     // special color
     // add CSS style sheet interface
     let specialStyle = document.createElement("style")
@@ -352,10 +357,8 @@ let setColor = () => {
     })
 }
 
-
-
 // ensure it works in the first time
-let init = async function() {
+async function init() {
     chrome.storage.local.get([BASE_THEME], r => {
         if (r[BASE_THEME] === undefined) {
             loadJSONConfig("PTT")

@@ -17,7 +17,7 @@ const colorCode2Key = {
     14: "--cyan-light"
 }
 
-let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, hasDefault=false) => {
+let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, hasDefault = false) => {
     console.log(target, elementPath, defaultColor, themeDefaultColor, hasDefault)
     let pickr = Pickr.create({
         el: elementPath,
@@ -59,7 +59,7 @@ let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, h
             }, callback)
         }
     }
-    
+
     let lastUpdateTime = 0;
     let cancelFlag
     let colorOnShow = undefined
@@ -92,11 +92,11 @@ let createPickrObject = (target, elementPath, defaultColor, themeDefaultColor, h
                 if (hasDefault) {
                     // set key-color to default
                     console.log("")
-                    let themeDefKey = target+"-theme-def"
+                    let themeDefKey = target + "-theme-def"
                     chrome.storage.local.get([themeDefKey], (r) => {
                         chrome.storage.local.set({
                             [target]: r[themeDefKey]
-                        }) 
+                        })
                     })
                 } else {
                     // remove key
@@ -150,7 +150,7 @@ let initThemeSelectionDropdown = () => {
 
 
 function download(filename, text) {
-    var element = document.createElement('a');
+    let element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
 
@@ -168,8 +168,8 @@ let exportJson = () => {
         "base": {},
         "specialCase": []
     }
-    chrome.storage.local.get([...colors, BASE_THEME, SP_COLOR_LIST, SP_COLOR_CSS_KEY, SP_BG_COLOR_CSS_KEY], r=>{
-        for(let c of colors){
+    chrome.storage.local.get([...colors, BASE_THEME, SP_COLOR_LIST, SP_COLOR_CSS_KEY, SP_BG_COLOR_CSS_KEY], r => {
+        for (let c of colors) {
             themeConfig.base[c] = r[c]
         }
         filename = `${r[BASE_THEME]}.custom.json`
@@ -177,7 +177,7 @@ let exportJson = () => {
         console.log("aaaa", spColorList)
         chrome.storage.local.get(spColorList, r => {
             console.log(r)
-            for(let spColor of spColorList){
+            for (let spColor of spColorList) {
                 console.log(spColor)
                 let t = spColor.match(/[0-9]+/g)
                 let q = t[0]
@@ -186,7 +186,7 @@ let exportJson = () => {
                     "q": q,
                     "b": b
                 }
-                if(spColor.includes("bg")){
+                if (spColor.includes("bg")) {
                     spColorConfig["bg-color"] = r[spColor]
                 } else {
                     spColorConfig["color"] = r[spColor]
@@ -202,6 +202,15 @@ let initExportButton = () => {
     let exportButton = document.getElementById("export-button")
     exportButton.addEventListener("click", exportJson)
 }
+
+let initImportButton = () => {
+    let importButton = document.getElementById("import-button")
+    importButton.onclick = () => {
+        chrome.tabs.create({url: "popup/import.html"});
+        return false;
+    }
+}
+
 
 let initSpClickEvent = () => {
     let buttons = [...document.getElementsByClassName("sp-color-demo-button")]
@@ -329,6 +338,7 @@ let initSpPopup = () => {
 (async () => {
     initThemeSelectionDropdown()
     initExportButton()
+    initImportButton()
     refreshColorPickr()
     initSpClickEvent()
 

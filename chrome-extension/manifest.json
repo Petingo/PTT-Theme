@@ -12,7 +12,8 @@
     "permissions": [
         "fontSettings",
         "storage",
-        "activeTab"
+        "activeTab",
+        "file://*/*"
     ],
     "content_scripts": [{
         "matches": ["*://term.ptt.cc/*"],

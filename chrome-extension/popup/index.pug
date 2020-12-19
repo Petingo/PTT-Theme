@@ -20,9 +20,15 @@ html(lang="en")
                     .container
                         #base-color-picker
                             .row
-                                .col-10.dropdown.show
+                                .col-8.dropdown.show
                                     a.btn.btn-primary.dropdown-toggle.col-12.mb-2#theme-selection-dropdown(href="#", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false")
                                     .dropdown-menu#theme-selection-dropdown-item-container(aria-labelledby="dropdownMenuLink")
+                                .col-2.pl-0
+                                    //- form(method="post" action="upload" name="myForm" enctype="multipart/form-data")
+                                    //- label.btn.btn-primary(style="width:100%")
+                                    //-     input#import-button(type="file")
+                                    //-     | 匯入
+                                    button.btn.btn-primary.col-12#import-button(type="button") 匯入
                                 .col-2.pl-0(style="padding-right: 20px")
                                     button.btn.btn-primary.col-12#export-button(type="button") 匯出
                             .row

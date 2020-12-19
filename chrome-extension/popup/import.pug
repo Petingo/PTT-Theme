@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+        -
+            var styleList = [
+                "/css/bootstrap.min.css",
+                "css/popup.css"
+            ]
+
+        each style in styleList
+            link(href=style, rel="stylesheet")
+
+    body
+        div.container.text-center(style="margin:8px;")
+            //- form(method="post" action="upload" name="myForm" enctype="multipart/form-data")
+            label.btn.btn-primary(style="width:60%;")
+                input#import-button(type="file")
+                | 匯入
+
+    -
+        var scriptList = [
+            "/js/init.js",
+            "js/import.js"
+        ]
+
+    each scriptSrc in scriptList
+        script(src=scriptSrc)
