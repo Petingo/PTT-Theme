@@ -1,6 +1,8 @@
 # PTT Theme
 看膩黑底白字了嗎？PTT Theme 是一個 https://term.ptt.cc 的色彩編輯插件，讓你自訂 PTT 的顏色！
 
+[到 Chrome 商店安裝](https://chrome.google.com/webstore/detail/ptt-theme/fbljlcpiopmigpifaimnnacjbbjdifkj?hl=zh-TW&authuser=0)
+
 <p align="center">
     <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/main.png">
 </p>
