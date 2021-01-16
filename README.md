@@ -1,17 +1,29 @@
-<p align="center">
-    <img src="https://github.com/Petingo/ptt-theme/raw/master/main.png">
-</p>
-
 # PTT Theme
 看膩黑底白字了嗎？PTT Theme 是一個 https://term.ptt.cc 的色彩編輯插件，讓你自訂 PTT 的顏色！
 
-| <img src="https://github.com/Petingo/ptt-theme/raw/master/Solarized-Dark.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/Solarized-Light.png"> |
-| Solarized Dark | Solarized Light |
-| <img src="https://github.com/Petingo/ptt-theme/raw/master/Argonaut.png"> | <img src="https://github.com/Petingo/ptt-theme/raw/master/Expresso.png"> |
-| Argonaut | Expresso |
+[到 Chrome 商店安裝](https://chrome.google.com/webstore/detail/ptt-theme/fbljlcpiopmigpifaimnnacjbbjdifkj?hl=zh-TW&authuser=0)
 
-## Flow
-![](https://github.com/Petingo/ptt-theme/raw/master/flow.jpg)
+<p align="center">
+    <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/main.png">
+</p>
+
+| Solarized Dark | Solarized Light |
+|-|-|
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Dark.png"/> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Solarized-Light.png"/> |
+
+| Argonaut | Expresso |
+|-|-|
+| <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Argonaut.png"/> | <img src="https://github.com/Petingo/ptt-theme/raw/master/imgs/Expresso.png"/> |
+
+## 已知問題 & TODO
+目前肥肥我在在申請研究所，下個月就要進去當兵了，應該沒空繼續開發，如果你對這個專案有興趣、想一起開發的話歡迎聯絡我：）
+- [ ] 目前切換的時候 special case 會有轉不過來的問題，如果你發現切換主題後有東西沒變，請**重新整理 PTT**
+- [ ] 白底背景優化
+- [ ] Theme Demo
+    想做一個網頁，可以有一個主題 -> 效果的呈現，並讓大家可以上傳自己編輯的主題
+
+## 程式流程
+![](https://github.com/Petingo/ptt-theme/raw/master/imgs/flow.jpg)
 
 ## Putty、PTT 色號對應表
 | 顏色代碼  | 原始目標          | PTT 色彩 | PTT 色號 | term.ptt.cc | 原始色彩 | template      |
@@ -38,13 +50,6 @@
 | Colour 19 | ANSI Cyan Bold    | 亮淺藍   | 1;36     | 14          | \#0FF    | --cyan-light    |
 | Colour 20 | ANSI White        |          |          |             |          |               |
 | Colour 21 | ANSI White Bold   |          |          |             |          |               |
-
-## TODO
-目前肥肥我在在申請研究所，下個月就要進去當兵了，應該沒空繼續開發，如果你對這個專案有興趣、想一起開發的話歡迎聯絡我：）
-- [ ] 白底背景優化
-- [ ] 目前切換的時候 special case 會有轉不過來的問題，感覺應該是 async 沒寫好
-- [ ] Theme Demo
-    想做一個網頁，可以有一個主題 -> 效果的呈現，並讓大家可以上傳自己編輯的主題
 
 ## 程式結構
 ### chrome storage key
